@@ -133,10 +133,13 @@ nav{position:sticky;top:0;z-index:50;background:rgba(247,243,234,.9);backdrop-fi
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2.5rem,5vw,4.5rem);align-items:center}
 .contact .note{color:var(--ink-soft);margin:1.2rem 0 2rem;max-width:34ch}
 .cinfo{display:grid;gap:1.4rem}
-.cinfo a{display:flex;align-items:center;gap:1rem;font-size:1.02rem;letter-spacing:.02em}
-.cinfo .ic{width:44px;height:44px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold-deep);flex:none}
+.cinfo a{display:flex;align-items:center;gap:1rem;font-size:1.02rem;letter-spacing:.02em;width:fit-content;cursor:pointer;transition:transform .25s,color .25s}
+.cinfo .ic{width:44px;height:44px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold-deep);flex:none;transition:background .25s,color .25s,box-shadow .25s}
 .cinfo .ic svg{width:20px;height:20px}
-.cinfo a:hover .ic{background:var(--gold);color:#fff}
+.cinfo a .cval{text-decoration:underline;text-decoration-color:rgba(176,141,79,.45);text-decoration-thickness:1px;text-underline-offset:5px;transition:.25s}
+.cinfo a:hover{color:var(--gold-deep);transform:translateX(5px)}
+.cinfo a:hover .ic{background:var(--gold);color:#fff;box-shadow:0 4px 12px rgba(176,141,79,.35)}
+.cinfo a:hover .cval{text-decoration-color:var(--gold)}
 .cinfo a b{font-family:var(--display);font-style:italic;font-weight:500;color:var(--gold-deep);margin-right:.4em}
 form{background:var(--paper);border:1px solid var(--line);padding:clamp(1.8rem,3vw,2.6rem)}
 form .ftitle{font-family:var(--display);font-style:italic;font-size:1.5rem;color:var(--gold-deep);margin-bottom:1.4rem;text-align:center}
