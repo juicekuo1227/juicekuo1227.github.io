@@ -224,6 +224,12 @@
     sections.forEach(function (s) { observer.observe(s); });
   }
 
+  // 版權年份自動更新為當年
+  function initFooterYear() {
+    var el = document.getElementById('footer-year');
+    if (el) el.textContent = new Date().getFullYear();
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     initMobileMenu();
     initSmoothScroll();
@@ -231,6 +237,7 @@
     initLightbox();
     initVideoLightbox();
     initScrollSpy();
+    initFooterYear();
   });
 
   // 供測試存取
