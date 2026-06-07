@@ -62,9 +62,7 @@ nav{position:sticky;top:0;z-index:50;background:rgba(247,243,234,.9);backdrop-fi
 .hero-tags span{position:relative;padding-left:1.2rem}
 .hero-tags span::before{content:"♪";position:absolute;left:0;color:var(--gold)}
 .hero-cta{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-top:.5rem}
-.hero-photo{position:relative;padding:14px}
-.hero-photo::before{content:"";position:absolute;inset:0;border:1px solid var(--gold)}
-.hero-photo::after{content:"";position:absolute;inset:14px;border:1px solid var(--line);pointer-events:none;z-index:2}
+.hero-photo{position:relative}
 .hero-photo img{width:100%;aspect-ratio:16/9;object-fit:cover}
 .hero-photo .cap{position:absolute;bottom:-2.2rem;left:50%;transform:translateX(-50%);font-family:var(--display);font-style:italic;color:var(--gold-deep);white-space:nowrap}
 
@@ -74,8 +72,7 @@ nav{position:sticky;top:0;z-index:50;background:rgba(247,243,234,.9);backdrop-fi
 /* teacher */
 .teacher{background:var(--paper);padding:clamp(3.5rem,8vw,6rem) 0;border-block:1px solid var(--line)}
 .teacher-grid{display:grid;grid-template-columns:440px 1fr;gap:clamp(2.5rem,5vw,4.5rem);align-items:start}
-.portrait-wrap{position:relative;justify-self:center;padding:12px;width:100%;max-width:440px}
-.portrait-wrap::before{content:"";position:absolute;inset:0;border:1px solid var(--gold)}
+.portrait-wrap{position:relative;justify-self:center;width:100%;max-width:440px}
 .portrait-wrap img{width:100%;aspect-ratio:4/3;object-fit:cover}
 .teacher .name{font-family:var(--serif);font-weight:500;font-size:clamp(1.7rem,3vw,2.2rem);letter-spacing:.08em}
 .teacher .name em{font-family:var(--display);font-style:italic;color:var(--gold-deep);font-size:.85em;margin-left:.5em;letter-spacing:.02em}
@@ -104,10 +101,9 @@ nav{position:sticky;top:0;z-index:50;background:rgba(247,243,234,.9);backdrop-fi
 .videos .sub{text-align:center;color:#c8bca6;font-size:.95rem;margin-top:.6rem}
 .video-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.6rem;margin-top:2.8rem}
 .vid{background:none;border:0;padding:0;text-align:left;color:inherit;font:inherit;cursor:pointer;width:100%}
-.vid .thumb{position:relative;padding:8px;border:1px solid rgba(176,141,79,.5);transition:.3s}
-.vid:hover .thumb,.vid:focus-visible .thumb{border-color:var(--gold)}
+.vid .thumb{position:relative;transition:.3s}
 .vid .thumb img{width:100%;aspect-ratio:16/10;object-fit:cover}
-.vid .play{position:absolute;inset:8px;display:grid;place-items:center;pointer-events:none}
+.vid .play{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none}
 .vid .play span{width:50px;height:50px;border-radius:50%;border:1px solid var(--gold);background:rgba(33,28,22,.6);display:grid;place-items:center;transition:.3s}
 .vid:hover .play span,.vid:focus-visible .play span{background:var(--gold)}
 .vid:hover .play svg,.vid:focus-visible .play svg{color:var(--ink)}
@@ -118,8 +114,8 @@ nav{position:sticky;top:0;z-index:50;background:rgba(247,243,234,.9);backdrop-fi
 /* recital */
 .recital{padding:clamp(3.5rem,8vw,6rem) 0}
 .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
-.gallery .cell{display:block;padding:7px;border:1px solid var(--line);transition:.3s;cursor:pointer}
-.gallery .cell:hover{border-color:var(--gold)}
+.gallery .cell{display:block;transition:.3s;cursor:pointer}
+.gallery .cell:hover{opacity:.88}
 .gallery .cell img{width:100%;aspect-ratio:3/2;object-fit:cover}
 
 /* awards */
@@ -127,7 +123,7 @@ nav{position:sticky;top:0;z-index:50;background:rgba(247,243,234,.9);backdrop-fi
 .award-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.5rem,3vw,3rem)}
 .award-card h3{font-family:var(--serif);font-weight:500;font-size:1.3rem;text-align:center;letter-spacing:.1em;padding-bottom:1rem;margin-bottom:1.2rem;border-bottom:1px solid var(--gold);color:var(--wine)}
 .award-card ul{list-style:none;display:grid;gap:1rem}
-.award-card li{font-size:.9rem;color:var(--ink-soft);text-align:center;line-height:1.7;padding-bottom:1rem;border-bottom:1px dotted var(--line)}
+.award-card li{font-size:.9rem;color:var(--ink-soft);text-align:left;line-height:1.7;padding-bottom:1rem;border-bottom:1px dotted var(--line)}
 .award-card li:last-child{border-bottom:none}
 
 /* contact */
