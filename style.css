@@ -26,6 +26,8 @@ a { color: inherit; }
 .container { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--pad); }
 
 .section { padding: 72px 0; }
+/* 錨點捲動時讓出固定表頭高度（64px）+ 緩衝，標題才不會被表頭蓋住 */
+#hero, #about, #courses, #videos, #recital, #awards, #contact { scroll-margin-top: 76px; }
 .section--rose { background: var(--c-rose); }
 .section--brown { background: var(--c-brown); color: var(--c-white); }
 .section-title {
