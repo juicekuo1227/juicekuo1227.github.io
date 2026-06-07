@@ -120,7 +120,7 @@ nav{position:sticky;top:0;z-index:50;background:rgba(247,243,234,.9);backdrop-fi
 
 /* awards */
 .awards{background:var(--paper);padding:clamp(3.5rem,8vw,6rem) 0;border-block:1px solid var(--line)}
-.award-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.5rem,3vw,3rem)}
+.award-cols{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(1.5rem,2.5vw,2.4rem)}
 .award-card h3{font-family:var(--serif);font-weight:500;font-size:1.3rem;text-align:center;letter-spacing:.1em;padding-bottom:1rem;margin-bottom:1.2rem;border-bottom:1px solid var(--gold);color:var(--wine)}
 .award-card ul{list-style:none;display:grid;gap:1rem}
 .award-card li{font-size:.9rem;color:var(--ink-soft);text-align:left;line-height:1.7;padding-bottom:1rem;border-bottom:1px dotted var(--line)}
@@ -177,7 +177,7 @@ footer small{color:#a89878;letter-spacing:.08em}
 /* ───── Responsive / RWD ───── */
 @media(max-width:1024px){
   .video-grid{grid-template-columns:repeat(2,1fr);gap:1.4rem}
-  .award-cols{grid-template-columns:repeat(3,1fr);gap:1.4rem}
+  .award-cols{grid-template-columns:repeat(2,1fr);gap:1.6rem}
 }
 @media(max-width:860px){
   .nav-in{flex-wrap:wrap;row-gap:0}
@@ -385,21 +385,23 @@ const S = {
   recitalTitle: "2025 郭老師音樂發表會",
   recitalCount: 12,
   awards: {
-    "檢定": [
-      "恭喜香奈通過英國皇家音樂檢定 Abrsm 鋼琴四級優良",
-      "恭喜張*珺通過英國皇家音樂檢定 Abrsm 長笛三級",
-      "恭喜黃*恩通過英國皇家音樂檢定 Abrsm 鋼琴三級優良",
-      "恭喜黃*安通過英國皇家音樂檢定 Abrsm 鋼琴二級優良",
-      "恭喜林*恩通過英國皇家音樂檢定 Abrsm 長笛二級優良",
-      "恭喜紀*怡通過英國皇家音樂檢定 Abrsm 長笛三級優良",
-      "恭喜谷*蓁通過 Yamaha 長笛檢定10級",
-      "恭喜陳*瑀通過 Yamaha 鋼琴檢定11級",
-      "恭喜楊*縈通過 Yamaha 鋼琴檢定13級",
-      "恭喜蔡*縈通過 Yamaha 鋼琴檢定13級",
-      "恭喜簡*羽通過 Yamaha 鋼琴檢定13級",
-      "恭喜王*棠通過 Yamaha 鋼琴檢定13級",
-      "恭喜李*倢通過 Yamaha 鋼琴檢定13級",
-      "恭喜張*奕通過 Yamaha 鋼琴檢定11級"
+    "英國皇家音樂檢定 ABRSM": [
+      "香奈 - 鋼琴四級榮獲優良",
+      "張*珺 - 長笛三級",
+      "黃*恩 - 鋼琴三級榮獲優良",
+      "黃*安 - 鋼琴二級榮獲優良",
+      "林*恩 - 長笛二級榮獲優良",
+      "紀*怡 - 長笛三級榮獲優良"
+    ],
+    "Yamaha 音樂檢定": [
+      "谷*蓁 - 長笛檢定 10 級",
+      "陳*瑀 - 鋼琴檢定 11 級",
+      "楊*縈 - 鋼琴檢定 13 級",
+      "蔡*縈 - 鋼琴檢定 13 級",
+      "簡*羽 - 鋼琴檢定 13 級",
+      "王*棠 - 鋼琴檢定 13 級",
+      "李*倢 - 鋼琴檢定 13 級",
+      "張*奕 - 鋼琴檢定 11 級"
     ],
     "比賽": [
       "恭喜黃*安參加希朵夫古典鋼琴比賽榮獲第四名",
