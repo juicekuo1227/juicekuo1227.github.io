@@ -121,7 +121,8 @@ nav{position:sticky;top:0;z-index:50;background:rgba(247,243,234,.9);backdrop-fi
 /* awards */
 .awards{background:var(--paper);padding:clamp(3.5rem,8vw,6rem) 0;border-block:1px solid var(--line)}
 .award-cols{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(1.5rem,2.5vw,2.4rem)}
-.award-card h3{font-family:var(--serif);font-weight:500;font-size:1.25rem;text-align:center;letter-spacing:.08em;line-height:1.4;min-height:3.9em;display:flex;align-items:center;justify-content:center;padding-bottom:1rem;margin-bottom:1.2rem;border-bottom:1px solid var(--gold);color:var(--wine)}
+.award-card h3{font-family:var(--serif);font-weight:500;font-size:1.25rem;text-align:left;letter-spacing:.08em;line-height:1.4;min-height:2.6em;display:flex;align-items:center;justify-content:flex-start;padding-bottom:1rem;margin-bottom:1.2rem;border-bottom:1px solid var(--gold);color:var(--wine)}
+.award-card h3 .h3-zh{font-size:.78em;letter-spacing:.04em}
 .award-card ul{list-style:none;display:grid;gap:1rem}
 .award-card li{font-size:.9rem;color:var(--ink-soft);text-align:left;line-height:1.7;padding-bottom:1rem;border-bottom:1px dotted var(--line)}
 .award-card li:last-child{border-bottom:none}
@@ -393,7 +394,7 @@ const S = {
       "谷*蓁 - 長笛二級榮獲優良",
       "孫*嫻 - 長笛一級榮獲優秀",
       "香奈 - 鋼琴四級榮獲優良",
-      "張*珺 - 長笛三級",
+      "張*珺 - 長笛三級合格",
       "黃*恩 - 鋼琴三級榮獲優良",
       "黃*安 - 鋼琴二級榮獲優良",
       "林*恩 - 長笛二級榮獲優良",
@@ -449,7 +450,8 @@ document.getElementById('programme').innerHTML=S.courses.map((c,i)=>`<div class=
 document.getElementById('video-grid').innerHTML=S.videos.map(v=>`<button class="vid" type="button" data-video="${v.id}" data-title="${v.title}" data-performer="演出者：${v.performer}"><div class="thumb"><img src="https://i.ytimg.com/vi/${v.id}/hqdefault.jpg" alt="${v.title} 影片縮圖" loading="lazy"><div class="play"><span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></div></div><div class="t">${v.title}</div><div class="p">演出者：${v.performer}</div></button>`).join('');
 document.getElementById('recital-title').textContent=S.recitalTitle;
 document.getElementById('gallery').innerHTML=Array.from({length:S.recitalCount},(_,i)=>{const n=pad2(i+1);return `<a class="cell" href="assets/gallery-${n}.jpg" data-full="assets/gallery-${n}.jpg" aria-label="2025 發表會相片 ${i+1}"><img src="assets/thumb-${n}.jpg" alt="2025 發表會相片 ${i+1}" loading="lazy"></a>`;}).join('');
-document.getElementById('award-cols').innerHTML=Object.entries(S.awards).map(([k,arr])=>`<div class="award-card"><h3>${k}</h3><ul>${arr.map(a=>`<li>${a}</li>`).join('')}</ul></div>`).join('');
+const fmtAward=k=>{const m=k.match(/^([A-Za-z]+)\s+(.+)$/);return m?`${m[1]} <span class="h3-zh">${m[2]}</span>`:k;};
+document.getElementById('award-cols').innerHTML=Object.entries(S.awards).map(([k,arr])=>`<div class="award-card"><h3>${fmtAward(k)}</h3><ul>${arr.map(a=>`<li>${a}</li>`).join('')}</ul></div>`).join('');
 document.getElementById('c-note').textContent=S.contact.note;
 const cl=document.getElementById('c-line');cl.querySelector('.cval').textContent=S.contact.line;cl.href='https://line.me/R/ti/p/'+encodeURIComponent(S.contact.line);
 const cm=document.getElementById('c-mail');cm.querySelector('.cval').textContent=S.contact.email;cm.href='mailto:'+S.contact.email;
