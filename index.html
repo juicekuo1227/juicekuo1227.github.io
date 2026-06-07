@@ -79,6 +79,7 @@ nav{position:sticky;top:0;z-index:50;background:rgba(247,243,234,.9);backdrop-fi
 .teacher .name em{font-family:var(--display);font-style:italic;color:var(--gold-deep);font-size:.85em;margin-left:.5em;letter-spacing:.02em}
 .teacher .role{font-family:var(--display);font-style:italic;font-size:1.3rem;color:var(--gold-deep);margin:.3rem 0 1.6rem}
 .teacher .bio p{margin-bottom:1.1rem;color:var(--ink-soft)}
+.teacher .bio .hl{font-weight:500;color:var(--ink);background:linear-gradient(transparent 58%, rgba(176,141,79,.32) 58%);box-decoration-break:clone;-webkit-box-decoration-break:clone}
 .cred{list-style:none;margin-top:1.8rem;border-top:1px solid var(--line)}
 .cred li{display:flex;gap:1.2rem;padding:.95rem 0;border-bottom:1px solid var(--line);font-size:.95rem;align-items:baseline}
 .cred li .rn{font-family:var(--display);font-style:italic;color:var(--gold);font-size:1.2rem;min-width:2ch}
@@ -363,7 +364,7 @@ const S = {
     name: "郭庭羽", nameEn: "Aria Kuo", role: "長笛 ‧ 鋼琴 音樂家教",
     bio: [
       "嗨，我是 Aria 郭老師！自幼學習長笛與鋼琴，主修長笛、副修鋼琴，師承蔡玉敏、林珮琪老師，曾參加多項比賽並榮獲前三名佳績。",
-      "多年的家教經驗讓我明白：每個學生都有自己的學習節奏。無論是大朋友還是小朋友，我都喜歡用互動的方式教學，課堂上不是單向的講授，而是一起玩、一起探索——我會把音符變成圖畫，用畫畫和說故事讓抽象的音樂變得好懂；也會把樂理變成遊戲，讓學生在玩樂中自然吸收節奏、音感和音樂知識。在我的課堂裡，學音樂不是壓力，而是每週最期待的快樂時光。希望每堂課結束時，每位學生帶走的不只是進步，還有滿滿的笑容。"
+      "多年的家教經驗讓我明白：每個學生都有自己的學習節奏。無論是大朋友還是小朋友，我都喜歡用互動的方式教學，課堂上不是單向的講授，而是一起玩、一起探索——<span class='hl'>我會把音符變成圖畫，用畫畫和說故事讓抽象的音樂變得好懂</span>；<span class='hl'>也會把樂理變成遊戲，讓學生在玩樂中自然吸收節奏、音感和音樂知識</span>。在我的課堂裡，學音樂不是壓力，而是每週最期待的快樂時光。希望每堂課結束時，每位學生帶走的不只是進步，還有滿滿的笑容。"
     ],
     credentials: [
       "通過 ABRSM 英國皇家音樂檢定 — ARSM 長笛演奏級",
