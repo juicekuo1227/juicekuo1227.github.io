@@ -100,34 +100,38 @@
       <h2 class="section-title">學生演出精彩片段</h2>
       <p class="videos-intro">成果發表會、檢定考試等演出，更多精彩影片請至<a href="https://www.youtube.com/@ting-ting-music" target="_blank" rel="noopener">聽聽音樂 Youtube</a>觀看</p>
       <div class="video-grid">
-        <article class="video-card">
-          <div class="video-embed">
-            <iframe src="https://www.youtube.com/embed/wnEmoi3gQ50" title="Martin Cuellar : Toccata" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-          </div>
+        <button type="button" class="video-card" data-video="wnEmoi3gQ50" data-title="Martin Cuellar : Toccata" data-performer="演出者：Kana">
+          <span class="video-thumb">
+            <img src="https://i.ytimg.com/vi/wnEmoi3gQ50/hqdefault.jpg" alt="Martin Cuellar : Toccata 影片縮圖" loading="lazy">
+            <span class="video-play" aria-hidden="true"></span>
+          </span>
           <h4>Martin Cuellar : Toccata</h4>
           <p>演出者：Kana</p>
-        </article>
-        <article class="video-card">
-          <div class="video-embed">
-            <iframe src="https://www.youtube.com/embed/tE8csMe-urU" title="柴可夫斯基：睡美人的華爾滋" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-          </div>
+        </button>
+        <button type="button" class="video-card" data-video="tE8csMe-urU" data-title="柴可夫斯基：睡美人的華爾滋" data-performer="演出者：Lily">
+          <span class="video-thumb">
+            <img src="https://i.ytimg.com/vi/tE8csMe-urU/hqdefault.jpg" alt="柴可夫斯基：睡美人的華爾滋 影片縮圖" loading="lazy">
+            <span class="video-play" aria-hidden="true"></span>
+          </span>
           <h4>柴可夫斯基：睡美人的華爾滋</h4>
           <p>演出者：Lily</p>
-        </article>
-        <article class="video-card">
-          <div class="video-embed">
-            <iframe src="https://www.youtube.com/embed/sG395okhOy8" title="魔法公主 Princess mononoke" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-          </div>
+        </button>
+        <button type="button" class="video-card" data-video="sG395okhOy8" data-title="魔法公主 Princess mononoke" data-performer="演出者：Effie">
+          <span class="video-thumb">
+            <img src="https://i.ytimg.com/vi/sG395okhOy8/hqdefault.jpg" alt="魔法公主 Princess mononoke 影片縮圖" loading="lazy">
+            <span class="video-play" aria-hidden="true"></span>
+          </span>
           <h4>魔法公主 Princess mononoke</h4>
           <p>演出者：Effie</p>
-        </article>
-        <article class="video-card">
-          <div class="video-embed">
-            <iframe src="https://www.youtube.com/embed/k5kHF68hHME" title="威尼斯狂歡節" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-          </div>
+        </button>
+        <button type="button" class="video-card" data-video="k5kHF68hHME" data-title="威尼斯狂歡節" data-performer="演出者：Daphne">
+          <span class="video-thumb">
+            <img src="https://i.ytimg.com/vi/k5kHF68hHME/hqdefault.jpg" alt="威尼斯狂歡節 影片縮圖" loading="lazy">
+            <span class="video-play" aria-hidden="true"></span>
+          </span>
           <h4>威尼斯狂歡節</h4>
           <p>演出者：Daphne</p>
-        </article>
+        </button>
       </div>
     </div>
   </section>
@@ -240,6 +244,16 @@
       <figcaption class="lightbox-caption"></figcaption>
     </figure>
     <button class="lightbox-btn lightbox-next" type="button" aria-label="下一張">&rsaquo;</button>
+  </div>
+
+  <div class="lightbox video-lightbox" id="video-lightbox" hidden role="dialog" aria-modal="true" aria-label="影片播放">
+    <button class="lightbox-btn lightbox-close" type="button" aria-label="關閉">&times;</button>
+    <button class="lightbox-btn lightbox-prev" type="button" aria-label="上一部">&lsaquo;</button>
+    <figure class="lightbox-stage">
+      <div class="video-frame"><iframe title="影片播放器" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+      <figcaption class="lightbox-caption"></figcaption>
+    </figure>
+    <button class="lightbox-btn lightbox-next" type="button" aria-label="下一部">&rsaquo;</button>
   </div>
 
   <script src="script.js"></script>

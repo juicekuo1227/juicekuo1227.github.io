@@ -93,10 +93,38 @@ body.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate
 .videos-intro { text-align: center; margin: -20px 0 36px; }
 .videos-intro a { text-decoration: underline; }
 .video-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
-.video-embed { position: relative; padding-top: 56.25%; }
-.video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; border-radius: 6px; }
+.video-card {
+  display: block; width: 100%; text-align: left; cursor: pointer;
+  background: none; border: 0; padding: 0; color: inherit; font: inherit;
+}
+.video-thumb {
+  position: relative; display: block; aspect-ratio: 16 / 9;
+  border-radius: 6px; overflow: hidden; background: #000;
+}
+.video-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform .25s, filter .25s; }
+.video-card:hover .video-thumb img, .video-card:focus-visible .video-thumb img { transform: scale(1.04); filter: brightness(.82); }
+.video-play {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 64px; height: 64px; border-radius: 50%;
+  background: rgba(0, 0, 0, .55); transition: background .2s;
+}
+.video-play::before {
+  content: ""; position: absolute; top: 50%; left: 54%; transform: translate(-50%, -50%);
+  border-style: solid; border-width: 11px 0 11px 19px;
+  border-color: transparent transparent transparent #fff;
+}
+.video-card:hover .video-play, .video-card:focus-visible .video-play { background: #cc0000; }
 .video-card h4 { font-family: var(--font-display); margin: 14px 0 4px; }
 .video-card p { margin: 0; opacity: .85; font-size: .9rem; }
+
+/* 影片燈箱：16:9 播放器 */
+.video-lightbox .lightbox-stage { width: min(1100px, 92vw); max-width: min(1100px, 92vw); }
+.video-frame {
+  position: relative; width: 100%; padding-top: 56.25%;
+  background: #000; border-radius: 6px; overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, .5);
+}
+.video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 
 /* ===== Recital gallery ===== */
 .gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }

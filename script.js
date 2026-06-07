@@ -138,6 +138,66 @@
     });
   }
 
+  // 影片燈箱：點縮圖 → 全螢幕 YouTube 播放器 + 上一部/下一部
+  function initVideoLightbox() {
+    var cards = Array.prototype.slice.call(document.querySelectorAll('.video-card'));
+    var box = document.getElementById('video-lightbox');
+    if (!cards.length || !box) return;
+
+    var iframe = box.querySelector('iframe');
+    var captionEl = box.querySelector('.lightbox-caption');
+    var btnPrev = box.querySelector('.lightbox-prev');
+    var btnNext = box.querySelector('.lightbox-next');
+    var btnClose = box.querySelector('.lightbox-close');
+    var current = 0;
+
+    var videos = cards.map(function (c) {
+      return {
+        id: c.getAttribute('data-video'),
+        title: c.getAttribute('data-title') || '',
+        performer: c.getAttribute('data-performer') || ''
+      };
+    });
+
+    function show(index) {
+      current = (index + videos.length) % videos.length;
+      var v = videos[current];
+      iframe.setAttribute('src', 'https://www.youtube.com/embed/' + v.id + '?autoplay=1&rel=0');
+      captionEl.textContent = v.performer ? (v.title + '　' + v.performer) : v.title;
+    }
+
+    function open(index) {
+      show(index);
+      box.hidden = false;
+      document.body.style.overflow = 'hidden';
+    }
+
+    function close() {
+      box.hidden = true;
+      document.body.style.overflow = '';
+      iframe.setAttribute('src', '');  // 清空以停止播放
+    }
+
+    cards.forEach(function (c, i) {
+      c.addEventListener('click', function () { open(i); });
+    });
+
+    btnPrev.addEventListener('click', function (e) { e.stopPropagation(); show(current - 1); });
+    btnNext.addEventListener('click', function (e) { e.stopPropagation(); show(current + 1); });
+    btnClose.addEventListener('click', close);
+
+    box.addEventListener('click', function (e) {
+      if (e.target === box || e.target.classList.contains('lightbox-stage')) close();
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (box.hidden) return;
+      if (e.key === 'Escape') close();
+      else if (e.key === 'ArrowLeft') show(current - 1);
+      else if (e.key === 'ArrowRight') show(current + 1);
+    });
+  }
+
   // 導覽列高亮：目前捲到哪個區塊就標記對應連結
   function initScrollSpy() {
     var links = Array.prototype.slice.call(document.querySelectorAll('.nav-links a'));
@@ -169,6 +229,7 @@
     initSmoothScroll();
     initContactForm();
     initLightbox();
+    initVideoLightbox();
     initScrollSpy();
   });
 
