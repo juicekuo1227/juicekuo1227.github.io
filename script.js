@@ -138,11 +138,38 @@
     });
   }
 
+  // 導覽列高亮：目前捲到哪個區塊就標記對應連結
+  function initScrollSpy() {
+    var links = Array.prototype.slice.call(document.querySelectorAll('.nav-links a'));
+    if (!links.length || !('IntersectionObserver' in window)) return;
+
+    var map = {};
+    var sections = [];
+    links.forEach(function (a) {
+      var sel = a.getAttribute('href');
+      var section = document.querySelector(sel);
+      if (section) { map[section.id] = a; sections.push(section); }
+    });
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var active = map[entry.target.id];
+        if (!active) return;
+        links.forEach(function (l) { l.classList.remove('is-active'); });
+        active.classList.add('is-active');
+      });
+    }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+
+    sections.forEach(function (s) { observer.observe(s); });
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     initMobileMenu();
     initSmoothScroll();
     initContactForm();
     initLightbox();
+    initScrollSpy();
   });
 
   // 供測試存取
