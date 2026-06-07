@@ -8,12 +8,13 @@
 <link rel="icon" href="assets/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Serif+TC:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Serif+TC:wght@200;300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root{
   --ivory:#F7F3EA; --paper:#FCFAF4; --ink:#211C16; --ink-soft:#5A4F43;
   --gold:#B08D4F; --gold-deep:#8C6E38; --wine:#6A2E37; --line:#DDD2BE;
   --display:"Cormorant Garamond",serif; --serif:"Noto Serif TC",serif; --sans:"Noto Sans TC",sans-serif;
+  --quote:"Noto Serif TC",serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -54,7 +55,7 @@ nav{position:sticky;top:0;z-index:50;background:rgba(247,243,234,.9);backdrop-fi
 .hero h1{font-family:var(--display);font-weight:500;font-size:clamp(3.4rem,8vw,6rem);line-height:.98;letter-spacing:.01em}
 .hero h1 .zh{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(1.5rem,3.4vw,2.4rem);letter-spacing:.3em;color:var(--ink-soft);margin-top:1rem}
 .hero .rule{width:64px;height:1px;background:var(--gold);margin:1.8rem auto}
-.hero .lead{font-family:var(--serif);font-weight:400;font-size:clamp(1.35rem,2.4vw,1.85rem);line-height:1.85;color:var(--ink);max-width:34ch;margin:2.2rem auto 0;letter-spacing:.05em;border:none;padding:0;position:relative}
+.hero .lead{font-family:var(--quote);font-style:italic;font-weight:300;font-size:clamp(1.25rem,2.1vw,1.6rem);line-height:1.9;color:var(--gold-deep);max-width:40ch;margin:2.2rem auto 0;letter-spacing:.1em;border:none;padding:0;position:relative}
 .hero .lead .qmark{display:inline;font-family:var(--display);font-size:1.7em;line-height:0;color:var(--gold);vertical-align:-.35em;margin:0 .12em}
 .hero .lead .qmark.qend{vertical-align:-.45em}
 .hero .lead .by{display:block;font-family:var(--display);font-style:italic;font-size:1.1rem;letter-spacing:.04em;color:var(--gold-deep);margin-top:1.2rem}
@@ -63,7 +64,7 @@ nav{position:sticky;top:0;z-index:50;background:rgba(247,243,234,.9);backdrop-fi
 .hero-tags span::before{content:"♪";position:absolute;left:0;color:var(--gold)}
 .hero-cta{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-top:.5rem}
 .hero-photo{position:relative}
-.hero-photo img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:30px}
+.hero-photo img{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:18% center;border-radius:30px}
 .hero-photo .cap{position:absolute;bottom:-2.2rem;left:50%;transform:translateX(-50%);font-family:var(--display);font-style:italic;color:var(--gold-deep);white-space:nowrap}
 
 .divider-staff{display:flex;justify-content:center;gap:.5rem;padding:1rem 0;color:var(--gold)}
@@ -241,7 +242,7 @@ footer small{color:#a89878;letter-spacing:.08em}
   <div class="wrap hero-head">
     <div class="op">Flute &amp; Piano Atelier</div>
     <h1>Aria Kuo<span class="zh">郭庭羽 ‧ 長笛鋼琴教學</span></h1>
-    <blockquote class="lead"><span class="qmark">&ldquo;</span>把音符變成圖畫，<br>把樂理變成遊戲<span class="qmark qend">&rdquo;</span><span class="by">— 郭庭羽 Aria Kuo</span></blockquote>
+    <blockquote class="lead"><span class="qmark">&ldquo;</span>把音符變成圖畫，把樂理變成遊戲<span class="qmark qend">&rdquo;</span><span class="by">— 郭庭羽 Aria Kuo</span></blockquote>
     <div class="hero-tags" id="hero-tags"></div>
     <div class="hero-cta">
       <a href="#contact" class="btn btn-solid">預約諮詢</a>
