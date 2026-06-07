@@ -74,10 +74,75 @@
     });
   }
 
+  // 相片牆燈箱：點縮圖 → 全螢幕遮罩大圖 + 左右換頁
+  function initLightbox() {
+    var items = Array.prototype.slice.call(document.querySelectorAll('.gallery-item'));
+    var box = document.getElementById('lightbox');
+    if (!items.length || !box) return;
+
+    var imgEl = box.querySelector('.lightbox-img');
+    var captionEl = box.querySelector('.lightbox-caption');
+    var btnPrev = box.querySelector('.lightbox-prev');
+    var btnNext = box.querySelector('.lightbox-next');
+    var btnClose = box.querySelector('.lightbox-close');
+    var current = 0;
+
+    // 每張圖：用 href 取大圖、img alt 當說明
+    var slides = items.map(function (a) {
+      var img = a.querySelector('img');
+      return { src: a.getAttribute('href') || (img && img.getAttribute('src')), caption: (img && img.getAttribute('alt')) || '' };
+    });
+
+    function show(index) {
+      current = (index + slides.length) % slides.length;
+      var slide = slides[current];
+      imgEl.setAttribute('src', slide.src);
+      imgEl.setAttribute('alt', slide.caption);
+      captionEl.textContent = slide.caption;
+    }
+
+    function open(index) {
+      show(index);
+      box.hidden = false;
+      document.body.style.overflow = 'hidden';
+    }
+
+    function close() {
+      box.hidden = true;
+      document.body.style.overflow = '';
+      imgEl.setAttribute('src', '');
+    }
+
+    items.forEach(function (a, i) {
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        open(i);
+      });
+    });
+
+    btnPrev.addEventListener('click', function (e) { e.stopPropagation(); show(current - 1); });
+    btnNext.addEventListener('click', function (e) { e.stopPropagation(); show(current + 1); });
+    btnClose.addEventListener('click', close);
+
+    // 點遮罩空白處關閉（點圖片或按鈕不關）
+    box.addEventListener('click', function (e) {
+      if (e.target === box || e.target.classList.contains('lightbox-stage')) close();
+    });
+
+    // 鍵盤：Esc 關閉、左右換頁
+    document.addEventListener('keydown', function (e) {
+      if (box.hidden) return;
+      if (e.key === 'Escape') close();
+      else if (e.key === 'ArrowLeft') show(current - 1);
+      else if (e.key === 'ArrowRight') show(current + 1);
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     initMobileMenu();
     initSmoothScroll();
     initContactForm();
+    initLightbox();
   });
 
   // 供測試存取
