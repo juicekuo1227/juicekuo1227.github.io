@@ -132,6 +132,8 @@ nav{position:sticky;top:0;z-index:50;background:rgba(247,243,234,.9);backdrop-fi
 
 /* contact */
 .contact{padding:clamp(3.5rem,8vw,6rem) 0}
+.kicker-left{justify-content:flex-start}
+.title-left{text-align:left}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2.5rem,5vw,4.5rem);align-items:center}
 .contact .note{color:var(--ink-soft);margin:1.2rem 0 2rem;max-width:34ch}
 .cinfo{display:grid;gap:1.4rem}
@@ -191,6 +193,9 @@ footer small{color:#a89878;letter-spacing:.08em}
   .nav-links a+a{border-top:1px solid var(--line)}
   .teacher-grid,.contact-grid{grid-template-columns:1fr}
   .teacher-grid{gap:2rem}
+  /* 手機版「與我聯絡」標題置中 */
+  .contact .kicker-left{justify-content:center}
+  .contact .title-left{text-align:center}
   .portrait-wrap{max-width:480px}
   .hero-photo{margin-inline:auto}
   .award-cols{grid-template-columns:1fr;gap:1.2rem}
@@ -299,8 +304,8 @@ footer small{color:#a89878;letter-spacing:.08em}
 <section class="contact" id="contact">
   <div class="wrap contact-grid">
     <div>
-      <div class="kicker" style="justify-content:flex-start"><span>Contact</span></div>
-      <div class="sec-title" style="text-align:left">與我聯絡</div>
+      <div class="kicker kicker-left"><span>Contact</span></div>
+      <div class="sec-title title-left">與我聯絡</div>
       <p class="note" id="c-note"></p>
       <div class="cinfo">
         <a id="c-line" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 5.7 2 10.2c0 4 3.6 7.4 8.5 8 .3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c-.1.3-.3 1 .9.5s6.3-3.7 8.6-6.4C22.4 13 23 11.7 23 10.2 23 5.7 18.5 2 13 2h-1z"/></svg></span><span><b>Line</b> ID：<span class="cval"></span></span></a>
@@ -327,7 +332,7 @@ footer small{color:#a89878;letter-spacing:.08em}
     <div class="socials">
       <a href="https://www.youtube.com/@ting-ting-music" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.8-.5-5.6a2.9 2.9 0 0 0-2-2C18.7 4 12 4 12 4s-6.7 0-8.5.4a2.9 2.9 0 0 0-2 2C1 8.2 1 12 1 12s0 3.8.5 5.6a2.9 2.9 0 0 0 2 2C5.3 20 12 20 12 20s6.7 0 8.5-.4a2.9 2.9 0 0 0 2-2C23 15.8 23 12 23 12zM10 15.5v-7l6 3.5-6 3.5z"/></svg></a>
       <a href="https://www.instagram.com/ting.ting.music/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg></a>
-      <a href="https://line.me/ti/p/~juicekuo" target="_blank" rel="noopener" aria-label="LINE"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 5.7 2 10.2c0 4 3.6 7.4 8.5 8 .3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c-.1.3-.3 1 .9.5s6.3-3.7 8.6-6.4C22.4 13 23 11.7 23 10.2 23 5.7 18.5 2 13 2h-1z"/></svg></a>
+      <a href="https://line.me/R/ti/p/%40897rgmut" target="_blank" rel="noopener" aria-label="LINE"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 5.7 2 10.2c0 4 3.6 7.4 8.5 8 .3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c-.1.3-.3 1 .9.5s6.3-3.7 8.6-6.4C22.4 13 23 11.7 23 10.2 23 5.7 18.5 2 13 2h-1z"/></svg></a>
     </div>
     <small>TingTing Music © <span id="year"></span> ‧ 郭庭羽 Aria Kuo</small>
   </div>
@@ -412,7 +417,7 @@ const S = {
   },
   contact: {
     note: "歡迎私訊預約諮詢，了解適合的課程與上課方式。",
-    line: "juicekuo",
+    line: "@897rgmut",
     email: "juicekuo@gmail.com"
   }
 };
@@ -439,7 +444,7 @@ document.getElementById('recital-title').textContent=S.recitalTitle;
 document.getElementById('gallery').innerHTML=Array.from({length:S.recitalCount},(_,i)=>{const n=pad2(i+1);return `<a class="cell" href="assets/gallery-${n}.jpg" data-full="assets/gallery-${n}.jpg" aria-label="2025 發表會相片 ${i+1}"><img src="assets/thumb-${n}.jpg" alt="2025 發表會相片 ${i+1}" loading="lazy"></a>`;}).join('');
 document.getElementById('award-cols').innerHTML=Object.entries(S.awards).map(([k,arr])=>`<div class="award-card"><h3>${k}</h3><ul>${arr.map(a=>`<li>${a}</li>`).join('')}</ul></div>`).join('');
 document.getElementById('c-note').textContent=S.contact.note;
-const cl=document.getElementById('c-line');cl.querySelector('.cval').textContent=S.contact.line;cl.href='https://line.me/ti/p/~'+S.contact.line;
+const cl=document.getElementById('c-line');cl.querySelector('.cval').textContent=S.contact.line;cl.href='https://line.me/R/ti/p/'+encodeURIComponent(S.contact.line);
 const cm=document.getElementById('c-mail');cm.querySelector('.cval').textContent=S.contact.email;cm.href='mailto:'+S.contact.email;
 document.getElementById('year').textContent=new Date().getFullYear();
 
