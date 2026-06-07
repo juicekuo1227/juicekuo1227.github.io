@@ -1,272 +1,502 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>聽聽音樂 庭羽老師 長笛 | 鋼琴</title>
-  <meta name="description" content="聽聽音樂 郭庭羽 Aria Kuo 長笛、鋼琴教學，幼兒啟蒙、成人初學、檢定比賽指導。">
-  <link rel="icon" href="assets/logo.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Averia+Sans+Libre:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>郭庭羽 Aria Kuo ‧ 長笛鋼琴教學｜優雅古典</title>
+<meta name="description" content="聽聽音樂 郭庭羽 Aria Kuo 長笛、鋼琴教學，幼兒啟蒙、成人初學、檢定比賽指導。">
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Serif+TC:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ivory:#F7F3EA; --paper:#FCFAF4; --ink:#211C16; --ink-soft:#5A4F43;
+  --gold:#B08D4F; --gold-deep:#8C6E38; --wine:#6A2E37; --line:#DDD2BE;
+  --display:"Cormorant Garamond",serif; --serif:"Noto Serif TC",serif; --sans:"Noto Sans TC",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--ivory);color:var(--ink);line-height:1.95;font-weight:300;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1080px,90vw);margin-inline:auto}
+.narrow{width:min(820px,90vw);margin-inline:auto}
+section[id]{scroll-margin-top:84px}
+/* shared heads */
+.eyebrow{font-family:var(--display);font-style:italic;font-size:1.5rem;color:var(--gold);letter-spacing:.04em}
+.kicker{display:flex;align-items:center;justify-content:center;gap:1rem;margin-bottom:1rem}
+.kicker::before,.kicker::after{content:"";height:1px;width:48px;background:var(--gold)}
+.kicker span{font-size:.78rem;letter-spacing:.45em;text-transform:uppercase;color:var(--gold-deep);font-weight:400}
+.sec-title{font-family:var(--serif);font-weight:500;font-size:clamp(1.8rem,3.6vw,2.7rem);letter-spacing:.06em;text-align:center}
+.sec-head{text-align:center;margin-bottom:clamp(2.4rem,5vw,3.8rem)}
+.btn{display:inline-flex;align-items:center;gap:.6em;font-family:var(--sans);font-weight:400;letter-spacing:.12em;font-size:.82rem;text-transform:uppercase;padding:.95em 2.2em;border:1px solid var(--ink);transition:.3s;cursor:pointer;background:none;color:var(--ink)}
+.btn:hover{background:var(--ink);color:var(--ivory)}
+.btn-gold{border-color:var(--gold);color:var(--gold-deep)}
+.btn-gold:hover{background:var(--gold);color:#fff;border-color:var(--gold)}
+.btn-solid{background:var(--ink);color:var(--ivory)}
+.btn-solid:hover{background:var(--wine);border-color:var(--wine)}
+
+nav{position:sticky;top:0;z-index:50;background:rgba(247,243,234,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;padding:1.1rem 0}
+.logo{font-family:var(--display);font-size:1.6rem;letter-spacing:.06em;display:flex;align-items:center;gap:.6rem;white-space:nowrap}
+.logo b{font-weight:600}
+.logo .em{width:34px;height:34px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold-deep);font-family:var(--serif);font-size:1rem}
+.nav-links{display:flex;gap:2rem;font-size:.86rem;letter-spacing:.08em;color:var(--ink-soft)}
+.nav-links a:hover{color:var(--gold-deep)}
+.nav-cta{font-size:.74rem;padding:.7em 1.5em}
+.menu-btn{display:none;background:none;border:none;color:var(--ink);cursor:pointer}
+
+/* hero */
+.hero{padding:clamp(3rem,7vw,5.5rem) 0 clamp(2.5rem,6vw,4.5rem)}
+.hero-head{text-align:center;max-width:820px;margin:0 auto clamp(2.4rem,5vw,3.6rem)}
+.hero .op{font-family:var(--display);font-style:italic;color:var(--gold);font-size:1.4rem;margin-bottom:.4rem}
+.hero h1{font-family:var(--display);font-weight:500;font-size:clamp(3.4rem,8vw,6rem);line-height:.98;letter-spacing:.01em}
+.hero h1 .zh{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(1.5rem,3.4vw,2.4rem);letter-spacing:.3em;color:var(--ink-soft);margin-top:1rem}
+.hero .rule{width:64px;height:1px;background:var(--gold);margin:1.8rem auto}
+.hero .lead{font-family:var(--serif);font-weight:400;font-size:clamp(1.35rem,2.4vw,1.85rem);line-height:1.85;color:var(--ink);max-width:34ch;margin:2.2rem auto 0;letter-spacing:.05em;border:none;padding:0;position:relative}
+.hero .lead .qmark{display:block;font-family:var(--display);font-size:3.2rem;line-height:1;color:var(--gold);margin-bottom:.3rem}
+.hero .lead .qmark.qend{margin-bottom:0;margin-top:.5rem}
+.hero .lead .by{display:block;font-family:var(--display);font-style:italic;font-size:1.1rem;letter-spacing:.04em;color:var(--gold-deep);margin-top:1.2rem}
+.hero-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem 1.4rem;margin:1.8rem 0;font-family:var(--serif);font-size:.92rem;letter-spacing:.1em;color:var(--ink-soft)}
+.hero-tags span{position:relative;padding-left:1.2rem}
+.hero-tags span::before{content:"♪";position:absolute;left:0;color:var(--gold)}
+.hero-cta{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-top:.5rem}
+.hero-photo{position:relative;padding:14px}
+.hero-photo::before{content:"";position:absolute;inset:0;border:1px solid var(--gold)}
+.hero-photo::after{content:"";position:absolute;inset:14px;border:1px solid var(--line);pointer-events:none;z-index:2}
+.hero-photo img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.hero-photo .cap{position:absolute;bottom:-2.2rem;left:50%;transform:translateX(-50%);font-family:var(--display);font-style:italic;color:var(--gold-deep);white-space:nowrap}
+
+.divider-staff{display:flex;justify-content:center;gap:.5rem;padding:1rem 0;color:var(--gold)}
+.divider-staff span{font-size:1.1rem;opacity:.8}
+
+/* teacher */
+.teacher{background:var(--paper);padding:clamp(3.5rem,8vw,6rem) 0;border-block:1px solid var(--line)}
+.teacher-grid{display:grid;grid-template-columns:440px 1fr;gap:clamp(2.5rem,5vw,4.5rem);align-items:start}
+.portrait-wrap{position:relative;justify-self:center;padding:12px;width:100%;max-width:440px}
+.portrait-wrap::before{content:"";position:absolute;inset:0;border:1px solid var(--gold)}
+.portrait-wrap img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.teacher .name{font-family:var(--serif);font-weight:500;font-size:clamp(1.7rem,3vw,2.2rem);letter-spacing:.08em}
+.teacher .name em{font-family:var(--display);font-style:italic;color:var(--gold-deep);font-size:.85em;margin-left:.5em;letter-spacing:.02em}
+.teacher .role{font-family:var(--display);font-style:italic;font-size:1.3rem;color:var(--gold-deep);margin:.3rem 0 1.6rem}
+.teacher .bio p{margin-bottom:1.1rem;color:var(--ink-soft)}
+.cred{list-style:none;margin-top:1.8rem;border-top:1px solid var(--line)}
+.cred li{display:flex;gap:1.2rem;padding:.95rem 0;border-bottom:1px solid var(--line);font-size:.95rem;align-items:baseline}
+.cred li .rn{font-family:var(--display);font-style:italic;color:var(--gold);font-size:1.2rem;min-width:2ch}
+
+/* courses — programme */
+.courses{padding:clamp(3.5rem,8vw,6rem) 0}
+.programme{border-top:1px solid var(--ink)}
+.movement{display:grid;grid-template-columns:auto 1fr auto;gap:clamp(1rem,3vw,2.5rem);align-items:baseline;padding:1.8rem 0;border-bottom:1px solid var(--line);transition:.3s}
+.movement:hover{background:var(--paper);padding-inline:1.2rem}
+.movement .num{font-family:var(--display);font-style:italic;font-size:2.2rem;color:var(--gold);line-height:1}
+.movement .body h3{font-family:var(--serif);font-weight:500;font-size:1.4rem;letter-spacing:.04em;margin-bottom:.4rem}
+.movement .body p{color:var(--ink-soft);font-size:.96rem;max-width:60ch}
+.movement .ic{color:var(--gold-deep)}
+.movement .ic svg{width:30px;height:30px}
+
+/* videos */
+.videos{background:var(--ink);color:var(--ivory);padding:clamp(3.5rem,8vw,6rem) 0}
+.videos .sec-title{color:var(--ivory)}
+.videos .kicker span{color:var(--gold)}
+.videos .kicker::before,.videos .kicker::after{background:var(--gold)}
+.videos .sub{text-align:center;color:#c8bca6;font-size:.95rem;margin-top:.6rem}
+.video-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.6rem;margin-top:2.8rem}
+.vid{background:none;border:0;padding:0;text-align:left;color:inherit;font:inherit;cursor:pointer;width:100%}
+.vid .thumb{position:relative;padding:8px;border:1px solid rgba(176,141,79,.5);transition:.3s}
+.vid:hover .thumb,.vid:focus-visible .thumb{border-color:var(--gold)}
+.vid .thumb img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.vid .play{position:absolute;inset:8px;display:grid;place-items:center;pointer-events:none}
+.vid .play span{width:50px;height:50px;border-radius:50%;border:1px solid var(--gold);background:rgba(33,28,22,.6);display:grid;place-items:center;transition:.3s}
+.vid:hover .play span,.vid:focus-visible .play span{background:var(--gold)}
+.vid:hover .play svg,.vid:focus-visible .play svg{color:var(--ink)}
+.vid .play svg{width:18px;height:18px;color:var(--gold);margin-left:2px}
+.vid .t{font-family:var(--serif);font-weight:500;font-size:1rem;margin-top:1rem;letter-spacing:.02em}
+.vid .p{font-family:var(--display);font-style:italic;color:var(--gold);font-size:1rem;margin-top:.2rem}
+
+/* recital */
+.recital{padding:clamp(3.5rem,8vw,6rem) 0}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.gallery .cell{display:block;padding:7px;border:1px solid var(--line);transition:.3s;cursor:pointer}
+.gallery .cell:hover{border-color:var(--gold)}
+.gallery .cell img{width:100%;aspect-ratio:3/2;object-fit:cover}
+
+/* awards */
+.awards{background:var(--paper);padding:clamp(3.5rem,8vw,6rem) 0;border-block:1px solid var(--line)}
+.award-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.5rem,3vw,3rem)}
+.award-card h3{font-family:var(--serif);font-weight:500;font-size:1.3rem;text-align:center;letter-spacing:.1em;padding-bottom:1rem;margin-bottom:1.2rem;border-bottom:1px solid var(--gold);color:var(--wine)}
+.award-card ul{list-style:none;display:grid;gap:1rem}
+.award-card li{font-size:.9rem;color:var(--ink-soft);text-align:center;line-height:1.7;padding-bottom:1rem;border-bottom:1px dotted var(--line)}
+.award-card li:last-child{border-bottom:none}
+
+/* contact */
+.contact{padding:clamp(3.5rem,8vw,6rem) 0}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2.5rem,5vw,4.5rem);align-items:center}
+.contact .note{color:var(--ink-soft);margin:1.2rem 0 2rem;max-width:34ch}
+.cinfo{display:grid;gap:1.4rem}
+.cinfo a{display:flex;align-items:center;gap:1rem;font-size:1.02rem;letter-spacing:.02em}
+.cinfo .ic{width:44px;height:44px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold-deep);flex:none}
+.cinfo .ic svg{width:20px;height:20px}
+.cinfo a:hover .ic{background:var(--gold);color:#fff}
+.cinfo a b{font-family:var(--display);font-style:italic;font-weight:500;color:var(--gold-deep);margin-right:.4em}
+form{background:var(--paper);border:1px solid var(--line);padding:clamp(1.8rem,3vw,2.6rem)}
+form .ftitle{font-family:var(--display);font-style:italic;font-size:1.5rem;color:var(--gold-deep);margin-bottom:1.4rem;text-align:center}
+form label{display:block;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:.5rem}
+form input,form textarea{width:100%;border:none;border-bottom:1px solid var(--line);background:none;padding:.7rem 0;font-family:var(--sans);font-size:1rem;color:var(--ink);margin-bottom:1.4rem;font-weight:300}
+form input:focus,form textarea:focus{outline:none;border-color:var(--gold)}
+form textarea{resize:vertical;min-height:90px}
+form .btn{width:100%;justify-content:center;margin-top:.5rem}
+.form-done{text-align:center;color:var(--gold-deep);font-family:var(--display);font-style:italic;font-size:1.3rem;display:none}
+
+footer{background:var(--ink);color:var(--ivory);text-align:center;padding:3rem 0}
+footer .fmark{font-family:var(--display);font-size:1.8rem;letter-spacing:.05em;margin-bottom:1rem}
+.socials{display:flex;gap:1.2rem;justify-content:center;margin-bottom:1.2rem}
+.socials a{width:42px;height:42px;border-radius:50%;border:1px solid rgba(176,141,79,.5);display:grid;place-items:center;color:var(--gold);transition:.3s}
+.socials a:hover{background:var(--gold);color:var(--ink)}
+.socials svg{width:18px;height:18px}
+footer small{color:#a89878;letter-spacing:.08em}
+
+/* ───── Lightbox（相片 / 影片共用） ───── */
+.lightbox{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;gap:10px;padding:24px;background:rgba(20,17,13,.93);opacity:0;animation:lb-in .2s ease forwards}
+.lightbox[hidden]{display:none}
+@keyframes lb-in{to{opacity:1}}
+.lb-stage{margin:0;max-width:min(1100px,92vw);max-height:88vh;display:flex;flex-direction:column;align-items:center;gap:14px}
+.lb-img{max-width:100%;max-height:82vh;width:auto;object-fit:contain;border:1px solid var(--gold)}
+.lb-cap{color:#d8ccb4;font-family:var(--display);font-style:italic;font-size:1.05rem;letter-spacing:.03em;text-align:center}
+.lb-btn{background:rgba(176,141,79,.15);color:var(--gold);border:1px solid var(--gold);cursor:pointer;line-height:1;flex:none;display:flex;align-items:center;justify-content:center;transition:.2s}
+.lb-btn:hover{background:var(--gold);color:#1a1611}
+.lb-prev,.lb-next{width:52px;height:52px;border-radius:50%;font-size:1.8rem}
+.lb-close{position:absolute;top:18px;right:18px;width:44px;height:44px;border-radius:50%;font-size:1.5rem}
+.video-frame{position:relative;width:min(1100px,92vw);padding-top:56.25%;border:1px solid var(--gold);background:#000}
+.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+@media(max-width:640px){
+  .lightbox{padding:12px}
+  .lb-prev,.lb-next{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;font-size:1.6rem}
+  .lb-prev{left:10px}.lb-next{right:10px}
+}
+
+/* ───── Responsive / RWD ───── */
+@media(max-width:1024px){
+  .video-grid{grid-template-columns:repeat(2,1fr);gap:1.4rem}
+  .award-cols{grid-template-columns:repeat(3,1fr);gap:1.4rem}
+}
+@media(max-width:860px){
+  .nav-in{flex-wrap:wrap;row-gap:0}
+  .menu-btn{display:block;margin-left:.3rem;padding:.3rem}
+  .nav-cta{margin-left:auto}
+  .nav-links{order:5;flex-basis:100%;display:none;flex-direction:column;gap:0;margin-top:.7rem;border-top:1px solid var(--line)}
+  nav.open .nav-links{display:flex}
+  .nav-links a{padding:.95rem .4rem;text-align:center;font-size:1.05rem;letter-spacing:.06em}
+  .nav-links a+a{border-top:1px solid var(--line)}
+  .teacher-grid,.contact-grid{grid-template-columns:1fr}
+  .teacher-grid{gap:2rem}
+  .portrait-wrap{max-width:480px}
+  .hero-photo{margin-inline:auto}
+  .award-cols{grid-template-columns:1fr;gap:1.2rem}
+  .gallery{grid-template-columns:repeat(2,1fr)}
+  .movement{grid-template-columns:auto 1fr;gap:1.2rem}
+  .movement .ic{display:none}
+}
+@media(max-width:600px){
+  .video-grid{grid-template-columns:1fr 1fr;gap:1rem}
+  .hero h1 .zh{letter-spacing:.16em}
+}
+@media(max-width:430px){
+  .logo{font-size:1.35rem}
+  .nav-cta{padding:.6em 1.1em;font-size:.68rem}
+  .hero h1{font-size:clamp(2.6rem,15vw,3.4rem)}
+  .hero h1 .zh{letter-spacing:.08em;font-size:1.25rem}
+  .hero .lead{font-size:1.3rem}
+  .video-grid{grid-template-columns:1fr}
+  .gallery{grid-template-columns:1fr}
+  .movement{padding:1.4rem 0}
+  .movement .num{font-size:1.8rem}
+}
+</style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="#hero" class="logo"><img src="assets/logo.png" alt="聽聽音樂"></a>
-      <button class="nav-toggle" aria-label="開啟選單" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-      <nav class="site-nav">
-        <ul class="nav-links">
-          <li><a href="#hero">首頁</a></li>
-          <li><a href="#about">師資介紹</a></li>
-          <li><a href="#courses">長笛 / 鋼琴 教學</a></li>
-          <li><a href="#videos">學生演出精彩片段</a></li>
-          <li><a href="#recital">歷年演奏會精彩照片</a></li>
-          <li><a href="#awards">檢定 / 比賽榮譽榜</a></li>
-          <li><a href="#contact">聯絡我</a></li>
-        </ul>
-        <a href="#contact" class="btn btn-contact">與我聯絡！</a>
-      </nav>
-    </div>
-  </header>
 
-  <section id="hero" class="hero">
-    <div class="container">
-      <h1 class="hero-title">聽聽音樂</h1>
-      <p class="hero-subtitle">♫長笛教學。♫鋼琴教學。♫音樂教材設計。♫上課紀錄</p>
+<nav>
+  <div class="wrap nav-in">
+    <a href="#top" class="logo"><span class="em">♪</span> <span><b>TingTing</b> Music</span></a>
+    <div class="nav-links">
+      <a href="#teacher">師資介紹</a>
+      <a href="#courses">課程</a>
+      <a href="#videos">學生演出</a>
+      <a href="#recital">發表會</a>
+      <a href="#awards">獲獎紀錄</a>
     </div>
-    <img class="hero-image" src="assets/hero.jpg" alt="學生成果發表合照">
-  </section>
-
-  <section id="about" class="about section section--rose">
-    <div class="container">
-      <h2 class="section-title">師資介紹</h2>
-      <div class="about-grid">
-        <img class="about-photo" src="assets/teacher.png" alt="郭庭羽 Aria Kuo">
-        <div class="about-body">
-          <h3 class="about-name">郭庭羽 Aria Kuo</h3>
-          <p>您好，我是音樂家教老師 Aria 郭老師，自幼學習長笛與鋼琴，主修長笛、附修鋼琴，師承蔡玉敏、林珮琪老師，對於音樂有極高的熱誠，參加過許多不同的比賽並取得前三名的成績。</p>
-          <p>目前從事音樂家教已經有 14 年的經驗，老師溫柔、有耐心，情緒穩定，上課有趣很受大朋友小朋友喜愛，擅長運用繪畫說故事的方式來讓學生們理解抽象的音樂內容，也會設計不同的音樂遊戲增加上課的趣味，讓學習音樂的過程充滿歡笑。</p>
-          <ul class="about-credentials">
-            <li>通過 ABRSM 英國皇家音樂檢定 - ARSM 長笛演奏級</li>
-            <li>通過 ABRSM 英國皇家音樂檢定 - 鋼琴 8 級</li>
-            <li>通過 ABRSM 英國皇家音樂檢定 - 樂理 5 級</li>
-            <li>文化盃長笛比賽 - 第一名</li>
-            <li>希朵夫鋼琴比賽 - 第二名</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="courses" class="courses section">
-    <div class="container">
-      <h2 class="section-title">長笛 / 鋼琴教學</h2>
-      <div class="course-grid">
-        <article class="course-card">
-          <img src="assets/icon-1.png" alt="" class="course-icon">
-          <h3>幼兒音樂啟蒙</h3>
-          <p>以繪圖、說故事及遊戲的方式，從中學習視譜能力、節奏等等，以及奠定正確彈奏 / 吹奏樂器的正確姿勢。</p>
-        </article>
-        <article class="course-card">
-          <img src="assets/icon-2.png" alt="" class="course-icon">
-          <h3>已有基礎的學生</h3>
-          <p>繼續深入更有挑戰性的曲目，訓練學生有曲目分析的能力，依照學生的程度、喜歡的曲目類型，練習曲、古典音樂、流行音樂甚至動漫音樂都可以加入，讓學音樂不再枯燥乏味。</p>
-        </article>
-        <article class="course-card">
-          <img src="assets/icon-3.png" alt="" class="course-icon">
-          <h3>成人初學</h3>
-          <p>可互相討論想要學習的方向來安排課程內容，也會加入基本樂理知識或是像大多的成人學生比較喜歡的流行歌，會根據學生的程度幫忙編排成適合彈奏的難度。</p>
-        </article>
-        <article class="course-card">
-          <img src="assets/icon-4.png" alt="" class="course-icon">
-          <h3>長笛團班</h3>
-          <p>歡迎找 2 ～ 4 位朋友一起來上課，享受音樂與合奏的樂趣，舒壓平時上班上課的壓力。</p>
-        </article>
-        <article class="course-card">
-          <img src="assets/icon-5.png" alt="" class="course-icon">
-          <h3>音樂檢定、比賽</h3>
-          <p>ABRSM 英國皇家音樂檢定、Yamaha 音樂檢定以及音樂比賽指導。</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="videos" class="videos section section--brown">
-    <div class="container">
-      <h2 class="section-title">學生演出精彩片段</h2>
-      <p class="videos-intro">成果發表會、檢定考試等演出，更多精彩影片請至<a href="https://www.youtube.com/@ting-ting-music" target="_blank" rel="noopener">聽聽音樂 Youtube</a>觀看</p>
-      <div class="video-grid">
-        <button type="button" class="video-card" data-video="wnEmoi3gQ50" data-title="Martin Cuellar : Toccata" data-performer="演出者：Kana">
-          <span class="video-thumb">
-            <img src="https://i.ytimg.com/vi/wnEmoi3gQ50/hqdefault.jpg" alt="Martin Cuellar : Toccata 影片縮圖" loading="lazy">
-            <span class="video-play" aria-hidden="true"></span>
-          </span>
-          <h4>Martin Cuellar : Toccata</h4>
-          <p>演出者：Kana</p>
-        </button>
-        <button type="button" class="video-card" data-video="tE8csMe-urU" data-title="柴可夫斯基：睡美人的華爾滋" data-performer="演出者：Lily">
-          <span class="video-thumb">
-            <img src="https://i.ytimg.com/vi/tE8csMe-urU/hqdefault.jpg" alt="柴可夫斯基：睡美人的華爾滋 影片縮圖" loading="lazy">
-            <span class="video-play" aria-hidden="true"></span>
-          </span>
-          <h4>柴可夫斯基：睡美人的華爾滋</h4>
-          <p>演出者：Lily</p>
-        </button>
-        <button type="button" class="video-card" data-video="sG395okhOy8" data-title="魔法公主 Princess mononoke" data-performer="演出者：Effie">
-          <span class="video-thumb">
-            <img src="https://i.ytimg.com/vi/sG395okhOy8/hqdefault.jpg" alt="魔法公主 Princess mononoke 影片縮圖" loading="lazy">
-            <span class="video-play" aria-hidden="true"></span>
-          </span>
-          <h4>魔法公主 Princess mononoke</h4>
-          <p>演出者：Effie</p>
-        </button>
-        <button type="button" class="video-card" data-video="k5kHF68hHME" data-title="威尼斯狂歡節" data-performer="演出者：Daphne">
-          <span class="video-thumb">
-            <img src="https://i.ytimg.com/vi/k5kHF68hHME/hqdefault.jpg" alt="威尼斯狂歡節 影片縮圖" loading="lazy">
-            <span class="video-play" aria-hidden="true"></span>
-          </span>
-          <h4>威尼斯狂歡節</h4>
-          <p>演出者：Daphne</p>
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <section id="recital" class="recital section">
-    <div class="container">
-      <h2 class="section-title">2025 郭老師音樂發表會</h2>
-      <div class="gallery">
-        <a class="gallery-item" href="assets/gallery-01.jpg" target="_blank" rel="noopener"><img src="assets/thumb-01.jpg" alt="2025 發表會相片 1" loading="lazy"></a>
-        <a class="gallery-item" href="assets/gallery-02.jpg" target="_blank" rel="noopener"><img src="assets/thumb-02.jpg" alt="2025 發表會相片 2" loading="lazy"></a>
-        <a class="gallery-item" href="assets/gallery-03.jpg" target="_blank" rel="noopener"><img src="assets/thumb-03.jpg" alt="2025 發表會相片 3" loading="lazy"></a>
-        <a class="gallery-item" href="assets/gallery-04.jpg" target="_blank" rel="noopener"><img src="assets/thumb-04.jpg" alt="2025 發表會相片 4" loading="lazy"></a>
-        <a class="gallery-item" href="assets/gallery-05.jpg" target="_blank" rel="noopener"><img src="assets/thumb-05.jpg" alt="2025 發表會相片 5" loading="lazy"></a>
-        <a class="gallery-item" href="assets/gallery-06.jpg" target="_blank" rel="noopener"><img src="assets/thumb-06.jpg" alt="2025 發表會相片 6" loading="lazy"></a>
-        <a class="gallery-item" href="assets/gallery-07.jpg" target="_blank" rel="noopener"><img src="assets/thumb-07.jpg" alt="2025 發表會相片 7" loading="lazy"></a>
-        <a class="gallery-item" href="assets/gallery-08.jpg" target="_blank" rel="noopener"><img src="assets/thumb-08.jpg" alt="2025 發表會相片 8" loading="lazy"></a>
-        <a class="gallery-item" href="assets/gallery-09.jpg" target="_blank" rel="noopener"><img src="assets/thumb-09.jpg" alt="2025 發表會相片 9" loading="lazy"></a>
-        <a class="gallery-item" href="assets/gallery-10.jpg" target="_blank" rel="noopener"><img src="assets/thumb-10.jpg" alt="2025 發表會相片 10" loading="lazy"></a>
-        <a class="gallery-item" href="assets/gallery-11.jpg" target="_blank" rel="noopener"><img src="assets/thumb-11.jpg" alt="2025 發表會相片 11" loading="lazy"></a>
-        <a class="gallery-item" href="assets/gallery-12.jpg" target="_blank" rel="noopener"><img src="assets/thumb-12.jpg" alt="2025 發表會相片 12" loading="lazy"></a>
-      </div>
-    </div>
-  </section>
-
-  <section id="awards" class="awards section section--rose">
-    <div class="container">
-      <h2 class="section-title">學生檢定、比賽獲獎紀錄</h2>
-      <div class="awards-grid">
-        <div class="awards-col">
-          <h3>檢定</h3>
-          <ul>
-            <li>恭喜香奈通過英國皇家音樂檢定 Abrsm 鋼琴四級優良。</li>
-            <li>恭喜張*珺通過英國皇家音樂檢定 Abrsm 長笛三級。</li>
-            <li>恭喜黃*恩通過英國皇家音樂檢定 Abrsm 鋼琴三級優良。</li>
-            <li>恭喜黃*安通過英國皇家音樂檢定 Abrsm 鋼琴二級優良。</li>
-            <li>恭喜林*恩通過英國皇家音樂檢定 Abrsm 長笛二級優良。</li>
-            <li>恭喜紀*怡通過英國皇家音樂檢定 Abrsm 長笛三級優良。</li>
-            <li>恭喜谷*蓁通過 Yamaha 長笛檢定10級</li>
-            <li>恭喜陳*瑀通過 Yamaha 鋼琴檢定11級</li>
-            <li>恭喜楊*縈通過 Yamaha 鋼琴檢定13級</li>
-            <li>恭喜蔡*縈通過 Yamaha 鋼琴檢定13級</li>
-            <li>恭喜簡*羽通過 Yamaha 鋼琴檢定13級</li>
-            <li>恭喜王*棠通過 Yamaha 鋼琴檢定13級</li>
-            <li>恭喜李*倢通過 Yamaha 鋼琴檢定13級</li>
-            <li>恭喜張*奕通過 Yamaha 鋼琴檢定11級</li>
-          </ul>
-        </div>
-        <div class="awards-col">
-          <h3>比賽</h3>
-          <ul>
-            <li>恭喜黃*安參加希朵夫古典鋼琴比賽榮獲第四名</li>
-            <li>恭喜王*可參加法雅盃流行鋼琴比賽榮獲第二名</li>
-            <li>恭喜張*珺參加歐洲盃長笛比賽榮獲第二名</li>
-            <li>恭喜李*倢參加布拉格古典鋼琴比賽成績優良</li>
-          </ul>
-        </div>
-        <div class="awards-col">
-          <h3>音樂班 / 樂團</h3>
-          <ul>
-            <li>恭喜孫*嫻錄取青年管樂團少年二團 - 長笛分部</li>
-            <li>恭喜曾*恩考上敦化國小音樂班 - 長笛副修</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="contact section section--rose">
-    <div class="container">
-      <h2 class="section-title">與我聯絡</h2>
-      <div class="contact-grid">
-        <div class="contact-info">
-          <p class="contact-line"><span class="contact-ico">📍</span>行天宮捷運站 4 號出口步行3分鐘</p>
-          <p class="contact-line"><span class="contact-ico">💬</span>Line ID : juicekuo</p>
-          <p class="contact-line"><span class="contact-ico">✉️</span><a href="mailto:juicekuo@gmail.com">juicekuo@gmail.com</a></p>
-        </div>
-        <form class="contact-form" id="contact-form" novalidate>
-          <div class="form-row">
-            <label class="field">
-              <span class="field-label">姓名</span>
-              <input type="text" name="name" required>
-            </label>
-            <label class="field">
-              <span class="field-label">電子信箱</span>
-              <input type="email" name="email" required>
-            </label>
-          </div>
-          <label class="field">
-            <span class="field-label">我想要學習.........</span>
-            <textarea name="message" rows="4"></textarea>
-          </label>
-          <p class="form-error" id="form-error" role="alert" hidden></p>
-          <button type="submit" class="btn btn-submit">送出</button>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <footer class="site-footer">
-    <div class="container">
-      <div class="social-links">
-        <a href="https://www.youtube.com/@ting-ting-music" target="_blank" rel="noopener" aria-label="YouTube">
-          <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg>
-        </a>
-        <a href="https://www.instagram.com/ting.ting.music/" target="_blank" rel="noopener" aria-label="Instagram">
-          <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.06 1.8.25 2.2.42.6.22 1 .48 1.4.9.43.42.69.83.9 1.4.18.43.37 1.05.42 2.2.06 1.3.07 1.7.07 4.9s0 3.6-.07 4.9c-.06 1.2-.25 1.8-.42 2.2-.22.6-.48 1-.9 1.4-.42.43-.83.69-1.4.9-.43.18-1.05.37-2.2.42-1.3.06-1.7.07-4.9.07s-3.6 0-4.9-.07c-1.2-.06-1.8-.25-2.2-.42-.6-.22-1-.48-1.4-.9-.43-.42-.69-.83-.9-1.4-.18-.43-.37-1.05-.42-2.2C2.21 15.6 2.2 15.2 2.2 12s0-3.6.07-4.9c.06-1.2.25-1.8.42-2.2.22-.6.48-1 .9-1.4.42-.43.83-.69 1.4-.9.43-.18 1.05-.37 2.2-.42C8.4 2.21 8.8 2.2 12 2.2zm0 1.98c-3.15 0-3.5.01-4.75.07-1.15.05-1.77.24-2.18.4-.55.22-.94.47-1.35.88-.41.41-.66.8-.88 1.35-.16.41-.35 1.03-.4 2.18-.06 1.25-.07 1.6-.07 4.75s.01 3.5.07 4.75c.05 1.15.24 1.77.4 2.18.22.55.47.94.88 1.35.41.41.8.66 1.35.88.41.16 1.03.35 2.18.4 1.25.06 1.6.07 4.75.07s3.5-.01 4.75-.07c1.15-.05 1.77-.24 2.18-.4.55-.22.94-.47 1.35-.88.41-.41.66-.8.88-1.35.16-.41.35-1.03.4-2.18.06-1.25.07-1.6.07-4.75s-.01-3.5-.07-4.75c-.05-1.15-.24-1.77-.4-2.18a3.6 3.6 0 0 0-.88-1.35 3.6 3.6 0 0 0-1.35-.88c-.41-.16-1.03-.35-2.18-.4-1.25-.06-1.6-.07-4.75-.07zm0 3.38a4.44 4.44 0 1 1 0 8.88 4.44 4.44 0 0 1 0-8.88zm0 1.98a2.46 2.46 0 1 0 0 4.92 2.46 2.46 0 0 0 0-4.92zm5.65-.42a1.04 1.04 0 1 1-2.08 0 1.04 1.04 0 0 1 2.08 0z"/></svg>
-        </a>
-        <a href="https://line.me/ti/p/~juicekuo" target="_blank" rel="noopener" aria-label="LINE">
-          <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 5.64 2 10.13c0 4.02 3.55 7.39 8.35 8.03.33.07.77.22.88.5.1.25.07.64.03.89l-.14.85c-.04.25-.2 1 .87.54 1.08-.45 5.78-3.4 7.88-5.83C21.3 13.62 22 11.96 22 10.13 22 5.64 17.52 2 12 2zM8.18 12.85H6.2a.53.53 0 0 1-.52-.53V8.39a.52.52 0 1 1 1.04 0v3.42h1.46a.52.52 0 1 1 0 1.04zm2.05-.53a.52.52 0 1 1-1.04 0V8.39a.52.52 0 1 1 1.04 0v3.93zm4.78 0a.52.52 0 0 1-.36.5.55.55 0 0 1-.16.02.52.52 0 0 1-.42-.21l-2.02-2.75v2.44a.52.52 0 1 1-1.04 0V8.39a.52.52 0 0 1 .93-.31l2.03 2.76V8.39a.52.52 0 1 1 1.04 0v3.93zm3.13-2.49a.52.52 0 1 1 0 1.04h-1.46v.93h1.46a.52.52 0 1 1 0 1.04h-1.98a.53.53 0 0 1-.52-.52V8.39c0-.29.24-.51.52-.51h1.98a.52.52 0 1 1 0 1.04h-1.46v.91h1.46z"/></svg>
-        </a>
-      </div>
-      <p>TingTingMusic © <span id="footer-year">2026</span></p>
-    </div>
-  </footer>
-
-  <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="相片檢視">
-    <button class="lightbox-btn lightbox-close" type="button" aria-label="關閉">&times;</button>
-    <button class="lightbox-btn lightbox-prev" type="button" aria-label="上一張">&lsaquo;</button>
-    <figure class="lightbox-stage">
-      <img class="lightbox-img" src="" alt="">
-      <figcaption class="lightbox-caption"></figcaption>
-    </figure>
-    <button class="lightbox-btn lightbox-next" type="button" aria-label="下一張">&rsaquo;</button>
+    <a href="#contact" class="btn btn-gold nav-cta">與我聯絡</a>
+    <button class="menu-btn" aria-label="menu"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
   </div>
+</nav>
 
-  <div class="lightbox video-lightbox" id="video-lightbox" hidden role="dialog" aria-modal="true" aria-label="影片播放">
-    <button class="lightbox-btn lightbox-close" type="button" aria-label="關閉">&times;</button>
-    <button class="lightbox-btn lightbox-prev" type="button" aria-label="上一部">&lsaquo;</button>
-    <figure class="lightbox-stage">
-      <div class="video-frame"><iframe title="影片播放器" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-      <figcaption class="lightbox-caption"></figcaption>
-    </figure>
-    <button class="lightbox-btn lightbox-next" type="button" aria-label="下一部">&rsaquo;</button>
+<section class="hero" id="top">
+  <div class="wrap hero-head">
+    <div class="op">Flute &amp; Piano Atelier</div>
+    <h1>Aria Kuo<span class="zh">郭庭羽 ‧ 長笛鋼琴教學</span></h1>
+    <blockquote class="lead"><span class="qmark">&ldquo;</span>用心陪伴每位學生，<br>用音符譜出屬於自己的樂章。<span class="qmark qend">&rdquo;</span><span class="by">— 郭庭羽 Aria Kuo</span></blockquote>
+    <div class="hero-tags" id="hero-tags"></div>
+    <div class="hero-cta">
+      <a href="#contact" class="btn btn-solid">預約諮詢</a>
+      <a href="#courses" class="btn btn-gold">課程介紹</a>
+    </div>
   </div>
+  <div class="wrap hero-photo">
+    <img src="assets/hero.jpg" alt="聽聽音樂 學生成果發表合照">
+    <span class="cap">— 聽聽音樂 —</span>
+  </div>
+</section>
 
-  <script src="script.js"></script>
+<div class="divider-staff"><span>♩</span><span>♪</span><span>♫</span><span>♬</span><span>♭</span></div>
+
+<section class="teacher" id="teacher">
+  <div class="wrap">
+    <div class="sec-head"><div class="kicker"><span>About</span></div><div class="sec-title">師資介紹</div></div>
+    <div class="teacher-grid">
+      <div class="portrait-wrap"><img src="assets/teacher.png" alt="郭庭羽 Aria Kuo"></div>
+      <div>
+        <div class="name" id="t-name"></div>
+        <div class="role" id="t-role"></div>
+        <div class="bio" id="t-bio"></div>
+        <ul class="cred" id="t-cred"></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="courses" id="courses">
+  <div class="narrow">
+    <div class="sec-head"><div class="kicker"><span>Programme</span></div><div class="sec-title">長笛 / 鋼琴教學</div></div>
+    <div class="programme" id="programme"></div>
+  </div>
+</section>
+
+<section class="videos" id="videos">
+  <div class="wrap">
+    <div class="sec-head"><div class="kicker"><span>Performances</span></div><div class="sec-title">學生演出精彩片段</div>
+      <p class="sub">成果發表會、檢定考試等演出，更多精彩影片請至 <a href="https://www.youtube.com/@ting-ting-music" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:underline">YouTube 頻道</a> 觀看</p>
+    </div>
+    <div class="video-grid" id="video-grid"></div>
+  </div>
+</section>
+
+<section class="recital" id="recital">
+  <div class="wrap">
+    <div class="sec-head"><div class="kicker"><span>Recital 2025</span></div><div class="sec-title" id="recital-title"></div></div>
+    <div class="gallery" id="gallery"></div>
+  </div>
+</section>
+
+<section class="awards" id="awards">
+  <div class="wrap">
+    <div class="sec-head"><div class="kicker"><span>Honours</span></div><div class="sec-title">學生檢定、比賽獲獎紀錄</div></div>
+    <div class="award-cols" id="award-cols"></div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <div class="kicker" style="justify-content:flex-start"><span>Contact</span></div>
+      <div class="sec-title" style="text-align:left">與我聯絡</div>
+      <p class="note" id="c-note"></p>
+      <div class="cinfo">
+        <a id="c-line" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 5.7 2 10.2c0 4 3.6 7.4 8.5 8 .3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c-.1.3-.3 1 .9.5s6.3-3.7 8.6-6.4C22.4 13 23 11.7 23 10.2 23 5.7 18.5 2 13 2h-1z"/></svg></span><span><b>Line</b> ID：<span class="cval"></span></span></a>
+        <a id="c-mail"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><span><b>Email</b> <span class="cval"></span></span></a>
+      </div>
+    </div>
+    <form id="contact-form" novalidate>
+      <div class="ftitle">Inquiry</div>
+      <label>姓名</label>
+      <input type="text" name="name" placeholder="您的稱呼" required>
+      <label>電子郵件</label>
+      <input type="email" name="email" placeholder="you@email.com" required>
+      <label>想學什麼</label>
+      <textarea name="msg" placeholder="想學長笛或鋼琴？學習目標…"></textarea>
+      <button type="submit" class="btn btn-solid">送出 ‧ Send</button>
+      <p class="form-done">謝謝您 ‧ 我會盡快與您聯繫</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fmark">TingTing Music</div>
+    <div class="socials">
+      <a href="https://www.youtube.com/@ting-ting-music" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.8-.5-5.6a2.9 2.9 0 0 0-2-2C18.7 4 12 4 12 4s-6.7 0-8.5.4a2.9 2.9 0 0 0-2 2C1 8.2 1 12 1 12s0 3.8.5 5.6a2.9 2.9 0 0 0 2 2C5.3 20 12 20 12 20s6.7 0 8.5-.4a2.9 2.9 0 0 0 2-2C23 15.8 23 12 23 12zM10 15.5v-7l6 3.5-6 3.5z"/></svg></a>
+      <a href="https://www.instagram.com/ting.ting.music/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg></a>
+      <a href="https://line.me/ti/p/~juicekuo" target="_blank" rel="noopener" aria-label="LINE"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 5.7 2 10.2c0 4 3.6 7.4 8.5 8 .3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c-.1.3-.3 1 .9.5s6.3-3.7 8.6-6.4C22.4 13 23 11.7 23 10.2 23 5.7 18.5 2 13 2h-1z"/></svg></a>
+    </div>
+    <small>TingTing Music © <span id="year"></span> ‧ 郭庭羽 Aria Kuo</small>
+  </div>
+</footer>
+
+<!-- 相片燈箱 -->
+<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="相片檢視">
+  <button class="lb-btn lb-close" type="button" aria-label="關閉">&times;</button>
+  <button class="lb-btn lb-prev" type="button" aria-label="上一張">&lsaquo;</button>
+  <figure class="lb-stage"><img class="lb-img" src="" alt=""><figcaption class="lb-cap"></figcaption></figure>
+  <button class="lb-btn lb-next" type="button" aria-label="下一張">&rsaquo;</button>
+</div>
+
+<!-- 影片燈箱 -->
+<div class="lightbox" id="video-lightbox" hidden role="dialog" aria-modal="true" aria-label="影片播放">
+  <button class="lb-btn lb-close" type="button" aria-label="關閉">&times;</button>
+  <button class="lb-btn lb-prev" type="button" aria-label="上一部">&lsaquo;</button>
+  <figure class="lb-stage"><div class="video-frame"><iframe title="影片播放器" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><figcaption class="lb-cap"></figcaption></figure>
+  <button class="lb-btn lb-next" type="button" aria-label="下一部">&rsaquo;</button>
+</div>
+
+<script>
+/* ───── 內容資料（沿用真實 v1 內容；課程文字採設計版） ───── */
+const S = {
+  teacher: {
+    name: "郭庭羽", nameEn: "Aria Kuo", role: "長笛 ‧ 鋼琴 音樂家教",
+    bio: [
+      "您好，我是音樂家教老師 Aria 郭老師，自幼學習長笛與鋼琴，主修長笛、附修鋼琴，師承蔡玉敏、林珮琪老師，對於音樂有極高的熱誠，參加過許多不同的比賽並取得前三名的成績。",
+      "目前從事音樂家教已經有 14 年的經驗，老師溫柔、有耐心，情緒穩定，上課有趣很受大朋友小朋友喜愛，擅長運用繪畫說故事的方式來讓學生們理解抽象的音樂內容，也會設計不同的音樂遊戲增加上課的趣味，讓學習音樂的過程充滿歡笑。"
+    ],
+    credentials: [
+      "通過 ABRSM 英國皇家音樂檢定 — ARSM 長笛演奏級",
+      "通過 ABRSM 英國皇家音樂檢定 — 鋼琴 8 級",
+      "通過 ABRSM 英國皇家音樂檢定 — 樂理 5 級",
+      "文化盃長笛比賽 — 第一名",
+      "希朵夫鋼琴比賽 — 第二名"
+    ]
+  },
+  tags: ["長笛教學", "鋼琴教學", "音樂教材設計", "上課記錄"],
+  courses: [
+    { title: "幼兒音樂啟蒙", icon: "book", desc: "以繪畫、說故事及遊戲的方式，從中培養孩子的專注力與美感，並建立正確的演奏姿勢，讓音樂啟蒙充滿樂趣。" },
+    { title: "已有基礎的學生", icon: "note", desc: "釐清個人既有的盲點，幫助學生在自己的步伐上更清楚地找到方法、重新打底，無論是想精進、考音樂班或師資的學生都適合。" },
+    { title: "成人初學", icon: "piano", desc: "可依您想學習的方向安排教學內容；針對工作繁忙的成人，會規劃輕鬆無壓力的進度，配合您的步調與需求。" },
+    { title: "長笛團班", icon: "flute", desc: "歡迎 2～4 位程度相近的學生一起上課，享受合奏的默契與樂趣，培養團隊演出的舞台經驗。" },
+    { title: "音樂檢定、比賽", icon: "trophy", desc: "ABRSM 英國皇家音樂檢定、Yamaha 音樂檢定，以及各項音樂比賽的指導與陪伴。" }
+  ],
+  videos: [
+    { title: "Martin Cuellar : Toccata", performer: "Kana", id: "wnEmoi3gQ50" },
+    { title: "柴可夫斯基：睡美人的華爾滋", performer: "Lily", id: "tE8csMe-urU" },
+    { title: "魔法公主 Princess mononoke", performer: "Effie", id: "sG395okhOy8" },
+    { title: "威尼斯狂歡節", performer: "Daphne", id: "k5kHF68hHME" }
+  ],
+  recitalTitle: "2025 郭老師音樂發表會",
+  recitalCount: 12,
+  awards: {
+    "檢定": [
+      "恭喜香奈通過英國皇家音樂檢定 Abrsm 鋼琴四級優良。",
+      "恭喜張*珺通過英國皇家音樂檢定 Abrsm 長笛三級。",
+      "恭喜黃*恩通過英國皇家音樂檢定 Abrsm 鋼琴三級優良。",
+      "恭喜黃*安通過英國皇家音樂檢定 Abrsm 鋼琴二級優良。",
+      "恭喜林*恩通過英國皇家音樂檢定 Abrsm 長笛二級優良。",
+      "恭喜紀*怡通過英國皇家音樂檢定 Abrsm 長笛三級優良。",
+      "恭喜谷*蓁通過 Yamaha 長笛檢定10級",
+      "恭喜陳*瑀通過 Yamaha 鋼琴檢定11級",
+      "恭喜楊*縈通過 Yamaha 鋼琴檢定13級",
+      "恭喜蔡*縈通過 Yamaha 鋼琴檢定13級",
+      "恭喜簡*羽通過 Yamaha 鋼琴檢定13級",
+      "恭喜王*棠通過 Yamaha 鋼琴檢定13級",
+      "恭喜李*倢通過 Yamaha 鋼琴檢定13級",
+      "恭喜張*奕通過 Yamaha 鋼琴檢定11級"
+    ],
+    "比賽": [
+      "恭喜黃*安參加希朵夫古典鋼琴比賽榮獲第四名",
+      "恭喜王*可參加法雅盃流行鋼琴比賽榮獲第二名",
+      "恭喜張*珺參加歐洲盃長笛比賽榮獲第二名",
+      "恭喜李*倢參加布拉格古典鋼琴比賽成績優良"
+    ],
+    "音樂班 / 樂團": [
+      "恭喜孫*嫻錄取青年管樂團少年二團 - 長笛分部",
+      "恭喜曾*恩考上敦化國小音樂班 - 長笛副修"
+    ]
+  },
+  contact: {
+    note: "歡迎私訊預約諮詢，了解適合的課程與上課方式。",
+    line: "juicekuo",
+    email: "juicekuo@gmail.com"
+  }
+};
+
+const icons={
+ book:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 6c-2-1.5-5-1.5-7 0v12c2-1.5 5-1.5 7 0 2-1.5 5-1.5 7 0V6c-2-1.5-5-1.5-7 0Z"/><path d="M12 6v12"/></svg>',
+ note:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="6" cy="18" r="2.5"/><circle cx="17" cy="16" r="2.5"/><path d="M8.5 18V5l11-2v13"/></svg>',
+ piano:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M8 5v8M12 5v8M16 5v8M3 13h18"/></svg>',
+ flute:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M3 14 19 4a2 2 0 0 1 2 3L7 18Z"/><circle cx="9" cy="13" r="1"/><circle cx="12" cy="11" r="1"/><circle cx="15" cy="9" r="1"/></svg>',
+ trophy:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M7 4h10v5a5 5 0 0 1-10 0V4Z"/><path d="M7 6H4v1a3 3 0 0 0 3 3M17 6h3v1a3 3 0 0 1-3 3M9 19h6M12 14v5"/></svg>'
+};
+const roman=['I','II','III','IV','V'];
+const pad2=n=>String(n).padStart(2,'0');
+
+/* ───── 渲染 ───── */
+document.getElementById('hero-tags').innerHTML=S.tags.map(t=>`<span>${t}</span>`).join('');
+document.getElementById('t-name').innerHTML=`${S.teacher.name}<em>${S.teacher.nameEn}</em>`;
+document.getElementById('t-role').textContent=S.teacher.role;
+document.getElementById('t-bio').innerHTML=S.teacher.bio.map(p=>`<p>${p}</p>`).join('');
+document.getElementById('t-cred').innerHTML=S.teacher.credentials.map((c,i)=>`<li><span class="rn">${roman[i]||'•'}</span><span>${c}</span></li>`).join('');
+document.getElementById('programme').innerHTML=S.courses.map((c,i)=>`<div class="movement"><span class="num">${roman[i]}</span><div class="body"><h3>${c.title}</h3><p>${c.desc}</p></div><span class="ic">${icons[c.icon]}</span></div>`).join('');
+document.getElementById('video-grid').innerHTML=S.videos.map(v=>`<button class="vid" type="button" data-video="${v.id}" data-title="${v.title}" data-performer="演出者：${v.performer}"><div class="thumb"><img src="https://i.ytimg.com/vi/${v.id}/hqdefault.jpg" alt="${v.title} 影片縮圖" loading="lazy"><div class="play"><span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></div></div><div class="t">${v.title}</div><div class="p">演出者：${v.performer}</div></button>`).join('');
+document.getElementById('recital-title').textContent=S.recitalTitle;
+document.getElementById('gallery').innerHTML=Array.from({length:S.recitalCount},(_,i)=>{const n=pad2(i+1);return `<a class="cell" href="assets/gallery-${n}.jpg" data-full="assets/gallery-${n}.jpg" aria-label="2025 發表會相片 ${i+1}"><img src="assets/thumb-${n}.jpg" alt="2025 發表會相片 ${i+1}" loading="lazy"></a>`;}).join('');
+document.getElementById('award-cols').innerHTML=Object.entries(S.awards).map(([k,arr])=>`<div class="award-card"><h3>${k}</h3><ul>${arr.map(a=>`<li>${a}</li>`).join('')}</ul></div>`).join('');
+document.getElementById('c-note').textContent=S.contact.note;
+const cl=document.getElementById('c-line');cl.querySelector('.cval').textContent=S.contact.line;cl.href='https://line.me/ti/p/~'+S.contact.line;
+const cm=document.getElementById('c-mail');cm.querySelector('.cval').textContent=S.contact.email;cm.href='mailto:'+S.contact.email;
+document.getElementById('year').textContent=new Date().getFullYear();
+
+/* ───── 聯絡表單：mailto + 謝謝訊息 ───── */
+document.getElementById('contact-form').addEventListener('submit',function(e){
+  e.preventDefault();
+  if(!this.reportValidity())return;
+  var name=this.name.value.trim(), email=this.email.value.trim(), msg=this.msg.value.trim();
+  var subject='音樂課程詢問 - '+name;
+  var body='姓名：'+name+'\n回信信箱：'+email+'\n\n想學什麼：\n'+(msg||'（未填寫）');
+  window.location.href='mailto:'+S.contact.email+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+  this.querySelectorAll('input,textarea,button,label,.ftitle').forEach(function(el){el.style.display='none';});
+  this.querySelector('.form-done').style.display='block';
+});
+
+/* ───── 手機選單 ───── */
+(function(){
+  const nav=document.querySelector('nav'), btn=document.querySelector('.menu-btn');
+  btn.addEventListener('click',()=>nav.classList.toggle('open'));
+  nav.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+})();
+
+/* ───── 相片燈箱 ───── */
+(function(){
+  var cells=Array.prototype.slice.call(document.querySelectorAll('.gallery .cell'));
+  var box=document.getElementById('lightbox'); if(!cells.length||!box)return;
+  var img=box.querySelector('.lb-img'), cap=box.querySelector('.lb-cap');
+  var cur=0;
+  var slides=cells.map(function(a){return {src:a.getAttribute('data-full'),cap:a.querySelector('img').getAttribute('alt')};});
+  function show(i){cur=(i+slides.length)%slides.length;img.setAttribute('src',slides[cur].src);img.setAttribute('alt',slides[cur].cap);cap.textContent=slides[cur].cap;}
+  function open(i){show(i);box.hidden=false;document.body.style.overflow='hidden';}
+  function close(){box.hidden=true;document.body.style.overflow='';img.setAttribute('src','');}
+  cells.forEach(function(a,i){a.addEventListener('click',function(e){e.preventDefault();open(i);});});
+  box.querySelector('.lb-prev').addEventListener('click',function(e){e.stopPropagation();show(cur-1);});
+  box.querySelector('.lb-next').addEventListener('click',function(e){e.stopPropagation();show(cur+1);});
+  box.querySelector('.lb-close').addEventListener('click',close);
+  box.addEventListener('click',function(e){if(e.target===box||e.target.classList.contains('lb-stage'))close();});
+  document.addEventListener('keydown',function(e){if(box.hidden)return;if(e.key==='Escape')close();else if(e.key==='ArrowLeft')show(cur-1);else if(e.key==='ArrowRight')show(cur+1);});
+})();
+
+/* ───── 影片燈箱 ───── */
+(function(){
+  var cards=Array.prototype.slice.call(document.querySelectorAll('.vid'));
+  var box=document.getElementById('video-lightbox'); if(!cards.length||!box)return;
+  var frame=box.querySelector('iframe'), cap=box.querySelector('.lb-cap');
+  var cur=0;
+  var vids=cards.map(function(c){return {id:c.getAttribute('data-video'),title:c.getAttribute('data-title'),performer:c.getAttribute('data-performer')};});
+  function show(i){cur=(i+vids.length)%vids.length;var v=vids[cur];frame.setAttribute('src','https://www.youtube.com/embed/'+v.id+'?autoplay=1&rel=0');cap.textContent=v.performer?(v.title+'　'+v.performer):v.title;}
+  function open(i){show(i);box.hidden=false;document.body.style.overflow='hidden';}
+  function close(){box.hidden=true;document.body.style.overflow='';frame.setAttribute('src','');}
+  cards.forEach(function(c,i){c.addEventListener('click',function(){open(i);});});
+  box.querySelector('.lb-prev').addEventListener('click',function(e){e.stopPropagation();show(cur-1);});
+  box.querySelector('.lb-next').addEventListener('click',function(e){e.stopPropagation();show(cur+1);});
+  box.querySelector('.lb-close').addEventListener('click',close);
+  box.addEventListener('click',function(e){if(e.target===box||e.target.classList.contains('lb-stage'))close();});
+  document.addEventListener('keydown',function(e){if(box.hidden)return;if(e.key==='Escape')close();else if(e.key==='ArrowLeft')show(cur-1);else if(e.key==='ArrowRight')show(cur+1);});
+})();
+</script>
 </body>
 </html>
