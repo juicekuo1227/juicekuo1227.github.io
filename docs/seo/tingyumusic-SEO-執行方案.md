@@ -258,10 +258,12 @@ Sitemap: https://tingyumusic.com/sitemap.xml
 
 以下需登入第三方帳號,Claude Code 不執行,僅提醒使用者完成:
 
-1. **Google Search Console**:驗證網站擁有權 → 提交 `sitemap.xml` → 請求索引。
-2. **Google 商家檔案(Google Business Profile)**:建立教學商家、填地區、累積評論(對在地 SEO 影響最大)。
-3. **在地名錄/平台登錄**:如 PRO360 等音樂教學平台,取得曝光與外部連結。
-4. **社群維護**:在 YouTube / IG / Line 個人資料放上網站連結,持續更新學生演出影片。
+1. ✅ **Google Search Console**(已完成 2026-06-09):已驗證擁有權、提交 `sitemap.xml`(狀態成功,探索到 1 頁)、對首頁要求建立索引(排入佇列,等 Google 實際收錄)。
+2. ✅ **Google 商家檔案(Google Business Profile)**(已完成 2026-06-09):商家已上線可被搜到,類別=音樂教師、填入地區、描述、服務。
+   - ⏳ 進行中:電話移除中(送審,最多 30 天)。
+   - 🔁 長期持續:**累積 Google 評論**(對在地 SEO 影響最大)、補照片把 Profile strength 補滿。
+3. ⬜ **在地名錄/平台登錄**:如 PRO360 等音樂教學平台,取得曝光與外部連結。
+4. ⬜ **社群維護**:在 YouTube / IG / Line 個人資料放上網站連結,持續更新學生演出影片。
 
 ---
 
