@@ -23,7 +23,7 @@ nav{position:sticky;top:0;z-index:50;background:rgba(247,243,234,.92);backdrop-f
 .post-eyebrow{font-family:var(--display);font-style:italic;color:var(--gold);font-size:1.2rem}
 .post h1{font-family:var(--serif);font-weight:500;font-size:clamp(1.7rem,4.2vw,2.5rem);line-height:1.4;letter-spacing:.03em;margin:.6rem 0;text-wrap:balance}
 .post-meta{font-size:.8rem;letter-spacing:.1em;color:var(--ink-soft);text-transform:uppercase}
-.post-lead{font-family:var(--serif);font-size:1.1rem;color:var(--ink-soft);margin:1.4rem auto 0;max-width:34em;text-wrap:balance}
+.post-lead{font-family:var(--serif);font-size:1.1rem;color:var(--ink-soft);margin:1.4rem auto 0;text-wrap:balance}
 .post figure{margin:2.4rem 0}
 .post figure img{width:100%;border-radius:20px}
 .post figure figcaption{text-align:center;font-size:.82rem;color:var(--ink-soft);margin-top:.7rem;font-family:var(--serif)}
