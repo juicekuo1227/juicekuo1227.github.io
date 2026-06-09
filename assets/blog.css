@@ -21,9 +21,9 @@ nav{position:sticky;top:0;z-index:50;background:rgba(247,243,234,.92);backdrop-f
 .post{padding:1rem 0 3rem}
 .post-head{text-align:center;margin:1.5rem 0 2.4rem}
 .post-eyebrow{font-family:var(--display);font-style:italic;color:var(--gold);font-size:1.2rem}
-.post h1{font-family:var(--serif);font-weight:500;font-size:clamp(1.7rem,4.2vw,2.5rem);line-height:1.4;letter-spacing:.03em;margin:.6rem 0}
+.post h1{font-family:var(--serif);font-weight:500;font-size:clamp(1.7rem,4.2vw,2.5rem);line-height:1.4;letter-spacing:.03em;margin:.6rem 0;text-wrap:balance}
 .post-meta{font-size:.8rem;letter-spacing:.1em;color:var(--ink-soft);text-transform:uppercase}
-.post-lead{font-family:var(--serif);font-size:1.1rem;color:var(--ink-soft);margin:1.4rem auto 0;max-width:34em}
+.post-lead{font-family:var(--serif);font-size:1.1rem;color:var(--ink-soft);margin:1.4rem auto 0;max-width:34em;text-wrap:balance}
 .post figure{margin:2.4rem 0}
 .post figure img{width:100%;border-radius:20px}
 .post figure figcaption{text-align:center;font-size:.82rem;color:var(--ink-soft);margin-top:.7rem;font-family:var(--serif)}
@@ -52,6 +52,6 @@ nav{position:sticky;top:0;z-index:50;background:rgba(247,243,234,.92);backdrop-f
 .post-card p{font-size:.86rem;color:var(--ink-soft);line-height:1.7}
 .blog-hero{text-align:center;padding:clamp(2.5rem,6vw,4rem) 0 1rem}
 .blog-hero .eyebrow{font-family:var(--display);font-style:italic;color:var(--gold);font-size:1.4rem}
-.blog-hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(1.9rem,4.5vw,2.8rem);letter-spacing:.05em;margin:.4rem 0}
-.blog-hero p{color:var(--ink-soft);max-width:30em;margin:1rem auto 0}
+.blog-hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(1.9rem,4.5vw,2.8rem);letter-spacing:.05em;margin:.4rem 0;text-wrap:balance}
+.blog-hero p{color:var(--ink-soft);max-width:30em;margin:1rem auto 0;text-wrap:balance}
 footer{text-align:center;padding:2.5rem 0;border-top:1px solid var(--line);color:var(--ink-soft);font-size:.82rem}
