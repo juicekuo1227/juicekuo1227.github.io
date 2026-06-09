@@ -272,7 +272,7 @@ Sitemap: https://tingyumusic.com/sitemap.xml
 1. ✅ **Phase 1**(收錄地基)— 已完成。
 2. 🔶 **Phase 2**(On-page)— 大致完成,僅剩 WebP 壓縮。
 3. ✅ **Phase 3**(結構化資料)— 已完成(電話/畢業學校欄位待補)。
-4. ⬜ 提醒使用者完成 **第 8 節**(GSC + 商家檔案)— **待使用者操作**,愈早愈好。
+4. ✅ **第 8 節**(GSC + 商家檔案 + 社群/平台)— 已完成初始設定;評論累積與影片更新為長期項目。
 5. 🔶 **Phase 4**(內容架構)— 已加 FAQ 區塊;拆頁/部落格視時間再做。
 
 > **目前待辦**:① 補電話與畢業學校(JSON-LD,見 index.html TODO)② WebP 壓縮 ③ 上線後跑 Rich Results Test / Lighthouse ④ 第 8 節人工操作(GSC、Google 商家檔案等)。
