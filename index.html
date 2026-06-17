@@ -532,9 +532,25 @@ document.getElementById('contact-form').addEventListener('submit',function(e){
   var name=this.name.value.trim(), email=this.email.value.trim(), msg=this.msg.value.trim();
   var subject='音樂課程詢問 - '+name;
   var body='姓名：'+name+'\n回信信箱：'+email+'\n\n想學什麼：\n'+(msg||'（未填寫）');
+  if(window.gtag)gtag('event','generate_lead',{method:'form'});
   window.location.href='mailto:'+S.contact.email+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
   this.querySelectorAll('input,textarea,button,label,.ftitle').forEach(function(el){el.style.display='none';});
   this.querySelector('.form-done').style.display='block';
+});
+
+/* ───── 轉換追蹤:Line / Email / IG 點擊 ───── */
+document.addEventListener('click',function(e){
+  var a=e.target.closest('a');
+  if(!a||!window.gtag)return;
+  var href=a.getAttribute('href')||'';
+  var inFooter=!!a.closest('footer');
+  if(href.indexOf('line.me')>-1){
+    gtag('event','generate_lead',{method:'line',link_location:inFooter?'footer':'contact'});
+  }else if(href.indexOf('mailto:')===0){
+    gtag('event','contact_click',{method:'email'});
+  }else if(href.indexOf('instagram.com')>-1){
+    gtag('event','contact_click',{method:'instagram',link_location:inFooter?'footer':'contact'});
+  }
 });
 
 /* ───── 手機選單 ───── */
