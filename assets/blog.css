@@ -35,6 +35,17 @@ nav{position:sticky;top:0;z-index:50;background:rgba(247,243,234,.92);backdrop-f
 .callout ul{list-style:none;display:flex;flex-direction:column;gap:.6rem}
 .callout li{padding-left:1.4rem;position:relative}
 .callout li::before{content:"\266A";position:absolute;left:0;color:var(--gold)}
+.answer{background:var(--paper);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:14px;padding:1.3rem 1.7rem;margin:2rem 0}
+.answer .a-label{font-family:var(--display);font-style:italic;color:var(--gold);font-size:1.15rem;display:block;margin-bottom:.4rem}
+.answer p{margin:.3rem 0;font-size:1.02rem}
+.post ul.dash{list-style:none;display:flex;flex-direction:column;gap:.55rem;margin:1.2rem 0}
+.post ul.dash li{padding-left:1.5rem;position:relative;font-size:1.02rem}
+.post ul.dash li::before{content:"—";position:absolute;left:0;color:var(--gold)}
+.post a.inlink{color:var(--gold-deep);border-bottom:1px solid var(--line);transition:.2s}
+.post a.inlink:hover{border-color:var(--gold)}
+.faq{margin:2.8rem 0}
+.faq-q{font-family:var(--serif);font-weight:500;color:var(--gold-deep);font-size:1.1rem;margin:1.7rem 0 .3rem}
+.faq-a{margin:.3rem 0;font-size:1.02rem}
 .cta{text-align:center;background:var(--ink);color:var(--ivory);border-radius:20px;padding:2.6rem 1.5rem;margin:3rem 0}
 .cta h3{font-family:var(--serif);font-weight:500;font-size:1.3rem;margin-bottom:.6rem}
 .cta p{color:#E8DFCE;font-size:.95rem;margin-bottom:1.4rem}
