@@ -50,6 +50,7 @@ docs/superpowers/        部落格 spec 與實作計畫
 
 - **口吻**:像朋友聊天、第二人稱「你」、帶 Aria 第一人稱視角(「我都跟學生說…」)、幾乎不用 emoji、不誇大、具體價格不寫死(引導 Line 預約)。
 - **節奏**:句子長短落差要大 —— 長句鋪陳後接一個很短的句子(2~5 字)。**避免兩個等長並排子句**(那讀起來太平)。
+- **段落**:單段上限約 120 字(手機 375px 約 5~6 行),在情緒/論點轉折處分段,punch 短句可獨立成段。不逐句斷行(那是 IG/Threads 導流貼文的排法,不進部落格)。
 - **標點**:中文內文一律**全形**(，：？！等),半形只留在程式碼/JSON-LD/URL/CSS。
 - **不顯示發佈日期**(避免洩漏同批產出);文章 `post-meta` 只寫「Aria 老師」，JSON-LD 不放 `datePublished`。
 - **插畫**:`scripts/gen-illustration.sh "<英文主體描述>" <輸出.png>`，用 Gemini `gemini-2.5-flash-image` 產 1024×1024 暖色**平面場景**插畫(no gradient、no text)。需 `GEMINI_API_KEY`(已設環境變數)、`jq`。每篇 2~3 張。
