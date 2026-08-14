@@ -7,6 +7,7 @@
 - [x] 1. 怎麼幫孩子挑第一個樂器？鋼琴與長笛的特性比較 — 已完成（`choosing-first-instrument.html`）
 - [x] 2. 孩子不肯練琴？建立練習習慣的 5 個方法 — 已完成（`kids-wont-practice.html`）
 - [ ] 3. 家長如何在家有效陪練（又不破壞親子關係）
+- [x] 3-1. 孩子要專心準備考試了，音樂課該先停嗎？ — 已完成（`exam-year-music-lessons.html`）
 - [x] 4. 初學要準備什麼？電鋼琴、租琴與基本配件怎麼選 — 已完成（`beginner-gear-guide.html`）
 
 ## 給成人學習者
