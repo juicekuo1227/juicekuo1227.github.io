@@ -162,6 +162,20 @@ nav{position:sticky;top:0;z-index:50;background:rgba(247,243,234,.9);backdrop-fi
 .faq-item .q{display:flex;gap:1rem;align-items:baseline;font-family:var(--serif);font-weight:500;font-size:1.25rem;letter-spacing:.04em;color:var(--ink)}
 .faq-item .q .qn{font-family:var(--display);font-style:italic;color:var(--gold);font-size:1.4rem;line-height:1;min-width:1.6ch}
 .faq-item .a{color:var(--ink-soft);font-size:.98rem;margin-top:.8rem;padding-left:calc(1.6ch + 1rem)}
+.faq-item .a a{color:var(--gold-deep);text-decoration:underline;text-underline-offset:.2em;text-decoration-thickness:1px}
+
+/* journal */
+.journal{background:var(--paper);padding:clamp(3.5rem,8vw,6rem) 0;border-block:1px solid var(--line)}
+.journal .sub{text-align:center;color:var(--ink-soft);font-size:.95rem;margin-top:.6rem}
+.journal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.5rem,2.5vw,2.2rem)}
+.jcard{display:block;background:var(--ivory);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:transform .3s,box-shadow .3s}
+.jcard:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,.07)}
+.jcard img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;display:block}
+.jc-body{padding:1.2rem 1.3rem 1.5rem}
+.jc-tag{font-size:.72rem;letter-spacing:.12em;color:var(--gold-deep)}
+.jcard h3{font-family:var(--serif);font-weight:500;font-size:1.08rem;line-height:1.5;margin:.5rem 0 .6rem;color:var(--ink)}
+.jcard p{font-size:.86rem;color:var(--ink-soft);line-height:1.7}
+.journal-more{text-align:center;margin-top:clamp(2rem,4vw,2.8rem)}
 
 /* contact */
 .contact{padding:clamp(3.5rem,8vw,6rem) 0}
@@ -235,6 +249,7 @@ footer small{color:#a89878;letter-spacing:.08em}
   .portrait-wrap{max-width:480px}
   .hero-photo{margin-inline:auto}
   .award-cols{grid-template-columns:1fr;gap:1.2rem;padding-inline:7vw}
+  .journal-grid{grid-template-columns:1fr;gap:1.4rem}
   .gallery{grid-template-columns:repeat(2,1fr)}
   .movement{grid-template-columns:auto 1fr;gap:1.2rem}
   .movement .ic{display:none}
@@ -361,10 +376,43 @@ footer small{color:#a89878;letter-spacing:.08em}
         <p class="a">其實不一定喔！這主要取決於每位學生的學習進度與狀態，以及孩子自己是否想參加。對學音樂的孩子來說，檢定與比賽最大的價值，在於提供一個明確的目標，讓他們願意為了達成它而主動練習；同時也像一把尺，幫助我們了解孩子目前的程度。在準備的過程中，更能看清楚哪些地方需要加強；而站上舞台所累積的臨場經驗與成就感，對孩子的成長同樣重要。因此我會依每位學生的狀況，和家長一起討論是否參加、以及何時參加。</p>
       </div>
       <div class="faq-item">
+        <div class="q"><span class="qn">Q</span><span>該怎麼挑長笛老師？</span></div>
+        <p class="a">除了學歷與演出經驗，我自己覺得更關鍵的是這幾件事：能不能先試上一堂看看互動、教室的距離撐不撐得住每週往返、氣息與吹奏姿勢怎麼教、家長能不能旁聽。這些決定的是孩子學不學得久，而不是學得快。更完整的判斷方式，我整理在 <a href="blog/taipei-flute-teacher-guide.html">在台北幫孩子找長笛老師，這 5 件事比學歷重要</a> 這篇。</p>
+      </div>
+      <div class="faq-item">
         <div class="q"><span class="qn">Q</span><span>教室在哪裡？怎麼前往？</span></div>
         <p class="a">教室位在台北市中山區，從捷運行天宮站步行過來大約 4 分鐘，附近也有公車站，無論從台北市區或新北市過來都方便喔。</p>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="journal" id="journal">
+  <div class="wrap">
+    <div class="sec-head"><div class="kicker"><span>Journal</span></div><h2 class="sec-title">Aria 老師碎碎念</h2>
+      <p class="sub">給家長與成人學習者的長笛・鋼琴學習筆記 —— 從選老師、挑樂器到練習方法，慢慢聊。</p>
+    </div>
+    <div class="journal-grid">
+      <a class="jcard" href="blog/taipei-flute-teacher-guide.html">
+        <img src="assets/blog/taipei-flute-teacher-guide/cover.png" alt="家長和孩子一起看著一支長笛、孩子好奇微笑的插畫" loading="lazy" width="1024" height="1024">
+        <div class="jc-body"><span class="jc-tag">給家長</span>
+          <h3>在台北幫孩子找長笛老師，這 5 件事比學歷重要</h3>
+          <p>名單很長，判斷標準卻很少。互動、通勤、氣息教法、旁聽與檢定經驗，一件一件看。</p></div>
+      </a>
+      <a class="jcard" href="blog/choosing-first-instrument.html">
+        <img src="assets/blog/choosing-first-instrument/cover.png" alt="家長和孩子一起在鋼琴與長笛之間挑選樂器的溫暖插畫" loading="lazy" width="1024" height="1024">
+        <div class="jc-body"><span class="jc-tag">給家長</span>
+          <h3>怎麼幫孩子挑第一個樂器？鋼琴與長笛的特性比較</h3>
+          <p>第一個樂器選鋼琴還是長笛？從年齡、體格與個性，聊聊怎麼挑對入門樂器。</p></div>
+      </a>
+      <a class="jcard" href="blog/adult-beginner-never-too-late.html">
+        <img src="assets/blog/adult-beginner-never-too-late/cover.png" alt="成人放鬆地在家彈鋼琴、享受音樂的插畫" loading="lazy" width="1024" height="1024">
+        <div class="jc-body"><span class="jc-tag">給成人學習者</span>
+          <h3>成人零基礎學音樂會太晚嗎？關於年齡的迷思</h3>
+          <p>「我這年紀還能學樂器嗎？」聊聊成人學音樂的優勢與常見迷思。</p></div>
+      </a>
+    </div>
+    <div class="journal-more"><a href="blog/" class="btn btn-gold">看更多文章</a></div>
   </div>
 </section>
 
@@ -670,6 +718,11 @@ document.addEventListener('click',function(e){
           "@type": "Question",
           "name": "學習音樂一定要參加比賽或檢定考嗎？",
           "acceptedAnswer": { "@type": "Answer", "text": "其實不一定喔！這主要取決於每位學生的學習進度與狀態，以及孩子自己是否想參加。對學音樂的孩子來說，檢定與比賽最大的價值，在於提供一個明確的目標，讓他們願意為了達成它而主動練習；同時也像一把尺，幫助我們了解孩子目前的程度。在準備的過程中，更能看清楚哪些地方需要加強；而站上舞台所累積的臨場經驗與成就感，對孩子的成長同樣重要。因此我會依每位學生的狀況，和家長一起討論是否參加、以及何時參加。" }
+        },
+        {
+          "@type": "Question",
+          "name": "該怎麼挑長笛老師？",
+          "acceptedAnswer": { "@type": "Answer", "text": "除了學歷與演出經驗，我自己覺得更關鍵的是這幾件事：能不能先試上一堂看看互動、教室的距離撐不撐得住每週往返、氣息與吹奏姿勢怎麼教、家長能不能旁聽。這些決定的是孩子學不學得久，而不是學得快。更完整的判斷方式，我整理在〈在台北幫孩子找長笛老師，這 5 件事比學歷重要〉這篇。" }
         },
         {
           "@type": "Question",
