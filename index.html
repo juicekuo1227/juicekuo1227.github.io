@@ -156,7 +156,7 @@ nav{position:sticky;top:0;z-index:50;background:rgba(247,243,234,.9);backdrop-fi
 .award-card li:last-child{border-bottom:none}
 
 /* faq */
-.faq{padding:clamp(3.5rem,8vw,6rem) 0}
+.faq{background:var(--paper);padding:clamp(3.5rem,8vw,6rem) 0;border-block:1px solid var(--line)}
 .faq-list{border-top:1px solid var(--ink)}
 .faq-item{padding:1.8rem 0;border-bottom:1px solid var(--line)}
 .faq-item .q{display:flex;gap:1rem;align-items:baseline;font-family:var(--serif);font-weight:500;font-size:1.25rem;letter-spacing:.04em;color:var(--ink)}
@@ -165,10 +165,10 @@ nav{position:sticky;top:0;z-index:50;background:rgba(247,243,234,.9);backdrop-fi
 .faq-item .a a{color:var(--gold-deep);text-decoration:underline;text-underline-offset:.2em;text-decoration-thickness:1px}
 
 /* journal */
-.journal{background:var(--paper);padding:clamp(3.5rem,8vw,6rem) 0;border-block:1px solid var(--line)}
+.journal{padding:clamp(3.5rem,8vw,6rem) 0}
 .journal .sub{text-align:center;color:var(--ink-soft);font-size:.95rem;margin-top:.6rem}
 .journal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.5rem,2.5vw,2.2rem)}
-.jcard{display:block;background:var(--ivory);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:transform .3s,box-shadow .3s}
+.jcard{display:block;background:var(--paper);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:transform .3s,box-shadow .3s}
 .jcard:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,.07)}
 .jcard img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;display:block}
 .jc-body{padding:1.2rem 1.3rem 1.5rem}
@@ -282,8 +282,8 @@ footer small{color:#a89878;letter-spacing:.08em}
       <a href="#videos">學生演出</a>
       <a href="#recital">發表會</a>
       <a href="#awards">獲獎紀錄</a>
-      <a href="#faq">常見問題</a>
       <a href="blog/">Aria 老師碎碎念</a>
+      <a href="#faq">常見問題</a>
     </div>
     <a href="#contact" class="btn btn-gold nav-cta">與我聯絡</a>
     <button class="menu-btn" aria-label="menu"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
@@ -355,6 +355,35 @@ footer small{color:#a89878;letter-spacing:.08em}
   </div>
 </section>
 
+<section class="journal" id="journal">
+  <div class="wrap">
+    <div class="sec-head"><div class="kicker"><span>Journal</span></div><h2 class="sec-title">Aria 老師碎碎念</h2>
+      <p class="sub">給家長與成人學習者的長笛・鋼琴學習筆記 —— 從選老師、挑樂器到練習方法，慢慢聊。</p>
+    </div>
+    <div class="journal-grid">
+      <a class="jcard" href="blog/taipei-flute-teacher-guide.html">
+        <img src="assets/blog/taipei-flute-teacher-guide/cover.png" alt="家長和孩子一起看著一支長笛、孩子好奇微笑的插畫" loading="lazy" width="1024" height="1024">
+        <div class="jc-body"><span class="jc-tag">給家長</span>
+          <h3>在台北幫孩子找長笛老師，這 5 件事比學歷重要</h3>
+          <p>名單很長，判斷標準卻很少。互動、通勤、氣息教法、旁聽與檢定經驗，一件一件看。</p></div>
+      </a>
+      <a class="jcard" href="blog/choosing-first-instrument.html">
+        <img src="assets/blog/choosing-first-instrument/cover.png" alt="家長和孩子一起在鋼琴與長笛之間挑選樂器的溫暖插畫" loading="lazy" width="1024" height="1024">
+        <div class="jc-body"><span class="jc-tag">給家長</span>
+          <h3>怎麼幫孩子挑第一個樂器？鋼琴與長笛的特性比較</h3>
+          <p>第一個樂器選鋼琴還是長笛？從年齡、體格與個性，聊聊怎麼挑對入門樂器。</p></div>
+      </a>
+      <a class="jcard" href="blog/adult-beginner-never-too-late.html">
+        <img src="assets/blog/adult-beginner-never-too-late/cover.png" alt="成人放鬆地在家彈鋼琴、享受音樂的插畫" loading="lazy" width="1024" height="1024">
+        <div class="jc-body"><span class="jc-tag">給成人學習者</span>
+          <h3>成人零基礎學音樂會太晚嗎？關於年齡的迷思</h3>
+          <p>「我這年紀還能學樂器嗎？」聊聊成人學音樂的優勢與常見迷思。</p></div>
+      </a>
+    </div>
+    <div class="journal-more"><a href="blog/" class="btn btn-gold">看更多文章</a></div>
+  </div>
+</section>
+
 <section class="faq" id="faq">
   <div class="narrow">
     <div class="sec-head"><div class="kicker"><span>FAQ</span></div><h2 class="sec-title">常見問題</h2></div>
@@ -384,35 +413,6 @@ footer small{color:#a89878;letter-spacing:.08em}
         <p class="a">教室位在台北市中山區，從捷運行天宮站步行過來大約 4 分鐘，附近也有公車站，無論從台北市區或新北市過來都方便喔。</p>
       </div>
     </div>
-  </div>
-</section>
-
-<section class="journal" id="journal">
-  <div class="wrap">
-    <div class="sec-head"><div class="kicker"><span>Journal</span></div><h2 class="sec-title">Aria 老師碎碎念</h2>
-      <p class="sub">給家長與成人學習者的長笛・鋼琴學習筆記 —— 從選老師、挑樂器到練習方法，慢慢聊。</p>
-    </div>
-    <div class="journal-grid">
-      <a class="jcard" href="blog/taipei-flute-teacher-guide.html">
-        <img src="assets/blog/taipei-flute-teacher-guide/cover.png" alt="家長和孩子一起看著一支長笛、孩子好奇微笑的插畫" loading="lazy" width="1024" height="1024">
-        <div class="jc-body"><span class="jc-tag">給家長</span>
-          <h3>在台北幫孩子找長笛老師，這 5 件事比學歷重要</h3>
-          <p>名單很長，判斷標準卻很少。互動、通勤、氣息教法、旁聽與檢定經驗，一件一件看。</p></div>
-      </a>
-      <a class="jcard" href="blog/choosing-first-instrument.html">
-        <img src="assets/blog/choosing-first-instrument/cover.png" alt="家長和孩子一起在鋼琴與長笛之間挑選樂器的溫暖插畫" loading="lazy" width="1024" height="1024">
-        <div class="jc-body"><span class="jc-tag">給家長</span>
-          <h3>怎麼幫孩子挑第一個樂器？鋼琴與長笛的特性比較</h3>
-          <p>第一個樂器選鋼琴還是長笛？從年齡、體格與個性，聊聊怎麼挑對入門樂器。</p></div>
-      </a>
-      <a class="jcard" href="blog/adult-beginner-never-too-late.html">
-        <img src="assets/blog/adult-beginner-never-too-late/cover.png" alt="成人放鬆地在家彈鋼琴、享受音樂的插畫" loading="lazy" width="1024" height="1024">
-        <div class="jc-body"><span class="jc-tag">給成人學習者</span>
-          <h3>成人零基礎學音樂會太晚嗎？關於年齡的迷思</h3>
-          <p>「我這年紀還能學樂器嗎？」聊聊成人學音樂的優勢與常見迷思。</p></div>
-      </a>
-    </div>
-    <div class="journal-more"><a href="blog/" class="btn btn-gold">看更多文章</a></div>
   </div>
 </section>
 
