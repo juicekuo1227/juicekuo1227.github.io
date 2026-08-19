@@ -131,7 +131,7 @@ nav{position:sticky;top:0;z-index:50;background:rgba(247,243,234,.9);backdrop-fi
 .results{padding:clamp(3.5rem,8vw,6rem) 0;border-block:1px solid var(--line);background:var(--paper)}
 .results .sub{text-align:center;color:var(--ink-soft);font-size:.95rem;margin-top:.6rem}
 .res-h{font-family:var(--serif);font-weight:500;font-size:clamp(1.2rem,2.2vw,1.5rem);letter-spacing:.05em;text-align:center}
-.res-videos{background:var(--ink);color:var(--ivory);border-radius:24px;padding:clamp(2rem,4vw,3rem) clamp(1.2rem,3vw,2.6rem)}
+.res-videos{background:var(--ink);color:var(--ivory);border-radius:0;padding:clamp(2rem,4vw,3rem) clamp(1.2rem,3vw,2.6rem);box-shadow:0 0 0 100vmax var(--ink);clip-path:inset(0 -100vmax)}
 .res-videos .res-h{color:var(--ivory)}
 .res-sub{text-align:center;color:#c8bca6;font-size:.9rem;margin-top:.5rem}
 .res-sub a{color:var(--gold);text-decoration:underline;text-underline-offset:3px}
@@ -145,7 +145,11 @@ nav{position:sticky;top:0;z-index:50;background:rgba(247,243,234,.9);backdrop-fi
 .aw-top{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 .aw-title{font-family:var(--serif);font-weight:500;font-size:clamp(1.05rem,2vw,1.2rem);letter-spacing:.05em}
 .aw-toggle{display:flex;align-items:center;gap:.6rem;font-size:.84rem;letter-spacing:.04em;color:var(--gold-deep);transition:color .25s}
+.aw-label-close{display:none}
+.res-awards[open] .aw-label-open{display:none}
+.res-awards[open] .aw-label-close{display:inline}
 .res-awards>summary:hover .aw-toggle{color:var(--ink)}
+.res-awards>summary:focus-visible{outline:2px solid var(--gold);outline-offset:6px;border-radius:8px}
 .aw-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem;margin-top:1.5rem}
 .aw-stat{text-align:center;padding:.4rem .3rem;border-left:1px solid var(--line)}
 .aw-stat:first-child{border-left:none}
@@ -162,13 +166,15 @@ nav{position:sticky;top:0;z-index:50;background:rgba(247,243,234,.9);backdrop-fi
 .vid:hover .play span,.vid:focus-visible .play span{background:var(--gold)}
 .vid:hover .play svg,.vid:focus-visible .play svg{color:var(--ink)}
 .vid .play svg{width:18px;height:18px;color:var(--gold);margin-left:2px}
-.vid .t{font-family:var(--serif);font-weight:500;font-size:1rem;margin-top:1rem;letter-spacing:.02em}
+.vid .t{font-family:var(--serif);font-weight:500;font-size:1rem;line-height:1.7;min-height:3.4em;margin-top:1rem;letter-spacing:.02em}
 .vid .p{font-family:var(--display);font-style:italic;color:var(--gold);font-size:1rem;margin-top:.2rem}
 
 .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
 .gallery .cell{display:block;transition:.3s;cursor:pointer}
 .gallery .cell:hover{opacity:.88}
 .gallery .cell img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:10px}
+.gallery .cell.closing{grid-column:1/-1}
+.gallery .cell.closing img{aspect-ratio:auto}
 
 .award-cols{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(1.5rem,2.5vw,2.4rem)}
 .award-card h3{font-family:var(--serif);font-weight:500;font-size:1.25rem;text-align:left;letter-spacing:.08em;line-height:1.4;min-height:2.6em;display:flex;align-items:center;justify-content:flex-start;padding-bottom:1rem;margin-bottom:1.2rem;border-bottom:1px solid var(--gold);color:var(--wine)}
@@ -293,6 +299,8 @@ footer small{color:#a89878;letter-spacing:.08em}
 }
 @media(max-width:600px){
   .video-grid{grid-template-columns:1fr 1fr;gap:1rem}
+  .aw-top{display:block}
+  .aw-toggle{width:100%;justify-content:space-between;min-height:44px;margin-top:1rem;padding:.7rem .9rem;border:1px solid var(--gold);border-radius:10px;background:var(--paper);font-size:.9rem}
   .hero .loc{font-size:.75rem;letter-spacing:.08em;gap:.6rem}
   .hero .loc::before,.hero .loc::after{width:20px}
   .hero h1 .zh{letter-spacing:.12em}
@@ -304,6 +312,7 @@ footer small{color:#a89878;letter-spacing:.08em}
   .hero h1{font-size:clamp(1.75rem,8vw,2.1rem)}
   .hero h1 .zh{letter-spacing:.08em}
   .video-grid{grid-template-columns:1fr}
+  .vid .t{min-height:0}
   .gallery{grid-template-columns:repeat(2,1fr)}
   .sit{padding:1.5rem 1.3rem}
   .sit .num{font-size:1.75rem}
@@ -316,9 +325,9 @@ footer small{color:#a89878;letter-spacing:.08em}
   <div class="wrap nav-in">
     <a href="#top" class="logo"><span class="em">♪</span> <span><b>TingTing</b> Music</span></a>
     <div class="nav-links">
-      <a href="#teacher">師資介紹</a>
       <a href="#courses">課程</a>
       <a href="#results">學生成果</a>
+      <a href="#teacher">師資介紹</a>
       <a href="blog/">Aria 老師碎碎念</a>
       <a href="#faq">常見問題</a>
     </div>
@@ -347,24 +356,9 @@ footer small{color:#a89878;letter-spacing:.08em}
 
 <div class="divider-staff"><span>♩</span><span>♪</span><span>♫</span><span>♬</span><span>♭</span></div>
 
-<section class="teacher" id="teacher">
-  <div class="wrap">
-    <div class="sec-head"><div class="kicker"><span>About</span></div><h2 class="sec-title">師資介紹</h2></div>
-    <div class="teacher-grid">
-      <div class="portrait-wrap"><img src="assets/aria-kuo-flute-teacher.png" alt="郭庭羽 Aria Kuo 長笛・鋼琴教師師資照" width="500" height="500" loading="lazy"></div>
-      <div>
-        <div class="name" id="t-name"></div>
-        <div class="role" id="t-role"></div>
-        <div class="bio" id="t-bio"></div>
-        <ul class="cred" id="t-cred"></ul>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="courses" id="courses">
   <div class="wrap">
-    <div class="sec-head"><div class="kicker"><span>Start Here</span></div><h2 class="sec-title">你的孩子是哪一種？</h2>
+    <div class="sec-head"><div class="kicker"><span>Start Here</span></div><h2 class="sec-title">你 / 你的孩子是哪一種？</h2>
       <p class="sub">長笛與鋼琴一對一，從幼兒啟蒙到成人零基礎。先找到最接近你現在狀況的那一格 —— 如果是為自己來的，最後一格是你。</p>
     </div>
     <div class="situations" id="situations"></div>
@@ -391,13 +385,28 @@ footer small{color:#a89878;letter-spacing:.08em}
 
     <details class="res-awards" id="awards">
       <summary>
-        <div class="aw-top"><span class="aw-title">檢定、比賽與音樂班錄取紀錄</span><span class="aw-toggle">展開全部 <span id="award-count"></span><span class="qi"></span></span></div>
+        <div class="aw-top"><span class="aw-title">檢定、比賽與音樂班錄取紀錄</span><span class="aw-toggle"><span class="aw-label-open">點擊展開 <span id="award-count"></span>完整紀錄</span><span class="aw-label-close">收起完整紀錄</span><span class="qi" aria-hidden="true"></span></span></div>
         <div class="aw-stats" id="award-stats"></div>
       </summary>
       <div class="award-cols" id="award-cols"></div>
     </details>
 
     <div class="res-cta"><a href="#contact" class="btn btn-solid" data-cta="results" data-lead-source="mid2">先聊聊你的狀況</a></div>
+  </div>
+</section>
+
+<section class="teacher" id="teacher">
+  <div class="wrap">
+    <div class="sec-head"><div class="kicker"><span>About</span></div><h2 class="sec-title">師資介紹</h2></div>
+    <div class="teacher-grid">
+      <div class="portrait-wrap"><img src="assets/aria-kuo-flute-teacher.png" alt="郭庭羽 Aria Kuo 長笛・鋼琴教師師資照" width="500" height="500" loading="lazy"></div>
+      <div>
+        <div class="name" id="t-name"></div>
+        <div class="role" id="t-role"></div>
+        <div class="bio" id="t-bio"></div>
+        <ul class="cred" id="t-cred"></ul>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -590,7 +599,7 @@ const S = {
     { title: "威尼斯狂歡節", performer: "Daphne", id: "k5kHF68hHME" }
   ],
   recitalTitle: "2025 郭老師音樂發表會",
-  recitalCount: 12,
+  recitalPhotos: [11,2,3,4,5,6,7,8,9,10],
   awards: {
     "ABRSM 英國皇家音樂檢定": [
       "黃*安 - 鋼琴三級榮獲優秀",
@@ -601,6 +610,7 @@ const S = {
       "黃*恩 - 鋼琴三級榮獲優良",
       "黃*安 - 鋼琴二級榮獲優良",
       "林*恩 - 長笛二級榮獲優良",
+      "林*芸 - 長笛二級榮獲優良",
       "紀*怡 - 長笛三級榮獲優良"
     ],
     "Yamaha 音樂檢定": [
@@ -657,7 +667,7 @@ document.getElementById('t-cred').innerHTML=S.teacher.credentials.map((c,i)=>`<l
 document.getElementById('situations').innerHTML=S.situations.map((s,i)=>`<article class="sit"><div class="num">${roman[i]}</div><h3>${s.title}</h3><p class="said">「${s.said}」</p>${s.body.map(b=>`<p${b.c?` class="${b.c}"`:''}>${b.t}</p>`).join('')}<div class="go"><a class="to" href="#contact" data-situation="${s.key}" data-situation-target="contact" data-lead-source="mid1">→ ${s.to}</a><a class="read" href="${s.read.href}" data-situation="${s.key}" data-situation-target="read">${s.read.text}</a></div></article>`).join('');
 document.getElementById('video-grid').innerHTML=S.videos.map(v=>`<button class="vid" type="button" data-video="${v.id}" data-title="${v.title}" data-performer="演出者：${v.performer}"><div class="thumb"><img src="https://i.ytimg.com/vi/${v.id}/hqdefault.jpg" alt="${v.title} 影片縮圖" loading="lazy"><div class="play"><span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></div></div><div class="t">${v.title}</div><div class="p">演出者：${v.performer}</div></button>`).join('');
 document.getElementById('recital-title').textContent=S.recitalTitle;
-document.getElementById('gallery').innerHTML=Array.from({length:S.recitalCount},(_,i)=>{const n=pad2(i+1);return `<a class="cell" href="assets/gallery-${n}.jpg" data-full="assets/gallery-${n}.jpg" aria-label="2025 發表會相片 ${i+1}"><img src="assets/thumb-${n}.jpg" alt="2025 發表會相片 ${i+1}" loading="lazy"></a>`;}).join('');
+document.getElementById('gallery').innerHTML=S.recitalPhotos.map((photo,i)=>{const n=pad2(photo);const src='assets/'+(i===0?'gallery-':'thumb-')+n+'.jpg';return `<a class="cell${i===0?' closing':''}" href="assets/gallery-${n}.jpg" data-full="assets/gallery-${n}.jpg" aria-label="2025 發表會相片 ${i+1}"><img src="${src}" alt="2025 發表會相片 ${i+1}" loading="lazy"></a>`;}).join('');
 const fmtAward=k=>{const m=k.match(/^([A-Za-z]+)\s+(.+)$/);return m?`${m[1]} <span class="h3-zh">${m[2]}</span>`:k;};
 document.getElementById('award-cols').innerHTML=Object.entries(S.awards).map(([k,arr])=>`<div class="award-card"><h3>${fmtAward(k)}</h3><ul>${arr.map(a=>`<li>${a}</li>`).join('')}</ul></div>`).join('');
 document.getElementById('award-count').textContent=Object.values(S.awards).reduce((n,a)=>n+a.length,0)+' 筆';
