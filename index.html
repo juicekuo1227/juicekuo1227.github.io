@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-home-analytics>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -335,7 +335,7 @@ footer small{color:#a89878;letter-spacing:.08em}
     <div class="rule"></div>
     <p class="intro">從幼兒啟蒙、成人零基礎到 ABRSM 檢定，<em>每個學生的教材和進度都是單獨排的</em>。學得久，比學得快重要。</p>
     <div class="hero-cta">
-      <a href="#contact" class="btn btn-solid" data-cta="hero">先聊聊你的狀況</a>
+      <a href="#contact" class="btn btn-solid" data-cta="hero" data-lead-source="hero">先聊聊你的狀況</a>
       <a href="#courses" class="btn btn-gold">看看你是哪一種</a>
     </div>
   </div>
@@ -368,7 +368,7 @@ footer small{color:#a89878;letter-spacing:.08em}
       <p class="sub">長笛與鋼琴一對一，從幼兒啟蒙到成人零基礎。先找到最接近你現在狀況的那一格 —— 如果是為自己來的，最後一格是你。</p>
     </div>
     <div class="situations" id="situations"></div>
-    <div class="sit-cta"><a href="#contact" class="btn btn-solid" data-cta="situations">先聊聊你的狀況</a></div>
+    <div class="sit-cta"><a href="#contact" class="btn btn-solid" data-cta="situations" data-lead-source="mid1">先聊聊你的狀況</a></div>
   </div>
 </section>
 
@@ -397,7 +397,7 @@ footer small{color:#a89878;letter-spacing:.08em}
       <div class="award-cols" id="award-cols"></div>
     </details>
 
-    <div class="res-cta"><a href="#contact" class="btn btn-solid" data-cta="results">先聊聊你的狀況</a></div>
+    <div class="res-cta"><a href="#contact" class="btn btn-solid" data-cta="results" data-lead-source="mid2">先聊聊你的狀況</a></div>
   </div>
 </section>
 
@@ -654,7 +654,7 @@ document.getElementById('t-name').innerHTML=`${S.teacher.name}<em>${S.teacher.na
 document.getElementById('t-role').textContent=S.teacher.role;
 document.getElementById('t-bio').innerHTML=S.teacher.bio.map(p=>`<p>${p}</p>`).join('');
 document.getElementById('t-cred').innerHTML=S.teacher.credentials.map((c,i)=>`<li><span class="rn">${roman[i]||'•'}</span><span>${c}</span></li>`).join('');
-document.getElementById('situations').innerHTML=S.situations.map((s,i)=>`<article class="sit"><div class="num">${roman[i]}</div><h3>${s.title}</h3><p class="said">「${s.said}」</p>${s.body.map(b=>`<p${b.c?` class="${b.c}"`:''}>${b.t}</p>`).join('')}<div class="go"><a class="to" href="#contact" data-situation="${s.key}" data-situation-target="contact">→ ${s.to}</a><a class="read" href="${s.read.href}" data-situation="${s.key}" data-situation-target="read">${s.read.text}</a></div></article>`).join('');
+document.getElementById('situations').innerHTML=S.situations.map((s,i)=>`<article class="sit"><div class="num">${roman[i]}</div><h3>${s.title}</h3><p class="said">「${s.said}」</p>${s.body.map(b=>`<p${b.c?` class="${b.c}"`:''}>${b.t}</p>`).join('')}<div class="go"><a class="to" href="#contact" data-situation="${s.key}" data-situation-target="contact" data-lead-source="mid1">→ ${s.to}</a><a class="read" href="${s.read.href}" data-situation="${s.key}" data-situation-target="read">${s.read.text}</a></div></article>`).join('');
 document.getElementById('video-grid').innerHTML=S.videos.map(v=>`<button class="vid" type="button" data-video="${v.id}" data-title="${v.title}" data-performer="演出者：${v.performer}"><div class="thumb"><img src="https://i.ytimg.com/vi/${v.id}/hqdefault.jpg" alt="${v.title} 影片縮圖" loading="lazy"><div class="play"><span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></div></div><div class="t">${v.title}</div><div class="p">演出者：${v.performer}</div></button>`).join('');
 document.getElementById('recital-title').textContent=S.recitalTitle;
 document.getElementById('gallery').innerHTML=Array.from({length:S.recitalCount},(_,i)=>{const n=pad2(i+1);return `<a class="cell" href="assets/gallery-${n}.jpg" data-full="assets/gallery-${n}.jpg" aria-label="2025 發表會相片 ${i+1}"><img src="assets/thumb-${n}.jpg" alt="2025 發表會相片 ${i+1}" loading="lazy"></a>`;}).join('');
@@ -669,26 +669,6 @@ const cl=document.getElementById('c-line');cl.querySelector('.cval').textContent
 const ci=document.getElementById('c-ig');ci.querySelector('.cval').textContent='@'+S.contact.ig;ci.href='https://www.instagram.com/'+S.contact.ig+'/';
 document.getElementById('year').textContent=new Date().getFullYear();
 
-/* ───── 轉換追蹤:Line / IG 點擊 ───── */
-document.addEventListener('click',function(e){
-  var a=e.target.closest('a');
-  if(!a||!window.gtag)return;
-  var href=a.getAttribute('href')||'';
-  /* 情境入口:知道進來的是哪一種訪客 */
-  var sit=a.getAttribute('data-situation');
-  if(sit){
-    gtag('event','select_situation',{situation:sit,target:a.getAttribute('data-situation-target')||''});
-  }else if(a.getAttribute('data-cta')){
-    gtag('event','select_situation',{situation:'none',target:a.getAttribute('data-cta')});
-  }
-  var inFooter=!!a.closest('footer');
-  if(href.indexOf('line.me')>-1){
-    gtag('event','generate_lead',{method:'line',link_location:inFooter?'footer':'contact'});
-  }else if(href.indexOf('instagram.com')>-1){
-    gtag('event','contact_click',{method:'instagram',link_location:inFooter?'footer':'contact'});
-  }
-});
-
 /* ───── 從外部連到 #awards 時自動展開（部落格文章有連過來） ───── */
 (function(){
   var aw=document.getElementById('awards'); if(!aw)return;
@@ -696,14 +676,6 @@ document.addEventListener('click',function(e){
   openIfTargeted();
   window.addEventListener('hashchange',openIfTargeted);
 })();
-
-/* ───── FAQ 展開追蹤:知道家長真正卡在哪一題 ───── */
-document.querySelectorAll('.faq-item').forEach(function(d){
-  d.addEventListener('toggle',function(){
-    if(!d.open||!window.gtag)return;
-    gtag('event','faq_open',{question:d.querySelector('.qt').textContent});
-  });
-});
 
 /* ───── 手機選單 ───── */
 (function(){
@@ -872,5 +844,6 @@ document.querySelectorAll('.faq-item').forEach(function(d){
   ]
 }
 </script>
+<script src="assets/analytics.js"></script>
 </body>
 </html>
