@@ -295,6 +295,8 @@ footer small{color:#a89878;letter-spacing:.08em}
   .aw-stat:nth-child(3){border-left:none}
   .journal-grid{grid-template-columns:1fr;gap:1.4rem}
   .gallery{grid-template-columns:repeat(2,1fr)}
+  .gallery .cell:last-child{grid-column:1/-1}
+  .gallery .cell:last-child img{aspect-ratio:auto}
   .situations{grid-template-columns:1fr;gap:1.2rem}
 }
 @media(max-width:600px){
@@ -667,7 +669,7 @@ document.getElementById('t-cred').innerHTML=S.teacher.credentials.map((c,i)=>`<l
 document.getElementById('situations').innerHTML=S.situations.map((s,i)=>`<article class="sit"><div class="num">${roman[i]}</div><h3>${s.title}</h3><p class="said">「${s.said}」</p>${s.body.map(b=>`<p${b.c?` class="${b.c}"`:''}>${b.t}</p>`).join('')}<div class="go"><a class="to" href="#contact" data-situation="${s.key}" data-situation-target="contact" data-lead-source="mid1">→ ${s.to}</a><a class="read" href="${s.read.href}" data-situation="${s.key}" data-situation-target="read">${s.read.text}</a></div></article>`).join('');
 document.getElementById('video-grid').innerHTML=S.videos.map(v=>`<button class="vid" type="button" data-video="${v.id}" data-title="${v.title}" data-performer="演出者：${v.performer}"><div class="thumb"><img src="https://i.ytimg.com/vi/${v.id}/hqdefault.jpg" alt="${v.title} 影片縮圖" loading="lazy"><div class="play"><span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></div></div><div class="t">${v.title}</div><div class="p">演出者：${v.performer}</div></button>`).join('');
 document.getElementById('recital-title').textContent=S.recitalTitle;
-document.getElementById('gallery').innerHTML=S.recitalPhotos.map((photo,i)=>{const n=pad2(photo);const src='assets/'+(i===0?'gallery-':'thumb-')+n+'.jpg';return `<a class="cell${i===0?' closing':''}" href="assets/gallery-${n}.jpg" data-full="assets/gallery-${n}.jpg" aria-label="2025 發表會相片 ${i+1}"><img src="${src}" alt="2025 發表會相片 ${i+1}" loading="lazy"></a>`;}).join('');
+document.getElementById('gallery').innerHTML=S.recitalPhotos.map((photo,i,photos)=>{const n=pad2(photo);const wide=i===0||i===photos.length-1;const src='assets/'+(wide?'gallery-':'thumb-')+n+'.jpg';return `<a class="cell${i===0?' closing':''}" href="assets/gallery-${n}.jpg" data-full="assets/gallery-${n}.jpg" aria-label="2025 發表會相片 ${i+1}"><img src="${src}" alt="2025 發表會相片 ${i+1}" loading="lazy"></a>`;}).join('');
 const fmtAward=k=>{const m=k.match(/^([A-Za-z]+)\s+(.+)$/);return m?`${m[1]} <span class="h3-zh">${m[2]}</span>`:k;};
 document.getElementById('award-cols').innerHTML=Object.entries(S.awards).map(([k,arr])=>`<div class="award-card"><h3>${fmtAward(k)}</h3><ul>${arr.map(a=>`<li>${a}</li>`).join('')}</ul></div>`).join('');
 document.getElementById('award-count').textContent=Object.values(S.awards).reduce((n,a)=>n+a.length,0)+' 筆';

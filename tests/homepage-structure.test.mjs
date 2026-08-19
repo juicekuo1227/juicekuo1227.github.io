@@ -52,7 +52,14 @@ test('recital gallery opens with a wide photo followed by nine tiles', () => {
   assert.match(homepage, /\.gallery \.cell\.closing img\{aspect-ratio:auto\}/);
 });
 
-test('recital gallery renders valid thumbnail paths and a landscape closing source', () => {
+test('two-column recital gallery uses a full-width landscape final row', () => {
+  const twoColumnCss = homepage.match(/@media\(max-width:860px\)\{([\s\S]*?)\n\}\n@media\(max-width:600px\)/)?.[1] || '';
+
+  assert.match(twoColumnCss, /\.gallery \.cell:last-child\{grid-column:1\/-1\}/);
+  assert.match(twoColumnCss, /\.gallery \.cell:last-child img\{aspect-ratio:auto\}/);
+});
+
+test('recital gallery renders valid thumbnail paths and landscape bookends', () => {
   const recitalPhotos = JSON.parse(homepage.match(/recitalPhotos:\s*(\[[^\]]+\])/)?.[1] || '[]');
   const renderer = homepage.match(/document\.getElementById\('gallery'\)\.innerHTML=[\s\S]*?\.join\(''\);/)?.[0] || '';
   const gallery = { innerHTML: '' };
@@ -75,6 +82,6 @@ test('recital gallery renders valid thumbnail paths and a landscape closing sour
     'assets/thumb-07.jpg',
     'assets/thumb-08.jpg',
     'assets/thumb-09.jpg',
-    'assets/thumb-10.jpg',
+    'assets/gallery-10.jpg',
   ]);
 });
