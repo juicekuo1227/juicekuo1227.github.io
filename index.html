@@ -110,16 +110,24 @@ nav{position:sticky;top:0;z-index:50;background:rgba(247,243,234,.9);backdrop-fi
 .cred li{display:flex;gap:1.2rem;padding:.95rem 0;border-bottom:1px solid var(--line);font-size:.95rem;align-items:baseline}
 .cred li .rn{font-family:var(--display);font-style:italic;color:var(--gold);font-size:1.2rem;min-width:2ch}
 
-/* courses — programme */
+/* courses — 情境入口 */
 .courses{padding:clamp(3.5rem,8vw,6rem) 0}
-.programme{border-top:1px solid var(--ink)}
-.movement{display:grid;grid-template-columns:auto 1fr auto;gap:clamp(1rem,3vw,2.5rem);align-items:baseline;padding:1.8rem 0;border-bottom:1px solid var(--line);transition:.3s}
-.movement:hover{background:var(--paper);padding-inline:1.2rem}
-.movement .num{font-family:var(--display);font-style:italic;font-size:2.2rem;color:var(--gold);line-height:1}
-.movement .body h3{font-family:var(--serif);font-weight:500;font-size:1.4rem;letter-spacing:.04em;margin-bottom:.4rem}
-.movement .body p{color:var(--ink-soft);font-size:.96rem;max-width:60ch}
-.movement .ic{color:var(--gold-deep)}
-.movement .ic svg{width:30px;height:30px}
+.courses .sub{text-align:center;color:var(--ink-soft);font-size:.95rem;margin-top:.6rem;max-width:46em;margin-inline:auto}
+.situations{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(1.2rem,2.4vw,1.9rem)}
+.sit{display:flex;flex-direction:column;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:clamp(1.6rem,3vw,2.2rem);transition:transform .3s,box-shadow .3s,border-color .3s}
+.sit:hover{transform:translateY(-3px);border-color:var(--gold);box-shadow:0 12px 30px rgba(0,0,0,.06)}
+.sit .num{font-family:var(--display);font-style:italic;font-size:2rem;color:var(--gold);line-height:1;margin-bottom:.5rem}
+.sit h3{font-family:var(--serif);font-weight:500;font-size:1.22rem;letter-spacing:.04em;line-height:1.6;margin-bottom:1.1rem}
+.sit .said{font-family:var(--quote);font-size:1rem;line-height:1.9;color:var(--gold-deep);border-left:2px solid var(--gold);padding-left:1rem;margin-bottom:1.2rem}
+.sit p{color:var(--ink-soft);font-size:.95rem;margin-bottom:.8rem}
+.sit p.punch{font-family:var(--serif);font-weight:500;font-size:1.2rem;color:var(--ink);letter-spacing:.04em}
+.sit p a{color:var(--gold-deep);text-decoration:underline;text-underline-offset:.2em;text-decoration-thickness:1px}
+.sit .go{margin-top:auto;padding-top:1.3rem;display:flex;flex-direction:column;align-items:flex-start;gap:.6rem}
+.sit .go .to{font-family:var(--serif);font-weight:500;font-size:1.02rem;letter-spacing:.04em;color:var(--gold-deep);transition:.25s}
+.sit .go .to:hover{color:var(--ink)}
+.sit .go .read{font-size:.84rem;color:var(--ink-soft);text-decoration:underline;text-decoration-color:rgba(176,141,79,.45);text-underline-offset:4px;transition:.25s}
+.sit .go .read:hover{color:var(--gold-deep)}
+.sit-cta{text-align:center;margin-top:clamp(2.2rem,4vw,3rem)}
 
 /* videos */
 .videos{background:var(--ink);color:var(--ivory);padding:clamp(3.5rem,8vw,6rem) 0}
@@ -251,8 +259,7 @@ footer small{color:#a89878;letter-spacing:.08em}
   .award-cols{grid-template-columns:1fr;gap:1.2rem;padding-inline:7vw}
   .journal-grid{grid-template-columns:1fr;gap:1.4rem}
   .gallery{grid-template-columns:repeat(2,1fr)}
-  .movement{grid-template-columns:auto 1fr;gap:1.2rem}
-  .movement .ic{display:none}
+  .situations{grid-template-columns:1fr;gap:1.2rem}
 }
 @media(max-width:600px){
   .video-grid{grid-template-columns:1fr 1fr;gap:1rem}
@@ -266,8 +273,8 @@ footer small{color:#a89878;letter-spacing:.08em}
   .hero .lead{font-size:1.3rem}
   .video-grid{grid-template-columns:1fr}
   .gallery{grid-template-columns:repeat(2,1fr)}
-  .movement{padding:1.4rem 0}
-  .movement .num{font-size:1.8rem}
+  .sit{padding:1.5rem 1.3rem}
+  .sit .num{font-size:1.75rem}
 }
 </style>
 </head>
@@ -326,9 +333,12 @@ footer small{color:#a89878;letter-spacing:.08em}
 </section>
 
 <section class="courses" id="courses">
-  <div class="narrow">
-    <div class="sec-head"><div class="kicker"><span>Programme</span></div><h2 class="sec-title">長笛 / 鋼琴教學</h2></div>
-    <div class="programme" id="programme"></div>
+  <div class="wrap">
+    <div class="sec-head"><div class="kicker"><span>Start Here</span></div><h2 class="sec-title">你的孩子是哪一種？</h2>
+      <p class="sub">長笛與鋼琴一對一，從幼兒啟蒙到成人零基礎。先找到最接近你現在狀況的那一格 —— 如果是為自己來的，最後一格是你。</p>
+    </div>
+    <div class="situations" id="situations"></div>
+    <div class="sit-cta"><a href="#contact" class="btn btn-solid" data-cta="situations">先聊聊孩子的狀況</a></div>
   </div>
 </section>
 
@@ -496,12 +506,51 @@ const S = {
     ]
   },
   tags: ["台北中山區・行天宮站", "長笛教學", "鋼琴教學", "音樂教材設計", "上課記錄"],
-  courses: [
-    { title: "幼兒音樂啟蒙", icon: "book", desc: "以繪畫、說故事及遊戲的方式，從中培養孩子的專注力與美感，並建立正確的演奏姿勢，讓音樂啟蒙充滿樂趣。" },
-    { title: "已有基礎的學生", icon: "note", desc: "釐清個人既有的盲點，幫助學生在自己的步伐上更清楚地找到方法、重新打底，無論是想精進、考音樂班或師資的學生都適合。" },
-    { title: "成人初學", icon: "piano", desc: "可依您想學習的方向安排教學內容；針對工作繁忙的成人，會規劃輕鬆無壓力的進度，配合您的步調與需求。" },
-    { title: "長笛團班", icon: "flute", desc: "歡迎 2～4 位程度相近的學生一起上課，享受合奏的默契與樂趣，培養團隊演出的舞台經驗。" },
-    { title: "音樂檢定、比賽", icon: "trophy", desc: "ABRSM 英國皇家音樂檢定、Yamaha 音樂檢定，以及各項音樂比賽的指導與陪伴。" }
+  situations: [
+    {
+      key: "beginner",
+      title: "第一次接觸音樂",
+      said: "不知道孩子到底適不適合學琴。",
+      body: [
+        { t: "不用急著買琴。", c: "punch" },
+        { t: "先看孩子對聲音、節奏和樂器的反應 —— 也不用一開始就決定要不要考級。" }
+      ],
+      to: "兒童音樂啟蒙",
+      read: { text: "鋼琴和長笛，第一個樂器怎麼挑？", href: "blog/choosing-first-instrument.html" }
+    },
+    {
+      key: "stuck",
+      title: "已經在學，但是越來越不想練",
+      said: "上課很開心，可是一回家就完全不碰琴。",
+      body: [
+        { t: "多半不是他懶。", c: "punch" },
+        { t: "一起重新調整曲目、練習方式與目標，讓孩子重新感受到自己真的在進步。" }
+      ],
+      to: "兒童鋼琴 / 長笛",
+      read: { text: "建立練琴習慣的 5 個方法", href: "blog/kids-wont-practice.html" }
+    },
+    {
+      key: "exam",
+      title: "有檢定或表演的目標",
+      said: "想給孩子一個努力的方向，但不確定該不該考。",
+      body: [
+        { t: "不一定要考。", c: "punch" },
+        { t: "檢定不是為了名次，是一把尺 —— 先看孩子現在在哪裡，再一起決定要不要考、什麼時候考。" }
+      ],
+      to: "ABRSM 檢定與表演準備",
+      read: { text: "看看學生的演出與獲獎紀錄", href: "#videos" }
+    },
+    {
+      key: "adult",
+      title: "我是成人，只是一直很想學",
+      said: "完全不會看五線譜，現在開始會不會太晚？",
+      body: [
+        { t: "不會。", c: "punch" },
+        { t: "五線譜不用先學會再來。我有不少從零基礎開始的成人學生，多半工作忙，進度都是配合你排的。" }
+      ],
+      to: "成人零基礎課程",
+      read: { text: "完全看不懂五線譜，可以從哪裡開始？", href: "blog/reading-sheet-music-start.html" }
+    }
   ],
   videos: [
     { title: "Martin Cuellar : Toccata", performer: "Kana", id: "wnEmoi3gQ50" },
@@ -553,13 +602,6 @@ const S = {
   }
 };
 
-const icons={
- book:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 6c-2-1.5-5-1.5-7 0v12c2-1.5 5-1.5 7 0 2-1.5 5-1.5 7 0V6c-2-1.5-5-1.5-7 0Z"/><path d="M12 6v12"/></svg>',
- note:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="6" cy="18" r="2.5"/><circle cx="17" cy="16" r="2.5"/><path d="M8.5 18V5l11-2v13"/></svg>',
- piano:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M8 5v8M12 5v8M16 5v8M3 13h18"/></svg>',
- flute:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M3 14 19 4a2 2 0 0 1 2 3L7 18Z"/><circle cx="9" cy="13" r="1"/><circle cx="12" cy="11" r="1"/><circle cx="15" cy="9" r="1"/></svg>',
- trophy:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M7 4h10v5a5 5 0 0 1-10 0V4Z"/><path d="M7 6H4v1a3 3 0 0 0 3 3M17 6h3v1a3 3 0 0 1-3 3M9 19h6M12 14v5"/></svg>'
-};
 const roman=['I','II','III','IV','V'];
 const pad2=n=>String(n).padStart(2,'0');
 
@@ -569,7 +611,7 @@ document.getElementById('t-name').innerHTML=`${S.teacher.name}<em>${S.teacher.na
 document.getElementById('t-role').textContent=S.teacher.role;
 document.getElementById('t-bio').innerHTML=S.teacher.bio.map(p=>`<p>${p}</p>`).join('');
 document.getElementById('t-cred').innerHTML=S.teacher.credentials.map((c,i)=>`<li><span class="rn">${roman[i]||'•'}</span><span>${c}</span></li>`).join('');
-document.getElementById('programme').innerHTML=S.courses.map((c,i)=>`<div class="movement"><span class="num">${roman[i]}</span><div class="body"><h3>${c.title}</h3><p>${c.desc}</p></div><span class="ic">${icons[c.icon]}</span></div>`).join('');
+document.getElementById('situations').innerHTML=S.situations.map((s,i)=>`<article class="sit"><div class="num">${roman[i]}</div><h3>${s.title}</h3><p class="said">「${s.said}」</p>${s.body.map(b=>`<p${b.c?` class="${b.c}"`:''}>${b.t}</p>`).join('')}<div class="go"><a class="to" href="#contact" data-situation="${s.key}" data-situation-target="contact">→ ${s.to}</a><a class="read" href="${s.read.href}" data-situation="${s.key}" data-situation-target="read">${s.read.text}</a></div></article>`).join('');
 document.getElementById('video-grid').innerHTML=S.videos.map(v=>`<button class="vid" type="button" data-video="${v.id}" data-title="${v.title}" data-performer="演出者：${v.performer}"><div class="thumb"><img src="https://i.ytimg.com/vi/${v.id}/hqdefault.jpg" alt="${v.title} 影片縮圖" loading="lazy"><div class="play"><span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></div></div><div class="t">${v.title}</div><div class="p">演出者：${v.performer}</div></button>`).join('');
 document.getElementById('recital-title').textContent=S.recitalTitle;
 document.getElementById('gallery').innerHTML=Array.from({length:S.recitalCount},(_,i)=>{const n=pad2(i+1);return `<a class="cell" href="assets/gallery-${n}.jpg" data-full="assets/gallery-${n}.jpg" aria-label="2025 發表會相片 ${i+1}"><img src="assets/thumb-${n}.jpg" alt="2025 發表會相片 ${i+1}" loading="lazy"></a>`;}).join('');
@@ -599,6 +641,13 @@ document.addEventListener('click',function(e){
   var a=e.target.closest('a');
   if(!a||!window.gtag)return;
   var href=a.getAttribute('href')||'';
+  /* 情境入口:知道進來的是哪一種訪客 */
+  var sit=a.getAttribute('data-situation');
+  if(sit){
+    gtag('event','select_situation',{situation:sit,target:a.getAttribute('data-situation-target')||''});
+  }else if(a.getAttribute('data-cta')){
+    gtag('event','select_situation',{situation:'none',target:a.getAttribute('data-cta')});
+  }
   var inFooter=!!a.closest('footer');
   if(href.indexOf('line.me')>-1){
     gtag('event','generate_lead',{method:'line',link_location:inFooter?'footer':'contact'});
