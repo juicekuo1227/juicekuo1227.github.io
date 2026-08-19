@@ -11,6 +11,14 @@
 <meta property="og:description" content="建議換完上排門牙、約 8 歲以上。門牙是嘴型的支點，缺一顆就會漏氣。">
 <meta property="og:url" content="https://tingyumusic.com/blog/what-age-start-flute.html">
 <meta property="og:image" content="https://tingyumusic.com/assets/blog/what-age-start-flute/cover.png">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JE1G1W4X4V"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-JE1G1W4X4V');
+</script>
 <link rel="icon" href="../assets/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -138,6 +146,20 @@
   </article>
 </main>
 <footer>© <span id="y">2026</span> 聽聽音樂 TingTing Music ・ 郭庭羽 Aria Kuo</footer>
-<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+/* 文章 → 詢問:知道哪一篇真的帶來詢問 */
+document.addEventListener('click',function(e){
+  var a=e.target.closest('a'); if(!a||!window.gtag)return;
+  var href=a.getAttribute('href')||'';
+  var slug=location.pathname.split('/').pop().replace('.html','')||'index';
+  if(href.indexOf('line.me')>-1){
+    gtag('event','generate_lead',{method:'line',link_location:'blog',from_slug:slug});
+    gtag('event','blog_to_contact',{from_slug:slug,target:'line'});
+  }else if(href.indexOf('#courses')>-1){
+    gtag('event','blog_to_contact',{from_slug:slug,target:'situations'});
+  }
+});
+</script>
 </body>
 </html>
