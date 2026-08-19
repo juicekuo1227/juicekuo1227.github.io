@@ -110,7 +110,7 @@ nav（不動；「與我聯絡」保持右上）
  ⑦  家長怎麼說 —— 3~6 則 testimonial                        〔新增，待素材〕
  ⑧  常見問題 —— 精簡到 4 題                                  〔改寫既有 #faq〕
  ⑨  Aria 老師碎碎念 —— 3 張文章卡                            〔不動〕
- ⑩  第一次聯絡會發生什麼 + 聯絡方式 + 地圖                    〔改寫既有 #contact〕
+ ⑩  第一次聯絡會發生什麼 + 聯絡方式 + Google 地圖入口         〔改寫既有 #contact〕
 footer（不動）
 ```
 
@@ -121,6 +121,9 @@ footer（不動）
 - FAQ **不刪題，改為全部收摺 + 重排順序**（2026-08-19 定案，取代原本「精簡到 4 題」的做法）。
   理由：刪題會讓文字從頁面消失，而 `<details>` 收摺同時達成「壓縮高度」與「不流失任何文字」，
   DOM 內容完整保留，AI 摘要通道（既有實測：AI 摘要幾乎照抄本站文案）不受影響。
+- 地圖改採**直接開啟 Google 商家檔案的分享連結**，不使用內嵌地圖。免金鑰的嵌入網址實測受 Google
+  阻擋，且外連可讓家長直接查看商家介紹、路線與評論；正式連結為
+  `https://maps.app.goo.gl/opWMtUHCjpVVHfd46`。
 - 錨點 id 全部保留（`#teacher`／`#courses`／`#videos`／`#recital`／`#awards`／`#faq`／`#contact`），
   避免既有外部連結與 nav 失效。新區塊用新 id（`#situations`／`#method`／`#lesson`／`#voices`）。
 - `title`／`meta description`／`canonical`／Open Graph／`@graph` JSON-LD 的地區語意
@@ -441,16 +444,21 @@ footer（不動）
 
 | 事件 | 參數 | 回答什麼問題 |
 |---|---|---|
-| `select_situation` | `situation`（四種之一） | 來的是哪種家長？ |
-| `generate_lead` | `link_location`（hero / mid1 / mid2 / faq / contact / footer） | 家長在哪一段被說服？ |
-| `video_demo_play` | — | 教學 demo 有沒有被看？ |
+| `select_situation` ✅ 已上線 | `situation`（四種之一）+ `target`（contact / read） | 來的是哪種家長？ |
+| `generate_lead` ✅ 已上線 | `link_location`（hero / mid1 / mid2 / faq / contact / footer / blog） | 家長在哪一段被說服？ |
+| `video_demo_play` 🕓 待素材 | — | 教學 demo 有沒有被看？ |
 | `faq_open` ✅ 已上線 | `question` | **家長真正卡在哪一題**（對應 9.3 指標 5） |
-| `blog_to_contact` | `from_slug` | 文章到詢問的轉換 |
-| `scroll_depth` | 25/50/75/100 | 家長在哪裡流失？ |
+| `blog_to_contact` ✅ 已上線 | `from_slug` + `target`（line / situations） | 文章到詢問的轉換 |
+| `scroll_depth` ✅ 已上線 | `percent_scrolled`（25 / 50 / 75 / 100） | 家長在哪裡流失？ |
+
+**實作紀錄（2026-08-19）**：Hero、情境區、成果區與 FAQ 會保留本頁最後一個有效來源，只有真正點擊
+Line 時才送出 `generate_lead`；直接從聯絡區或 footer 點擊則分別記為 `contact`、`footer`。
+`select_situation` 只由四張情境卡觸發，不再讓一般 CTA 或地圖連結送出 `situation: none`。
+`scroll_depth` 透過共用 `assets/analytics.js` 載入首頁、部落格首頁與全部 9 篇文章，每個門檻每頁只送一次。
 
 ### 9.3 驗證指標（每月看一次，不看單日）
 
-1. 首頁 → Line 點擊率（目前無法分辨位置，改造後才有基準）
+1. 首頁 → Line 點擊率（可依 `link_location` 分辨 Hero／中段／FAQ／聯絡區／footer）
 2. 四個情境入口的分佈
 3. 文章 → 聯絡的點擊率
 4. **實際每月有效詢問數**（需 Aria 手動記錄，網站量不到）
@@ -466,14 +474,14 @@ footer（不動）
 |---|---|---|
 | 1 | ✅ **已完成 2026-08-19** —— Hero 改寫（B 版）+ 單一主 CTA + 地點上移 | 斷點 2、3 |
 | 2 | ✅ **已完成 2026-08-19** —— ②情境入口取代課程區（4 卡、金色羅馬數字） | 斷點 7 |
-| 3 | 中段 CTA ×2（情境區的那一顆 ✅ 已隨第 2 項上線，另一顆待⑥完成後補） | **斷點 1（最重要）** |
+| 3 | ✅ **已完成 2026-08-19** —— 中段 CTA ×2（情境區 + 學生成果區） | **斷點 1（最重要）** |
 | 4 | ③ Aria 怎麼教（先寫兩個有素材的方法） | 斷點 5 |
-| 5 | ⑥ 成果合併、獲獎收摺 | 斷點 6 |
+| 5 | ✅ **已完成 2026-08-19** —— ⑥ 成果合併、獲獎收摺並保留數字摘要 | 斷點 6 |
 | 6 | ✅ **已完成 2026-08-19** —— ⑧ FAQ 全部收摺 + 重排順序（7 題全留，`<details>`） | 斷點 10 |
 | 7a | ✅ **已完成 2026-08-19** —— 聯絡區重排：移除 Email 與 `mailto:` 表單，改為 Line（主）+ IG 兩張卡 | 斷點 8 |
-| 7b | 🕓 **保留中，待使用者決定** —— ⑩「第一次聯絡會發生什麼」三步驟區塊（已實作，未 commit） | 斷點 8 |
-| 7c | ⑩ 地圖嵌入 | 斷點 9 |
-| 8 | GA4 事件修正與新增 | 第 9 節 |
+| 7b | 🙈 **已實作、暫時隱藏 2026-08-19** —— ⑩「第一次聯絡會發生什麼」三步驟區塊保留在程式碼，待文案定案後再顯示 | 斷點 8 |
+| 7c | ✅ **已完成 2026-08-19** —— ⑩ Google 地圖入口（直接開啟聽聽音樂商家介紹） | 斷點 9 |
+| 8 | ✅ **已完成 2026-08-19** —— GA4 事件修正與新增（教學 Demo 尚無素材，`video_demo_play` 待影片上線時補） | 第 9 節 |
 | 9 | ✅ **已完成 2026-08-19** —— 5 篇文章統一結尾 CTA；GA4 與事件補進全部 10 個部落格檔案 | 第 8 節 |
 
 ### 第二批：需要 Aria 的素材
