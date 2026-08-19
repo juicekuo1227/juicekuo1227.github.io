@@ -163,11 +163,21 @@ nav{position:sticky;top:0;z-index:50;background:rgba(247,243,234,.9);backdrop-fi
 
 /* faq */
 .faq{background:var(--paper);padding:clamp(3.5rem,8vw,6rem) 0;border-block:1px solid var(--line)}
+.faq .sub{text-align:center;color:var(--ink-soft);font-size:.95rem;margin-top:.6rem}
 .faq-list{border-top:1px solid var(--ink)}
-.faq-item{padding:1.8rem 0;border-bottom:1px solid var(--line)}
-.faq-item .q{display:flex;gap:1rem;align-items:baseline;font-family:var(--serif);font-weight:500;font-size:1.25rem;letter-spacing:.04em;color:var(--ink)}
-.faq-item .q .qn{font-family:var(--display);font-style:italic;color:var(--gold);font-size:1.4rem;line-height:1;min-width:1.6ch}
-.faq-item .a{color:var(--ink-soft);font-size:.98rem;margin-top:.8rem;padding-left:calc(1.6ch + 1rem)}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-item>summary{display:flex;gap:1rem;align-items:baseline;padding:1.5rem 0;cursor:pointer;list-style:none;font-family:var(--serif);font-weight:500;font-size:1.18rem;letter-spacing:.04em;color:var(--ink);transition:color .25s}
+.faq-item>summary::-webkit-details-marker{display:none}
+.faq-item>summary::marker{content:""}
+.faq-item>summary:hover{color:var(--gold-deep)}
+.faq-item .qn{font-family:var(--display);font-style:italic;color:var(--gold);font-size:1.4rem;line-height:1;min-width:1.6ch;flex:none}
+.faq-item .qt{flex:1}
+.faq-item .qi{flex:none;position:relative;width:16px;height:16px;align-self:center}
+.faq-item .qi::before,.faq-item .qi::after{content:"";position:absolute;background:var(--gold);transition:transform .3s,opacity .3s}
+.faq-item .qi::before{left:0;top:7px;width:16px;height:1px}
+.faq-item .qi::after{left:7px;top:0;width:1px;height:16px}
+.faq-item[open] .qi::after{transform:rotate(90deg);opacity:0}
+.faq-item .a{color:var(--ink-soft);font-size:.98rem;padding:0 0 1.7rem calc(1.6ch + 1rem)}
 .faq-item .a a{color:var(--gold-deep);text-decoration:underline;text-underline-offset:.2em;text-decoration-thickness:1px}
 
 /* journal */
@@ -384,36 +394,38 @@ footer small{color:#a89878;letter-spacing:.08em}
 
 <section class="faq" id="faq">
   <div class="narrow">
-    <div class="sec-head"><div class="kicker"><span>FAQ</span></div><h2 class="sec-title">常見問題</h2></div>
+    <div class="sec-head"><div class="kicker"><span>FAQ</span></div><h2 class="sec-title">常見問題</h2>
+      <p class="sub">點開看答案。前面三題是最多人在決定前會卡住的。</p>
+    </div>
     <div class="faq-list">
-      <div class="faq-item">
-        <div class="q"><span class="qn">Q</span><span>幾歲可以開始學長笛 / 鋼琴？</span></div>
-        <p class="a">鋼琴大約 4 歲起、長笛則建議 8 歲以上（手指與肺活量發展較足夠）即可開始學習。每位孩子的發展節奏不同，幼兒會以繪畫、說故事與遊戲的方式啟蒙，先建立專注力、音感與正確姿勢，再循序進入正式演奏，歡迎先預約諮詢評估適合的開始時間。兩種樂器該怎麼挑，我在 <a href="blog/choosing-first-instrument.html">怎麼幫孩子挑第一個樂器？鋼琴與長笛的特性比較</a> 裡有更完整的比較。</p>
-      </div>
-      <div class="faq-item">
-        <div class="q"><span class="qn">Q</span><span>完全沒基礎的成人可以學嗎？</span></div>
-        <p class="a">當然可以。我有許多從零開始的成人學生，課程會依您的興趣與目標量身規劃，針對工作繁忙的成人安排輕鬆無壓力的進度，配合您的步調慢慢前進。無論是想圓夢、紓壓還是培養興趣，都很適合從現在開始。如果你心裡卡的是年紀，可以看看 <a href="blog/adult-beginner-never-too-late.html">成人零基礎學音樂會太晚嗎？關於年齡的迷思</a> 這篇。</p>
-      </div>
-      <div class="faq-item">
-        <div class="q"><span class="qn">Q</span><span>需要自備樂器嗎？學費怎麼計算？</span></div>
+      <details class="faq-item">
+        <summary><span class="qn">Q</span><span class="qt">需要自備樂器嗎？學費怎麼計算？</span><span class="qi"></span></summary>
         <p class="a">初期可以先不購入樂器，我會協助您依預算與需求挑選合適的長笛或安排鋼琴練習方式，等確定持續學習再添購即可。電鋼琴怎麼挑、租琴划不划算，我寫在 <a href="blog/beginner-gear-guide.html">初學要準備什麼？電鋼琴、租琴與基本配件怎麼選</a>。學費依課程長度、頻率與上課方式（一對一、團班、到府）而有不同，歡迎透過 Line 預約諮詢，依您的需求提供詳細報價。</p>
-      </div>
-      <div class="faq-item">
-        <div class="q"><span class="qn">Q</span><span>孩子上課很開心，回家卻不肯練琴，怎麼辦？</span></div>
-        <p class="a">這大概是家長問我最多的一題。多數時候不是孩子不想彈，而是「練半小時」這個目標太大、又沒有固定的時間點，於是每天都在討價還價。我的做法是把單位縮小 —— 改成「彈一小段給我聽」，再讓他自己挑一首這週想練的曲子。家長在旁邊當聽眾就好，先不要急著糾正音。更完整的五個方法，我寫在 <a href="blog/kids-wont-practice.html">孩子不肯練琴？幫他建立練琴習慣的 5 個方法</a>。</p>
-      </div>
-      <div class="faq-item">
-        <div class="q"><span class="qn">Q</span><span>學習音樂一定要參加比賽或檢定考嗎？</span></div>
-        <p class="a">其實不一定喔！這主要取決於每位學生的學習進度與狀態，以及孩子自己是否想參加。對學音樂的孩子來說，檢定與比賽最大的價值，在於提供一個明確的目標，讓他們願意為了達成它而主動練習；同時也像一把尺，幫助我們了解孩子目前的程度。在準備的過程中，更能看清楚哪些地方需要加強；而站上舞台所累積的臨場經驗與成就感，對孩子的成長同樣重要。因此我會依每位學生的狀況，和家長一起討論是否參加、以及何時參加。</p>
-      </div>
-      <div class="faq-item">
-        <div class="q"><span class="qn">Q</span><span>該怎麼挑長笛老師？</span></div>
-        <p class="a">除了學歷與演出經驗，我自己覺得更關鍵的是這幾件事：能不能先試上一堂看看互動、教室的距離撐不撐得住每週往返、氣息與吹奏姿勢怎麼教、家長能不能旁聽。這些決定的是孩子學不學得久，而不是學得快。更完整的判斷方式，我整理在 <a href="blog/taipei-flute-teacher-guide.html">在台北幫孩子找長笛老師，這 5 件事比學歷重要</a> 這篇。</p>
-      </div>
-      <div class="faq-item">
-        <div class="q"><span class="qn">Q</span><span>教室在哪裡？怎麼前往？</span></div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="qn">Q</span><span class="qt">教室在哪裡？怎麼前往？</span><span class="qi"></span></summary>
         <p class="a">教室位在台北市中山區，從捷運行天宮站步行過來大約 4 分鐘，附近也有公車站，無論從台北市區或新北市過來都方便喔。</p>
-      </div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="qn">Q</span><span class="qt">該怎麼挑長笛老師？</span><span class="qi"></span></summary>
+        <p class="a">除了學歷與演出經驗，我自己覺得更關鍵的是這幾件事：能不能先試上一堂看看互動、教室的距離撐不撐得住每週往返、氣息與吹奏姿勢怎麼教、家長能不能旁聽。這些決定的是孩子學不學得久，而不是學得快。更完整的判斷方式，我整理在 <a href="blog/taipei-flute-teacher-guide.html">在台北幫孩子找長笛老師，這 5 件事比學歷重要</a> 這篇。</p>
+      </details>
+      <details class="faq-item">
+        <summary><span class="qn">Q</span><span class="qt">孩子上課很開心，回家卻不肯練琴，怎麼辦？</span><span class="qi"></span></summary>
+        <p class="a">這大概是家長問我最多的一題。多數時候不是孩子不想彈，而是「練半小時」這個目標太大、又沒有固定的時間點，於是每天都在討價還價。我的做法是把單位縮小 —— 改成「彈一小段給我聽」，再讓他自己挑一首這週想練的曲子。家長在旁邊當聽眾就好，先不要急著糾正音。更完整的五個方法，我寫在 <a href="blog/kids-wont-practice.html">孩子不肯練琴？幫他建立練琴習慣的 5 個方法</a>。</p>
+      </details>
+      <details class="faq-item">
+        <summary><span class="qn">Q</span><span class="qt">幾歲可以開始學長笛 / 鋼琴？</span><span class="qi"></span></summary>
+        <p class="a">鋼琴大約 4 歲起、長笛則建議 8 歲以上（手指與肺活量發展較足夠）即可開始學習。每位孩子的發展節奏不同，幼兒會以繪畫、說故事與遊戲的方式啟蒙，先建立專注力、音感與正確姿勢，再循序進入正式演奏，歡迎先預約諮詢評估適合的開始時間。兩種樂器該怎麼挑，我在 <a href="blog/choosing-first-instrument.html">怎麼幫孩子挑第一個樂器？鋼琴與長笛的特性比較</a> 裡有更完整的比較。</p>
+      </details>
+      <details class="faq-item">
+        <summary><span class="qn">Q</span><span class="qt">完全沒基礎的成人可以學嗎？</span><span class="qi"></span></summary>
+        <p class="a">當然可以。我有許多從零開始的成人學生，課程會依您的興趣與目標量身規劃，針對工作繁忙的成人安排輕鬆無壓力的進度，配合您的步調慢慢前進。無論是想圓夢、紓壓還是培養興趣，都很適合從現在開始。如果你心裡卡的是年紀，可以看看 <a href="blog/adult-beginner-never-too-late.html">成人零基礎學音樂會太晚嗎？關於年齡的迷思</a> 這篇。</p>
+      </details>
+      <details class="faq-item">
+        <summary><span class="qn">Q</span><span class="qt">學習音樂一定要參加比賽或檢定考嗎？</span><span class="qi"></span></summary>
+        <p class="a">其實不一定喔！這主要取決於每位學生的學習進度與狀態，以及孩子自己是否想參加。對學音樂的孩子來說，檢定與比賽最大的價值，在於提供一個明確的目標，讓他們願意為了達成它而主動練習；同時也像一把尺，幫助我們了解孩子目前的程度。在準備的過程中，更能看清楚哪些地方需要加強；而站上舞台所累積的臨場經驗與成就感，對孩子的成長同樣重要。因此我會依每位學生的狀況，和家長一起討論是否參加、以及何時參加。</p>
+      </details>
     </div>
   </div>
 </section>
@@ -613,6 +625,14 @@ document.addEventListener('click',function(e){
   }
 });
 
+/* ───── FAQ 展開追蹤:知道家長真正卡在哪一題 ───── */
+document.querySelectorAll('.faq-item').forEach(function(d){
+  d.addEventListener('toggle',function(){
+    if(!d.open||!window.gtag)return;
+    gtag('event','faq_open',{question:d.querySelector('.qt').textContent});
+  });
+});
+
 /* ───── 手機選單 ───── */
 (function(){
   const nav=document.querySelector('nav'), btn=document.querySelector('.menu-btn');
@@ -689,58 +709,91 @@ document.addEventListener('click',function(e){
       "@id": "https://tingyumusic.com/#teacher",
       "name": "郭庭羽 Aria Kuo",
       "jobTitle": "長笛・鋼琴教師",
-      "worksFor": { "@id": "https://tingyumusic.com/#business" },
-      "knowsAbout": ["長笛教學", "鋼琴教學", "音樂檢定", "音樂比賽指導", "幼兒音樂啟蒙"]
+      "worksFor": {
+        "@id": "https://tingyumusic.com/#business"
+      },
+      "knowsAbout": [
+        "長笛教學",
+        "鋼琴教學",
+        "音樂檢定",
+        "音樂比賽指導",
+        "幼兒音樂啟蒙"
+      ]
     },
     {
       "@type": "Course",
       "name": "長笛一對一課程",
       "description": "依學生程度客製的長笛課程，涵蓋啟蒙、進階、檢定與比賽準備。",
-      "provider": { "@id": "https://tingyumusic.com/#business" }
+      "provider": {
+        "@id": "https://tingyumusic.com/#business"
+      }
     },
     {
       "@type": "Course",
       "name": "鋼琴一對一課程",
       "description": "幼兒啟蒙至成人初學的鋼琴課程，客製化進度。",
-      "provider": { "@id": "https://tingyumusic.com/#business" }
+      "provider": {
+        "@id": "https://tingyumusic.com/#business"
+      }
     },
     {
       "@type": "FAQPage",
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "幾歲可以開始學長笛 / 鋼琴？",
-          "acceptedAnswer": { "@type": "Answer", "text": "鋼琴大約 4 歲起、長笛則建議 8 歲以上（手指與肺活量發展較足夠）即可開始學習。每位孩子的發展節奏不同，幼兒會以繪畫、說故事與遊戲的方式啟蒙，先建立專注力、音感與正確姿勢，再循序進入正式演奏，歡迎先預約諮詢評估適合的開始時間。兩種樂器該怎麼挑，我在〈怎麼幫孩子挑第一個樂器？鋼琴與長笛的特性比較〉裡有更完整的比較。" }
-        },
-        {
-          "@type": "Question",
-          "name": "完全沒基礎的成人可以學嗎？",
-          "acceptedAnswer": { "@type": "Answer", "text": "當然可以。我有許多從零開始的成人學生，課程會依您的興趣與目標量身規劃，針對工作繁忙的成人安排輕鬆無壓力的進度，配合您的步調慢慢前進。無論是想圓夢、紓壓還是培養興趣，都很適合從現在開始。如果你心裡卡的是年紀，可以看看〈成人零基礎學音樂會太晚嗎？關於年齡的迷思〉這篇。" }
-        },
-        {
-          "@type": "Question",
           "name": "需要自備樂器嗎？學費怎麼計算？",
-          "acceptedAnswer": { "@type": "Answer", "text": "初期可以先不購入樂器，我會協助您依預算與需求挑選合適的長笛或安排鋼琴練習方式，等確定持續學習再添購即可。電鋼琴怎麼挑、租琴划不划算，我寫在〈初學要準備什麼？電鋼琴、租琴與基本配件怎麼選〉。學費依課程長度、頻率與上課方式（一對一、團班、到府）而有不同，歡迎透過 Line 預約諮詢，依您的需求提供詳細報價。" }
-        },
-        {
-          "@type": "Question",
-          "name": "孩子上課很開心，回家卻不肯練琴，怎麼辦？",
-          "acceptedAnswer": { "@type": "Answer", "text": "這大概是家長問我最多的一題。多數時候不是孩子不想彈，而是「練半小時」這個目標太大、又沒有固定的時間點，於是每天都在討價還價。我的做法是把單位縮小 —— 改成「彈一小段給我聽」，再讓他自己挑一首這週想練的曲子。家長在旁邊當聽眾就好，先不要急著糾正音。更完整的五個方法，我寫在〈孩子不肯練琴？幫他建立練琴習慣的 5 個方法〉。" }
-        },
-        {
-          "@type": "Question",
-          "name": "學習音樂一定要參加比賽或檢定考嗎？",
-          "acceptedAnswer": { "@type": "Answer", "text": "其實不一定喔！這主要取決於每位學生的學習進度與狀態，以及孩子自己是否想參加。對學音樂的孩子來說，檢定與比賽最大的價值，在於提供一個明確的目標，讓他們願意為了達成它而主動練習；同時也像一把尺，幫助我們了解孩子目前的程度。在準備的過程中，更能看清楚哪些地方需要加強；而站上舞台所累積的臨場經驗與成就感，對孩子的成長同樣重要。因此我會依每位學生的狀況，和家長一起討論是否參加、以及何時參加。" }
-        },
-        {
-          "@type": "Question",
-          "name": "該怎麼挑長笛老師？",
-          "acceptedAnswer": { "@type": "Answer", "text": "除了學歷與演出經驗，我自己覺得更關鍵的是這幾件事：能不能先試上一堂看看互動、教室的距離撐不撐得住每週往返、氣息與吹奏姿勢怎麼教、家長能不能旁聽。這些決定的是孩子學不學得久，而不是學得快。更完整的判斷方式，我整理在〈在台北幫孩子找長笛老師，這 5 件事比學歷重要〉這篇。" }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "初期可以先不購入樂器，我會協助您依預算與需求挑選合適的長笛或安排鋼琴練習方式，等確定持續學習再添購即可。電鋼琴怎麼挑、租琴划不划算，我寫在〈初學要準備什麼？電鋼琴、租琴與基本配件怎麼選〉。學費依課程長度、頻率與上課方式（一對一、團班、到府）而有不同，歡迎透過 Line 預約諮詢，依您的需求提供詳細報價。"
+          }
         },
         {
           "@type": "Question",
           "name": "教室在哪裡？怎麼前往？",
-          "acceptedAnswer": { "@type": "Answer", "text": "教室位在台北市中山區，從捷運行天宮站步行過來大約 4 分鐘，附近也有公車站，無論從台北市區或新北市過來都方便喔。" }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "教室位在台北市中山區，從捷運行天宮站步行過來大約 4 分鐘，附近也有公車站，無論從台北市區或新北市過來都方便喔。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "該怎麼挑長笛老師？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "除了學歷與演出經驗，我自己覺得更關鍵的是這幾件事：能不能先試上一堂看看互動、教室的距離撐不撐得住每週往返、氣息與吹奏姿勢怎麼教、家長能不能旁聽。這些決定的是孩子學不學得久，而不是學得快。更完整的判斷方式，我整理在〈在台北幫孩子找長笛老師，這 5 件事比學歷重要〉這篇。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "孩子上課很開心，回家卻不肯練琴，怎麼辦？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "這大概是家長問我最多的一題。多數時候不是孩子不想彈，而是「練半小時」這個目標太大、又沒有固定的時間點，於是每天都在討價還價。我的做法是把單位縮小 —— 改成「彈一小段給我聽」，再讓他自己挑一首這週想練的曲子。家長在旁邊當聽眾就好，先不要急著糾正音。更完整的五個方法，我寫在〈孩子不肯練琴？幫他建立練琴習慣的 5 個方法〉。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "幾歲可以開始學長笛 / 鋼琴？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "鋼琴大約 4 歲起、長笛則建議 8 歲以上（手指與肺活量發展較足夠）即可開始學習。每位孩子的發展節奏不同，幼兒會以繪畫、說故事與遊戲的方式啟蒙，先建立專注力、音感與正確姿勢，再循序進入正式演奏，歡迎先預約諮詢評估適合的開始時間。兩種樂器該怎麼挑，我在〈怎麼幫孩子挑第一個樂器？鋼琴與長笛的特性比較〉裡有更完整的比較。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "完全沒基礎的成人可以學嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "當然可以。我有許多從零開始的成人學生，課程會依您的興趣與目標量身規劃，針對工作繁忙的成人安排輕鬆無壓力的進度，配合您的步調慢慢前進。無論是想圓夢、紓壓還是培養興趣，都很適合從現在開始。如果你心裡卡的是年紀，可以看看〈成人零基礎學音樂會太晚嗎？關於年齡的迷思〉這篇。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "學習音樂一定要參加比賽或檢定考嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "其實不一定喔！這主要取決於每位學生的學習進度與狀態，以及孩子自己是否想參加。對學音樂的孩子來說，檢定與比賽最大的價值，在於提供一個明確的目標，讓他們願意為了達成它而主動練習；同時也像一把尺，幫助我們了解孩子目前的程度。在準備的過程中，更能看清楚哪些地方需要加強；而站上舞台所累積的臨場經驗與成就感，對孩子的成長同樣重要。因此我會依每位學生的狀況，和家長一起討論是否參加、以及何時參加。"
+          }
         }
       ]
     }

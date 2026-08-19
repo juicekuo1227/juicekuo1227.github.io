@@ -118,9 +118,9 @@ footer（不動）
 
 - 「獲獎紀錄」由獨立大區塊 → 併入⑥並預設收摺（`<details>`）。保留全部 24 條文字（SEO 與事實不損失），
   但不再用高度換低轉換。
-- FAQ 由 7 題 → 4 題留在首頁；被移除的 3 題（幾歲、成人、設備）**JSON-LD 的 `FAQPage` 全數保留**，
-  因為它們是 AI 摘要通道的養分（見既有實測：AI 摘要幾乎照抄本站文案）。
-  → **首頁可見 FAQ 精簡，JSON-LD 不精簡。**
+- FAQ **不刪題，改為全部收摺 + 重排順序**（2026-08-19 定案，取代原本「精簡到 4 題」的做法）。
+  理由：刪題會讓文字從頁面消失，而 `<details>` 收摺同時達成「壓縮高度」與「不流失任何文字」，
+  DOM 內容完整保留，AI 摘要通道（既有實測：AI 摘要幾乎照抄本站文案）不受影響。
 - 錨點 id 全部保留（`#teacher`／`#courses`／`#videos`／`#recital`／`#awards`／`#faq`／`#contact`），
   避免既有外部連結與 nav 失效。新區塊用新 id（`#situations`／`#method`／`#lesson`／`#voices`）。
 - `title`／`meta description`／`canonical`／Open Graph／`@graph` JSON-LD 的地區語意
@@ -425,6 +425,7 @@ footer（不動）
 | `select_situation` | `situation`（四種之一） | 來的是哪種家長？ |
 | `generate_lead` | `link_location`（hero / mid1 / mid2 / faq / contact / footer） | 家長在哪一段被說服？ |
 | `video_demo_play` | — | 教學 demo 有沒有被看？ |
+| `faq_open` ✅ 已上線 | `question` | **家長真正卡在哪一題**（對應 9.3 指標 5） |
 | `blog_to_contact` | `from_slug` | 文章到詢問的轉換 |
 | `scroll_depth` | 25/50/75/100 | 家長在哪裡流失？ |
 
@@ -449,7 +450,7 @@ footer（不動）
 | 3 | 中段 CTA ×2（情境區的那一顆 ✅ 已隨第 2 項上線，另一顆待⑥完成後補） | **斷點 1（最重要）** |
 | 4 | ③ Aria 怎麼教（先寫兩個有素材的方法） | 斷點 5 |
 | 5 | ⑥ 成果合併、獲獎收摺 | 斷點 6 |
-| 6 | ⑧ FAQ 首頁精簡到 4 題（JSON-LD 全保留） | 斷點 10 |
+| 6 | ✅ **已完成 2026-08-19** —— ⑧ FAQ 全部收摺 + 重排順序（7 題全留，`<details>`） | 斷點 10 |
 | 7a | ✅ **已完成 2026-08-19** —— 聯絡區重排：移除 Email 與 `mailto:` 表單，改為 Line（主）+ IG 兩張卡 | 斷點 8 |
 | 7b | 🕓 **保留中，待使用者決定** —— ⑩「第一次聯絡會發生什麼」三步驟區塊（已實作，未 commit） | 斷點 8 |
 | 7c | ⑩ 地圖嵌入 | 斷點 9 |
