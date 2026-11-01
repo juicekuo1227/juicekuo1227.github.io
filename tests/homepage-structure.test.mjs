@@ -51,7 +51,7 @@ test('recital gallery opens with a wide photo followed by nine tiles', () => {
 
   assert.equal(cells.length, 10);
   assert.equal(cells[0], 'cell closing');
-  assert.equal(cells.at(-1), 'cell closing');
+  assert.equal(cells.at(-1), 'cell');
   assert.match(homepage, /\.gallery \.cell\.closing\{grid-column:1\/-1\}/);
   assert.match(homepage, /\.gallery \.cell\.closing img\{aspect-ratio:auto\}/);
 });

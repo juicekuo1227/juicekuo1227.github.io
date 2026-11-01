@@ -48,7 +48,7 @@ window.addEventListener('load',function(){
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:var(--sans);background:var(--ivory);color:var(--ink);line-height:1.95;font-weight:400;-webkit-font-smoothing:antialiased}
-img{display:block;max-width:100%}picture{display:block}
+img{display:block;max-width:100%}picture{display:block;width:100%}
 a{color:inherit;text-decoration:none}
 .wrap{width:min(1080px,90vw);margin-inline:auto}
 .narrow{width:min(820px,90vw);margin-inline:auto}
@@ -91,7 +91,7 @@ nav{position:sticky;top:0;z-index:50;background:rgba(247,243,234,.9);backdrop-fi
 .hero .intro em{font-style:normal;font-weight:500;color:var(--ink)}
 .hero-cta{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-top:.5rem}
 .hero-photo{position:relative}
-.hero-photo img{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:18% center;border-radius:30px}
+.hero-photo img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;object-position:18% center;border-radius:30px}
 .hero-photo .cap{position:absolute;bottom:-2.2rem;left:50%;transform:translateX(-50%);font-family:var(--display);font-style:italic;color:var(--gold-deep);white-space:nowrap}
 
 .divider-staff{display:flex;justify-content:center;gap:.5rem;padding:1rem 0;color:var(--gold)}
@@ -163,7 +163,7 @@ nav{position:sticky;top:0;z-index:50;background:rgba(247,243,234,.9);backdrop-fi
 .video-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.6rem;margin-top:2.2rem}
 .vid{background:none;border:0;padding:0;text-align:left;color:inherit;font:inherit;cursor:pointer;width:100%}
 .vid .thumb{position:relative;transition:.3s}
-.vid .thumb img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.vid .thumb img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover}
 .vid .play{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none}
 .vid .play span{width:50px;height:50px;border-radius:50%;border:1px solid var(--gold);background:rgba(33,28,22,.6);display:grid;place-items:center;transition:.3s}
 .vid:hover .play span,.vid:focus-visible .play span{background:var(--gold)}
@@ -175,7 +175,7 @@ nav{position:sticky;top:0;z-index:50;background:rgba(247,243,234,.9);backdrop-fi
 .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
 .gallery .cell{display:block;transition:.3s;cursor:pointer}
 .gallery .cell:hover{opacity:.88}
-.gallery .cell img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:10px}
+.gallery .cell img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:10px}
 .gallery .cell.closing{grid-column:1/-1}
 .gallery .cell.closing img{aspect-ratio:auto}
 
@@ -389,7 +389,7 @@ footer small{color:#a89878;letter-spacing:.08em}
 
     <div class="res-recital" id="recital">
       <h3 class="res-h" id="recital-title">2025 郭老師音樂發表會</h3>
-      <div class="gallery" id="gallery"><a class="cell closing" href="assets/gallery-11.jpg" data-full="assets/gallery-11.jpg" aria-label="2025 發表會相片 1"><img src="assets/gallery-11.jpg" alt="2025 發表會相片 1" width="900" height="392" loading="lazy" decoding="async"></a><a class="cell" href="assets/gallery-02.jpg" data-full="assets/gallery-02.jpg" aria-label="2025 發表會相片 2"><img src="assets/thumb-02.jpg" alt="2025 發表會相片 2" width="900" height="600" loading="lazy" decoding="async"></a><a class="cell" href="assets/gallery-03.jpg" data-full="assets/gallery-03.jpg" aria-label="2025 發表會相片 3"><img src="assets/thumb-03.jpg" alt="2025 發表會相片 3" width="600" height="600" loading="lazy" decoding="async"></a><a class="cell" href="assets/gallery-04.jpg" data-full="assets/gallery-04.jpg" aria-label="2025 發表會相片 4"><img src="assets/thumb-04.jpg" alt="2025 發表會相片 4" width="600" height="600" loading="lazy" decoding="async"></a><a class="cell" href="assets/gallery-05.jpg" data-full="assets/gallery-05.jpg" aria-label="2025 發表會相片 5"><img src="assets/thumb-05.jpg" alt="2025 發表會相片 5" width="600" height="600" loading="lazy" decoding="async"></a><a class="cell" href="assets/gallery-06.jpg" data-full="assets/gallery-06.jpg" aria-label="2025 發表會相片 6"><img src="assets/thumb-06.jpg" alt="2025 發表會相片 6" width="600" height="600" loading="lazy" decoding="async"></a><a class="cell" href="assets/gallery-07.jpg" data-full="assets/gallery-07.jpg" aria-label="2025 發表會相片 7"><img src="assets/thumb-07.jpg" alt="2025 發表會相片 7" width="600" height="600" loading="lazy" decoding="async"></a><a class="cell" href="assets/gallery-08.jpg" data-full="assets/gallery-08.jpg" aria-label="2025 發表會相片 8"><img src="assets/thumb-08.jpg" alt="2025 發表會相片 8" width="600" height="600" loading="lazy" decoding="async"></a><a class="cell" href="assets/gallery-09.jpg" data-full="assets/gallery-09.jpg" aria-label="2025 發表會相片 9"><img src="assets/thumb-09.jpg" alt="2025 發表會相片 9" width="900" height="600" loading="lazy" decoding="async"></a><a class="cell closing" href="assets/gallery-10.jpg" data-full="assets/gallery-10.jpg" aria-label="2025 發表會相片 10"><img src="assets/gallery-10.jpg" alt="2025 發表會相片 10" width="900" height="385" loading="lazy" decoding="async"></a></div>
+      <div class="gallery" id="gallery"><a class="cell closing" href="assets/gallery-11.jpg" data-full="assets/gallery-11.jpg" aria-label="2025 發表會相片 1"><img src="assets/gallery-11.jpg" alt="2025 發表會相片 1" width="900" height="392" loading="lazy" decoding="async"></a><a class="cell" href="assets/gallery-02.jpg" data-full="assets/gallery-02.jpg" aria-label="2025 發表會相片 2"><img src="assets/thumb-02.jpg" alt="2025 發表會相片 2" width="900" height="600" loading="lazy" decoding="async"></a><a class="cell" href="assets/gallery-03.jpg" data-full="assets/gallery-03.jpg" aria-label="2025 發表會相片 3"><img src="assets/thumb-03.jpg" alt="2025 發表會相片 3" width="600" height="600" loading="lazy" decoding="async"></a><a class="cell" href="assets/gallery-04.jpg" data-full="assets/gallery-04.jpg" aria-label="2025 發表會相片 4"><img src="assets/thumb-04.jpg" alt="2025 發表會相片 4" width="600" height="600" loading="lazy" decoding="async"></a><a class="cell" href="assets/gallery-05.jpg" data-full="assets/gallery-05.jpg" aria-label="2025 發表會相片 5"><img src="assets/thumb-05.jpg" alt="2025 發表會相片 5" width="600" height="600" loading="lazy" decoding="async"></a><a class="cell" href="assets/gallery-06.jpg" data-full="assets/gallery-06.jpg" aria-label="2025 發表會相片 6"><img src="assets/thumb-06.jpg" alt="2025 發表會相片 6" width="600" height="600" loading="lazy" decoding="async"></a><a class="cell" href="assets/gallery-07.jpg" data-full="assets/gallery-07.jpg" aria-label="2025 發表會相片 7"><img src="assets/thumb-07.jpg" alt="2025 發表會相片 7" width="600" height="600" loading="lazy" decoding="async"></a><a class="cell" href="assets/gallery-08.jpg" data-full="assets/gallery-08.jpg" aria-label="2025 發表會相片 8"><img src="assets/thumb-08.jpg" alt="2025 發表會相片 8" width="600" height="600" loading="lazy" decoding="async"></a><a class="cell" href="assets/gallery-09.jpg" data-full="assets/gallery-09.jpg" aria-label="2025 發表會相片 9"><img src="assets/thumb-09.jpg" alt="2025 發表會相片 9" width="900" height="600" loading="lazy" decoding="async"></a><a class="cell" href="assets/gallery-10.jpg" data-full="assets/gallery-10.jpg" aria-label="2025 發表會相片 10"><img src="assets/gallery-10.jpg" alt="2025 發表會相片 10" width="900" height="385" loading="lazy" decoding="async"></a></div>
     </div>
 
     <details class="res-awards" id="awards">
