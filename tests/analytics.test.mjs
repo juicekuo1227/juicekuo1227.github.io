@@ -37,6 +37,7 @@ function loadAnalytics({ home = true } = {}) {
     document,
     innerHeight: 100,
     scrollY: 0,
+    location: { pathname: home ? '/' : '/blog/what-age-start-flute.html', search: '', hostname: 'localhost' },
     gtag(command, name, params) { events.push({ command, name, params }); },
     addEventListener(type, handler) { windowListeners[type] = handler; },
     requestAnimationFrame(handler) { handler(); }
@@ -86,9 +87,11 @@ test('generate_lead uses the CTA that led to the real Line click', () => {
   page.click({ href: 'https://line.me/example' }, { footer: true });
 
   assert.deepEqual(named(page.events, 'generate_lead'), [
-    { command: 'event', name: 'generate_lead', params: { method: 'line', link_location: 'hero' } },
-    { command: 'event', name: 'generate_lead', params: { method: 'line', link_location: 'footer' } }
+    { command: 'event', name: 'generate_lead', params: { method: 'line', link_location: 'hero', page_type: 'home', page_path: '/' } },
+    { command: 'event', name: 'generate_lead', params: { method: 'line', link_location: 'footer', page_type: 'home', page_path: '/' } }
   ]);
+  assert.equal(named(page.events, 'blog_to_contact').length, 0);
+  assert.equal(named(page.events, 'line_click').length, 0);
 });
 
 test('opening an FAQ attributes a later contact Line click to faq', () => {
@@ -104,6 +107,41 @@ test('opening an FAQ attributes a later contact Line click to faq', () => {
     params: { question: '教室在哪裡？' }
   }]);
   assert.equal(named(page.events, 'generate_lead')[0].params.link_location, 'faq');
+});
+
+test('one blog Line click emits a single generate_lead', () => {
+  const page = loadAnalytics({ home: false });
+
+  page.click({
+    href: 'https://line.me/R/ti/p/%40897rgmut',
+    'data-lead-source': 'blog-end'
+  });
+
+  assert.deepEqual(named(page.events, 'generate_lead'), [{
+    command: 'event',
+    name: 'generate_lead',
+    params: {
+      method: 'line',
+      link_location: 'blog-end',
+      page_type: 'blog',
+      page_path: '/blog/what-age-start-flute.html',
+      from_slug: 'what-age-start-flute'
+    }
+  }]);
+  assert.equal(named(page.events, 'blog_to_contact').length, 0);
+});
+
+test('Instagram clicks stay on contact_click', () => {
+  const page = loadAnalytics();
+
+  page.click({ href: 'https://www.instagram.com/ting.ting.music/' });
+
+  assert.deepEqual(named(page.events, 'contact_click'), [{
+    command: 'event',
+    name: 'contact_click',
+    params: { method: 'instagram', link_location: 'contact', page_type: 'home', page_path: '/' }
+  }]);
+  assert.equal(named(page.events, 'generate_lead').length, 0);
 });
 
 test('scroll_depth emits each 25 percent threshold once', () => {
