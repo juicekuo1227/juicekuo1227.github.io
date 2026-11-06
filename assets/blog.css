@@ -39,6 +39,9 @@ nav{position:sticky;top:0;z-index:50;background:rgba(247,243,234,.92);backdrop-f
 .answer{background:var(--paper);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:14px;padding:1.3rem 1.7rem;margin:2rem 0}
 .answer .a-label{font-family:var(--display);font-style:italic;color:var(--gold);font-size:1.15rem;display:block;margin-bottom:.4rem}
 .answer p{margin:.3rem 0;font-size:1.02rem}
+.teach-example{background:var(--paper);border:1px dashed var(--wine);border-radius:14px;padding:1.15rem 1.35rem;margin:1.4rem 0}
+.teach-example .ex-label{display:inline-block;font-size:.78rem;letter-spacing:.04em;color:#fff;background:var(--wine);border-radius:999px;padding:.22rem .75rem;margin:0}
+.teach-example p{margin:.7rem 0 0}
 .post ul.dash{list-style:none;display:flex;flex-direction:column;gap:.55rem;margin:1.2rem 0}
 .post ul.dash li{padding-left:1.5rem;position:relative;font-size:1.02rem}
 .post ul.dash li::before{content:"—";position:absolute;left:0;color:var(--gold)}
