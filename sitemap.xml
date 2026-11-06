@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://tingyumusic.com/</loc>
-    <lastmod>2026-06-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url><loc>https://tingyumusic.com/blog/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://tingyumusic.com/blog/choosing-first-instrument.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tingyumusic.com/blog/adult-beginner-never-too-late.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tingyumusic.com/blog/reading-sheet-music-start.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tingyumusic.com/blog/kids-wont-practice.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tingyumusic.com/blog/busy-adult-practice.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tingyumusic.com/blog/beginner-gear-guide.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tingyumusic.com/blog/taipei-flute-teacher-guide.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tingyumusic.com/blog/exam-year-music-lessons.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tingyumusic.com/blog/what-age-start-flute.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tingyumusic.com/</loc><lastmod>2026-11-01</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://tingyumusic.com/blog/</loc><lastmod>2026-11-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tingyumusic.com/blog/choosing-first-instrument.html</loc><lastmod>2026-11-01</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tingyumusic.com/blog/adult-beginner-never-too-late.html</loc><lastmod>2026-11-01</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tingyumusic.com/blog/reading-sheet-music-start.html</loc><lastmod>2026-11-01</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tingyumusic.com/blog/kids-wont-practice.html</loc><lastmod>2026-11-01</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tingyumusic.com/blog/busy-adult-practice.html</loc><lastmod>2026-11-01</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tingyumusic.com/blog/beginner-gear-guide.html</loc><lastmod>2026-11-01</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tingyumusic.com/blog/taipei-flute-teacher-guide.html</loc><lastmod>2026-11-01</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tingyumusic.com/blog/exam-year-music-lessons.html</loc><lastmod>2026-11-01</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tingyumusic.com/blog/what-age-start-flute.html</loc><lastmod>2026-11-01</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
 </urlset>
