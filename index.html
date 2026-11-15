@@ -323,12 +323,14 @@ footer small{color:#a89878;letter-spacing:.08em}
   .sit .num{font-size:1.75rem}
 }
 </style>
+<link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC&family=Noto+Sans+TC:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/picturebook.css">
 </head>
 <body>
 
 <nav>
   <div class="wrap nav-in">
-    <a href="#top" class="logo"><span class="em">♪</span> <span><b>TingTing</b> Music</span></a>
+    <a href="#top" class="logo"><span class="em" aria-hidden="true">♫</span><span class="brand-words"><b>聽聽音樂</b><small>TingTing Music</small></span></a>
     <div class="nav-links">
       <a href="#courses">課程</a>
       <a href="#results">學生成果</a>
@@ -343,41 +345,33 @@ footer small{color:#a89878;letter-spacing:.08em}
 
 <main>
 <section class="hero" id="top">
-  <div class="wrap hero-head">
-    <div class="loc">台北市中山區 ・ 捷運行天宮站步行 4 分鐘</div>
-    <h1><span class="l">把音符變成圖畫，</span><span class="l">把樂理變成遊戲</span><span class="zh"><span class="l">聽聽音樂 <em>TingTing Music</em> ‧ </span><span class="l">長笛・鋼琴一對一教學</span></span></h1>
-    <div class="rule"></div>
-    <p class="intro">從幼兒啟蒙、成人零基礎到 ABRSM 檢定，<em>每個學生的教材和進度都是單獨排的</em>。學得久，比學得快重要。</p>
-    <div class="hero-cta">
-      <a href="#contact" class="btn btn-solid" data-cta="hero" data-lead-source="hero">先聊聊你的狀況</a>
-      <a href="#courses" class="btn btn-gold">看看你是哪一種</a>
+  <div class="wrap hero-layout">
+    <div class="hero-head">
+      <div class="hero-brand">聽聽音樂 <span>TingTing Music</span></div>
+      <h1>把音符變成圖畫，<br>把樂理變成遊戲。</h1>
+      <p class="hero-subtitle">長笛・鋼琴一對一教學</p>
+      <p class="intro">從幼兒啟蒙、成人零基礎到 ABRSM 檢定，<br class="desktop-br">每個學生的教材和進度都是單獨排的。<br>學得久，比學得快重要。</p>
+      <div class="hero-cta"><a href="#contact" class="btn btn-solid" data-cta="hero" data-lead-source="hero">先聊聊你的狀況</a><a href="#courses" class="quiet-link">看看適合我的課程</a></div>
+      <p class="hero-location"><span aria-hidden="true">⌂</span> 台北市中山區・行天宮站步行 4 分鐘</p>
     </div>
+    <figure class="hero-art"><img src="assets/music-cats.png" alt="手繪花貓吹長笛、白貓彈鋼琴，周圍飄著彩色音符" width="1536" height="1024" fetchpriority="high" decoding="async"><figcaption>一起，把喜歡的旋律變成生活。<span aria-hidden="true"> ♫</span></figcaption></figure>
   </div>
-  <div class="wrap hero-photo">
-    <picture>
-      <source type="image/avif" srcset="assets/flute-piano-students-recital-800.avif 800w, assets/flute-piano-students-recital-1400.avif 1400w" sizes="(max-width: 1080px) 90vw, 1080px">
-      <source type="image/webp" srcset="assets/flute-piano-students-recital-800.webp 800w, assets/flute-piano-students-recital-1400.webp 1400w" sizes="(max-width: 1080px) 90vw, 1080px">
-      <img src="assets/flute-piano-students-recital.jpg" alt="聽聽音樂 郭庭羽 Aria Kuo 長笛・鋼琴學生成果發表會合照" width="1882" height="877" fetchpriority="high" decoding="async">
-    </picture>
-    <span class="cap">— 聽聽音樂 —</span>
-  </div>
+  <div class="hero-bottom" aria-hidden="true"><span>♩</span><span>♪</span><span>♫</span><span>♬</span><span>♩</span></div>
 </section>
-
-<div class="divider-staff"><span>♩</span><span>♪</span><span>♫</span><span>♬</span><span>♭</span></div>
 
 <section class="courses" id="courses">
   <div class="wrap">
-    <div class="sec-head"><div class="kicker"><span>Start Here</span></div><h2 class="sec-title">你 / 你的孩子是哪一種？</h2>
-      <p class="sub">長笛與鋼琴一對一，從幼兒啟蒙到成人零基礎。先找到最接近你現在狀況的那一格 —— 如果是為自己來的，最後一格是你。</p>
+    <div class="sec-head"><div class="kicker"><span>每個起點，都值得被好好陪伴</span></div><h2 class="sec-title">找到自己的音樂節奏</h2>
+      <p class="sub">長笛與鋼琴一對一，從幼兒啟蒙到成人零基礎。不管是第一次摸琴，還是想重新開始，都有適合你的起點。</p>
     </div>
-    <div class="situations" id="situations"><article class="sit" id="situation-beginner"><div class="num">I</div><h3>第一次接觸音樂</h3><p class="said">「不知道孩子到底適不適合學琴。」</p><p class="punch">不用急著買琴。</p><p>先看孩子對聲音、節奏和樂器的反應 —— 也不用一開始就決定要不要考級。</p><div class="go"><a class="to" href="#contact" data-situation="beginner" data-situation-target="contact" data-lead-source="mid1">→ 兒童音樂啟蒙</a><a class="read" href="blog/choosing-first-instrument.html" data-situation="beginner" data-situation-target="read">鋼琴和長笛，第一個樂器怎麼挑？</a></div></article><article class="sit" id="situation-stuck"><div class="num">II</div><h3>已經在學，但是越來越不想練</h3><p class="said">「上課很開心，可是一回家就完全不碰琴。」</p><p class="punch">多半不是他懶。</p><p>一起重新調整曲目、練習方式與目標，讓孩子重新感受到自己真的在進步。</p><div class="go"><a class="to" href="#contact" data-situation="stuck" data-situation-target="contact" data-lead-source="mid1">→ 兒童鋼琴 / 長笛</a><a class="read" href="blog/kids-wont-practice.html" data-situation="stuck" data-situation-target="read">建立練琴習慣的 5 個方法</a></div></article><article class="sit" id="situation-exam"><div class="num">III</div><h3>有檢定或表演的目標</h3><p class="said">「想給孩子一個努力的方向，但不確定該不該考。」</p><p class="punch">不一定要考。</p><p>檢定不是為了名次，是一把尺 —— 先看孩子現在在哪裡，再一起決定要不要考、什麼時候考。</p><div class="go"><a class="to" href="#contact" data-situation="exam" data-situation-target="contact" data-lead-source="mid1">→ ABRSM 檢定與表演準備</a><a class="read" href="#videos" data-situation="exam" data-situation-target="read">看看學生的演出與獲獎紀錄</a></div></article><article class="sit" id="situation-adult"><div class="num">IV</div><h3>我是成人，只是一直很想學</h3><p class="said">「完全不會看五線譜，現在開始會不會太晚？」</p><p class="punch">不會。</p><p>五線譜不用先學會再來。我有不少從零基礎開始的成人學生，多半工作忙，進度都是配合你排的。</p><div class="go"><a class="to" href="#contact" data-situation="adult" data-situation-target="contact" data-lead-source="mid1">→ 成人零基礎課程</a><a class="read" href="blog/reading-sheet-music-start.html" data-situation="adult" data-situation-target="read">學長笛、鋼琴，完全看不懂五線譜可以從哪裡開始？</a></div></article></div>
+    <div class="situations" id="situations"><article class="sit" id="situation-beginner"><div class="num" aria-hidden="true">♪</div><h3>第一次接觸音樂</h3><p class="said">「不知道孩子到底適不適合學琴。」</p><p class="punch">不用急著買琴。</p><p>先看孩子對聲音、節奏和樂器的反應 —— 也不用一開始就決定要不要考級。</p><div class="go"><a class="to" href="#contact" data-situation="beginner" data-situation-target="contact" data-lead-source="mid1">兒童音樂啟蒙 ↗</a><a class="read" href="blog/choosing-first-instrument.html" data-situation="beginner" data-situation-target="read">鋼琴和長笛，第一個樂器怎麼挑？</a></div></article><article class="sit" id="situation-stuck"><div class="num" aria-hidden="true">♬</div><h3>已經在學，但是越來越不想練</h3><p class="said">「上課很開心，可是一回家就完全不碰琴。」</p><p class="punch">多半不是他懶。</p><p>一起重新調整曲目、練習方式與目標，讓孩子重新感受到自己真的在進步。</p><div class="go"><a class="to" href="#contact" data-situation="stuck" data-situation-target="contact" data-lead-source="mid1">兒童鋼琴 / 長笛 ↗</a><a class="read" href="blog/kids-wont-practice.html" data-situation="stuck" data-situation-target="read">建立練琴習慣的 5 個方法</a></div></article><article class="sit" id="situation-exam"><div class="num" aria-hidden="true">♮</div><h3>有檢定或表演的目標</h3><p class="said">「想給孩子一個努力的方向，但不確定該不該考。」</p><p class="punch">不一定要考。</p><p>檢定不是為了名次，是一把尺 —— 先看孩子現在在哪裡，再一起決定要不要考、什麼時候考。</p><div class="go"><a class="to" href="#contact" data-situation="exam" data-situation-target="contact" data-lead-source="mid1">ABRSM 檢定與表演準備 ↗</a><a class="read" href="#videos" data-situation="exam" data-situation-target="read">看看學生的演出與獲獎紀錄</a></div></article><article class="sit" id="situation-adult"><div class="num" aria-hidden="true">♫</div><h3>我是成人，只是一直很想學</h3><p class="said">「完全不會看五線譜，現在開始會不會太晚？」</p><p class="punch">不會。</p><p>五線譜不用先學會再來。我有不少從零基礎開始的成人學生，多半工作忙，進度都是配合你排的。</p><div class="go"><a class="to" href="#contact" data-situation="adult" data-situation-target="contact" data-lead-source="mid1">成人零基礎課程 ↗</a><a class="read" href="blog/reading-sheet-music-start.html" data-situation="adult" data-situation-target="read">學長笛、鋼琴，完全看不懂五線譜可以從哪裡開始？</a></div></article></div>
     <div class="sit-cta"><a href="#contact" class="btn btn-solid" data-cta="situations" data-lead-source="mid1">先聊聊你的狀況</a></div>
   </div>
 </section>
 
 <section class="results" id="results">
   <div class="wrap">
-    <div class="sec-head"><div class="kicker"><span>Results</span></div><h2 class="sec-title">學生的成果</h2>
+    <div class="sec-head"><div class="kicker"><span>那些練習，慢慢開花了</span></div><h2 class="sec-title">學生的成果</h2>
       <p class="sub">演出、發表會，還有檢定與比賽的紀錄。</p>
     </div>
 
@@ -406,7 +400,7 @@ footer small{color:#a89878;letter-spacing:.08em}
 
 <section class="teacher" id="teacher">
   <div class="wrap">
-    <div class="sec-head"><div class="kicker"><span>About</span></div><h2 class="sec-title">師資介紹</h2></div>
+    <div class="sec-head"><div class="kicker"><span>陪你一起喜歡上音樂的人</span></div><h2 class="sec-title">師資介紹</h2></div>
     <div class="teacher-grid">
       <div class="portrait-wrap"><picture><source type="image/avif" srcset="assets/aria-kuo-flute-teacher.avif"><source type="image/webp" srcset="assets/aria-kuo-flute-teacher.webp"><img src="assets/aria-kuo-flute-teacher.jpg" alt="郭庭羽 Aria Kuo 長笛・鋼琴教師師資照" width="500" height="500" loading="lazy" decoding="async"></picture></div>
       <div>
@@ -421,7 +415,7 @@ footer small{color:#a89878;letter-spacing:.08em}
 
 <section class="journal" id="journal">
   <div class="wrap">
-    <div class="sec-head"><div class="kicker"><span>Journal</span></div><h2 class="sec-title">Aria 老師碎碎念</h2>
+    <div class="sec-head"><div class="kicker"><span>課堂之外，也想和你聊聊</span></div><h2 class="sec-title">Aria 老師碎碎念</h2>
       <p class="sub">給家長與成人學習者的長笛・鋼琴學習筆記 —— 從選老師、挑樂器到練習方法，慢慢聊。</p>
     </div>
     <div class="journal-grid">
@@ -450,7 +444,7 @@ footer small{color:#a89878;letter-spacing:.08em}
 
 <section class="faq" id="faq">
   <div class="narrow">
-    <div class="sec-head"><div class="kicker"><span>FAQ</span></div><h2 class="sec-title">常見問題</h2>
+    <div class="sec-head"><div class="kicker"><span>開始之前，你可能想知道</span></div><h2 class="sec-title">常見問題</h2>
       <p class="sub">點開看答案。前面三題是最多人在決定前會卡住的。</p>
     </div>
     <div class="faq-list">
@@ -503,7 +497,7 @@ footer small{color:#a89878;letter-spacing:.08em}
       </ul></div>
   </div>
   <div class="wrap contact-in">
-    <div class="sec-head"><div class="kicker"><span>Contact</span></div><h2 class="sec-title">與我聯絡</h2>
+    <div class="sec-head"><div class="kicker"><span>下一段旋律，從這裡開始</span></div><h2 class="sec-title">與我聯絡</h2>
       <p class="note" id="c-note">用 Line 傳訊息最快，平常也在 Instagram 上分享上課的樣子。目前第一堂體驗課免費。</p>
     </div>
     <div class="cinfo">
@@ -518,7 +512,7 @@ footer small{color:#a89878;letter-spacing:.08em}
 
 <footer>
   <div class="wrap">
-    <div class="fmark">TingTing Music</div>
+    <div class="fmark">聽聽音樂 <span>♪</span></div>
     <div class="socials">
       <a href="https://www.youtube.com/@ting-ting-music" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.8-.5-5.6a2.9 2.9 0 0 0-2-2C18.7 4 12 4 12 4s-6.7 0-8.5.4a2.9 2.9 0 0 0-2 2C1 8.2 1 12 1 12s0 3.8.5 5.6a2.9 2.9 0 0 0 2 2C5.3 20 12 20 12 20s6.7 0 8.5-.4a2.9 2.9 0 0 0 2-2C23 15.8 23 12 23 12zM10 15.5v-7l6 3.5-6 3.5z"/></svg></a>
       <a href="https://www.instagram.com/ting.ting.music/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg></a>

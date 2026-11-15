@@ -18,8 +18,8 @@ test('navigation follows the visible homepage order', () => {
   assert.deepEqual(destinations, ['#courses', '#results', '#teacher', 'blog/', '#faq']);
 });
 
-test('situation heading addresses adults and parents', () => {
-  assert.match(homepage, /<h2 class="sec-title">你 \/ 你的孩子是哪一種？<\/h2>/);
+test('situation heading offers a starting point for every learner', () => {
+  assert.match(homepage, /<h2 class="sec-title">找到自己的音樂節奏<\/h2>/);
 });
 
 test('award disclosure has explicit mobile expand and collapse cues', () => {
@@ -28,12 +28,11 @@ test('award disclosure has explicit mobile expand and collapse cues', () => {
   assert.match(homepage, /@media\(max-width:600px\)\{[\s\S]*?\.aw-toggle\{[^}]*width:100%/);
 });
 
-test('video showcase background bleeds to the viewport while content stays wrapped', () => {
-  const rule = homepage.match(/\.res-videos\{([^}]*)\}/)?.[1] || '';
-
-  assert.match(rule, /border-radius:0/);
-  assert.match(rule, /box-shadow:0 0 0 100vmax var\(--ink\)/);
-  assert.match(rule, /clip-path:inset\(0 -100vmax\)/);
+test('approved picturebook theme keeps video thumbnails straight', () => {
+  const theme = readFileSync(new URL('../assets/picturebook.css', import.meta.url), 'utf8');
+  assert.match(homepage, /href="assets\/picturebook.css"/);
+  assert.match(theme, /\.res-videos\{[^}]*background:transparent/);
+  assert.doesNotMatch(theme, /\.vid[^}]*rotate\(/);
   assert.match(homepage, /<section class="results"[^>]*>[\s\S]*?<div class="wrap">[\s\S]*?<div class="res-videos"/);
 });
 
