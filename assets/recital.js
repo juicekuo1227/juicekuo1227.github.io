@@ -17,8 +17,8 @@
     image.alt = scene.alt;
     caption.textContent = scene.piece;
     link.href = enter.href = `https://2026-demo.tingyumusic.com/?guest=1&performance=${scene.id}`;
-    link.setAttribute('aria-label',`在官網內探索${scene.title}互動舞台`);
-    enter.setAttribute('aria-label',`進入${scene.title}互動舞台`);
+    link.setAttribute('aria-label',`播放${scene.title}演出與互動舞台`);
+    enter.setAttribute('aria-label',`播放${scene.title}演出與互動舞台`);
     document.getElementById('program-preview-meta').textContent = `第 ${scene.number} 場 · ${scene.instrument}`;
     document.getElementById('recital-scene-count').textContent = `${index + 1} / ${scenes.length}`;
     choices.forEach((button,i) => button.setAttribute('aria-pressed',String(i === index)));
@@ -29,7 +29,7 @@
     loading.hidden = false;
     document.documentElement.classList.add('recital-modal-open');
     dialog.showModal();
-    frame.src = url;
+    window.dispatchEvent(new CustomEvent('recital:open',{detail:{url}}));
     document.getElementById('recital-dialog-close').focus({preventScroll:true});
   }
   choices.forEach((button,i) => {
@@ -61,6 +61,7 @@
     if(event.clientX < b.left || event.clientX > b.right || event.clientY < b.top || event.clientY > b.bottom) dialog.close();
   });
   dialog.addEventListener('close', () => {
+    window.dispatchEvent(new Event('recital:close'));
     frame.removeAttribute('src');loading.hidden = true;
     document.documentElement.classList.remove('recital-modal-open');
     opener?.focus({preventScroll:true});opener = null;

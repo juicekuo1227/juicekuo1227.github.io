@@ -1,0 +1,23 @@
+/* Storybook details stay around the program, leaving the performances easy to read. */
+.program-sheet{position:relative;border:1.5px solid #b9c5b4;border-radius:10px 7px 13px 5px;box-shadow:5px 6px 0 #cbd6c7,9px 10px 0 #dde4d7;background:#fffcf5}
+.program-cover{position:relative;isolation:isolate;background:#e2ecdf;border-bottom:0;padding:25px 38px 30px;gap:20px;overflow:hidden}
+.program-cover::after{content:"";position:absolute;bottom:0;left:0;right:0;height:7px;background:radial-gradient(circle at 50% 0,#e2ecdf 5px,transparent 5.5px) 0 0/14px 7px repeat-x;background-color:#fffcf5}
+.program-cover>div:first-child{position:relative;z-index:1}.program-edition{font-family:var(--hand);color:#526e5a;font-size:15px}.program-edition span{font-family:var(--sans);font-size:11px;border-color:#afc1a6}
+.program-cover h3{position:relative;display:inline-block;z-index:1;margin-bottom:12px}.program-cover h3::after{content:"";position:absolute;bottom:3px;left:1px;width:96%;height:10px;background:#e5d7a3;z-index:-1;border-radius:55% 40% 60% 35%}
+.program-lead{font-family:var(--hand);font-size:16px;letter-spacing:.025em;color:#69745d}
+.program-cover-mark{width:230px;flex:0 0 230px;height:160px;padding:0;transform:none;color:inherit;align-self:center}.program-cover-mark svg{display:block;width:100%;height:100%}
+.program-body{background:#fffcf5}.program-list{border-right:3px double #ddd9c8}.program-list-heading{border-bottom:1.5px dashed #aebb9f;color:#7c806b}
+.program-row{border-bottom:1px dashed #dedac8}.recital-scene-choice{border-radius:2px}.recital-scene-choice:hover{background:#f1f3e7}.recital-scene-choice[aria-pressed=true]{background:#e8efdd;border-left-color:#81976a}
+.program-number{display:grid;place-items:start center;width:27px;height:38px;padding-top:5px;font-size:17px;background:#e9dec0;color:#756044;clip-path:polygon(0 0,100% 0,97% 100%,50% 86%,3% 100%)}
+.program-row:nth-child(5n+2) .program-number{background:#dce7db;color:#58705b}.program-row:nth-child(5n+3) .program-number{background:#eedbda;color:#895e64}.program-row:nth-child(5n+4) .program-number{background:#dce6eb;color:#5f7885}.program-row:nth-child(5n) .program-number{background:#e8e3cf;color:#7b7650}
+.program-thumbnail{border:2px solid #fffdf8;border-radius:6px 4px 7px 3px;outline:1px solid #e5dfcc;outline-offset:0}
+.program-open{color:#637c5e}.program-current{color:#8e9d68}
+.program-preview-heading{font-family:var(--hand);font-size:14px;color:#7f8d6e}.program-preview-heading>span:first-child::before{content:"✧";color:#b39956;margin-right:8px}
+.recital-scene-link{border:9px solid #f3edda;border-bottom-width:18px;border-radius:7px 4px 8px 5px;outline:1px solid #e0d7bd;outline-offset:0;box-shadow:3px 4px 0 #e6dfcc}
+.program-selected-label{color:#8b9574}.program-preview h4{text-decoration:underline;text-decoration-color:#e3d4a8;text-decoration-thickness:7px;text-underline-offset:-1px;text-decoration-skip-ink:none}
+.program-book-footer{display:flex;justify-content:center;align-items:center;gap:16px;padding-top:20px;color:#b19c63;font-family:var(--hand);font-size:19px}.program-book-footer span:nth-child(2){color:#8caa85;font-size:23px}.program-list-note{text-align:center;padding-top:7px;font-size:10px;color:#92927b}
+.recital-footnote{border-top:1px dashed #d5ceb6}.recital-dialog-bar{background:#f4f0df;border-bottom:2px dashed #d6d0b6}.recital-dialog-bar h2::after{content:" ♪";color:#a58a49;font-size:22px}
+@media(max-width:1050px){.program-cover{padding:24px 26px 28px}.program-cover-mark{width:175px;flex-basis:175px;height:132px}.program-cover h3{font-size:29px}.program-lead{font-size:14px}}
+@media(max-width:700px){.program-sheet{box-shadow:3px 4px 0 #cbd6c7,6px 7px 0 #dde4d7}.program-cover{padding:22px 18px 27px;gap:10px;align-items:center}.program-cover>div:first-child{flex:1;min-width:0}.program-cover-mark{display:block;width:80px;flex-basis:80px;height:100px;margin-right:-5px}.program-edition{font-size:12px;gap:9px;flex-wrap:wrap;line-height:1.7}.program-edition span{font-size:10px;padding-left:9px}.program-cover h3{font-size:25px;line-height:1.55;letter-spacing:.01em;margin:10px 0}.program-cover h3::after{height:8px;bottom:2px}.program-lead{font-size:13px;line-height:1.9}.program-list{border:0}.program-number{width:23px;height:34px;font-size:15px;padding-top:5px}.program-preview-heading{font-size:12px}.recital-dialog-bar h2::after{font-size:17px}.program-book-footer{padding-top:16px}.program-list-note{font-size:9px}}
+.program-cover-subtitle::before{content:"・"}
+@media(max-width:700px){.program-cover h3{font-size:25px}.program-cover-subtitle{display:block;font-size:21px;line-height:1.6;color:#68745d;margin-top:1px}.program-cover-subtitle::before{content:none}}

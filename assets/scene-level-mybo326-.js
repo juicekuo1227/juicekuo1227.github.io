@@ -1,0 +1,1 @@
+var e=e=>Number.isFinite(e)&&e>=5?2:1;export{e as t};

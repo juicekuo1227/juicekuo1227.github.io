@@ -1,0 +1,312 @@
+[
+  {
+    "number": 1,
+    "id": "upper-01",
+    "title": "木偶奇遇記：向星星許願",
+    "available": true,
+    "url": "https://www.youtube.com/watch?v=IBFftu5XYMU",
+    "shortTitle": "向星星許願",
+    "story": "每當迪士尼城堡出現，搭配上這段熟悉的旋律，就代表精彩故事即將開始！這首曲子來自《木偶奇遇記》，旋律溫柔又動人，今天，就讓我們用這首曲子來揭開音樂會的序幕！",
+    "youtubeId": "IBFftu5XYMU"
+  },
+  {
+    "number": 2,
+    "id": "upper-02",
+    "title": "芭蕾舞的布景",
+    "available": true,
+    "url": "https://www.youtube.com/watch?v=RjRvONNzOxE",
+    "shortTitle": "芭蕾舞的布景",
+    "story": "聚光燈亮起，芭蕾舞者踮起腳尖，旋轉、跳躍，在空中畫出美麗的弧線！讓長笛帶我們走進優雅又夢幻的舞台！",
+    "youtubeId": "RjRvONNzOxE"
+  },
+  {
+    "number": 3,
+    "id": "upper-03",
+    "title": "芬貝爾：傑克與魔豆",
+    "available": true,
+    "url": "https://www.youtube.com/watch?v=cxkQP12J1lU",
+    "shortTitle": "傑克與魔豆",
+    "story": "一顆神奇的豆子竟然長成巨大藤蔓！傑克順著魔豆一直往上爬，他會遇見什麼呢？",
+    "youtubeId": "cxkQP12J1lU"
+  },
+  {
+    "number": 4,
+    "id": "upper-04",
+    "title": "貝多芬：G大調小步舞曲",
+    "available": true,
+    "url": "https://www.youtube.com/watch?v=OOk0m0gmuSE",
+    "shortTitle": "G大調小步舞曲",
+    "story": "時光倒轉，來到古典時代的舞會！穿著華麗服裝的人們，正隨著音樂優雅地踏步。",
+    "youtubeId": "OOk0m0gmuSE"
+  },
+  {
+    "number": 5,
+    "id": "upper-05",
+    "title": "神隱少女：永遠同在",
+    "available": true,
+    "url": "https://www.youtube.com/watch?v=4lddXPQKS8Q",
+    "shortTitle": "永遠同在",
+    "story": "在神祕的異世界裡，千尋經歷了許多冒險，也遇見了珍貴的夥伴，讓我們跟著音樂，回想千尋的冒險，感受這首歌帶來的溫暖與感動！",
+    "youtubeId": "4lddXPQKS8Q"
+  },
+  {
+    "number": 6,
+    "id": "upper-06",
+    "title": "迪士尼：小小世界",
+    "available": true,
+    "url": "https://www.youtube.com/watch?v=Dc417PgSveI",
+    "shortTitle": "小小世界",
+    "story": "你知道嗎？世界各地有不同的語言與文化，但音樂卻能讓大家成為朋友！讓我們跟著《小小世界》，感受用音樂串起來的世界！",
+    "youtubeId": "Dc417PgSveI"
+  },
+  {
+    "number": 7,
+    "id": "upper-07",
+    "title": "海頓：驚愕交響曲第二樂章 行板",
+    "available": true,
+    "url": "https://www.youtube.com/watch?v=iYdoRyfpp5A",
+    "shortTitle": "驚愕交響曲第二樂章 行板",
+    "story": "音樂本來輕輕的、慢慢的，忽然「砰」一聲！聽說是海頓想把打瞌睡的人嚇醒。",
+    "youtubeId": "iYdoRyfpp5A"
+  },
+  {
+    "number": 8,
+    "id": "upper-08",
+    "title": "聖桑：天鵝",
+    "available": true,
+    "url": "https://www.youtube.com/watch?v=tgdGbAWUi74",
+    "shortTitle": "天鵝",
+    "story": "漂亮的天鵝，在平靜的湖面上慢慢游動，這首曲子旋律優美又寧靜，閉上眼睛，聽聽這首好美的歌。",
+    "youtubeId": "tgdGbAWUi74"
+  },
+  {
+    "number": 9,
+    "id": "upper-09",
+    "title": "路易·柯勒：G大調小奏鳴曲第一樂章",
+    "available": true,
+    "url": "https://www.youtube.com/watch?v=UgP_roRFlSY",
+    "shortTitle": "G大調小奏鳴曲第一樂章",
+    "story": "古典音樂也能像一場精彩的冒險！活潑的旋律一來一往，就像兩位主角在對話，快來聽聽這場音樂小劇場！",
+    "youtubeId": "UgP_roRFlSY"
+  },
+  {
+    "number": 10,
+    "id": "upper-10",
+    "title": "貝多芬：歡樂頌",
+    "available": true,
+    "url": "https://www.youtube.com/watch?v=yDOXLdrdz9o",
+    "shortTitle": "歡樂頌",
+    "story": "大家聽過這段旋律嗎？它不只是熟悉的《歡樂頌》，更藏著貝多芬對和平與友愛的期盼。即使幾乎聽不見聲音，他仍創作出這首動人的樂曲！",
+    "youtubeId": "yDOXLdrdz9o"
+  },
+  {
+    "number": 11,
+    "id": "upper-11",
+    "title": "德佛札克：幽默曲",
+    "available": true,
+    "url": "https://www.youtube.com/watch?v=yo3AJqgyxOI",
+    "shortTitle": "幽默曲",
+    "story": "長笛的清亮與法國號的溫潤交織，為這首輕快詼諧的名曲帶來豐富的和聲層次。",
+    "youtubeId": "yo3AJqgyxOI"
+  },
+  {
+    "number": 12,
+    "id": "upper-12",
+    "title": "魔女宅急便：能看見海的街道",
+    "available": true,
+    "url": "https://www.youtube.com/watch?v=XeTZYtR1Ez4",
+    "shortTitle": "能看見海的街道",
+    "story": "小魔女琪琪騎著掃帚，飛越美麗的海岸小鎮。跟著輕快的旋律，一起出發去旅行！",
+    "youtubeId": "XeTZYtR1Ez4"
+  },
+  {
+    "number": 13,
+    "id": "upper-13",
+    "title": "瑪莎·米爾：傑克森街藍調",
+    "available": true,
+    "url": "https://www.youtube.com/watch?v=cIC_yqAL4oA",
+    "shortTitle": "傑克森街藍調",
+    "story": "接著我們轉換一下風格，這首藍調音樂自由又有個性，還帶點俏皮和帥氣。準備好跟著節拍搖擺了嗎？",
+    "youtubeId": "cIC_yqAL4oA"
+  },
+  {
+    "number": 14,
+    "id": "upper-14",
+    "title": "庫勒：C 大調長笛練習曲",
+    "available": true,
+    "url": "https://www.youtube.com/watch?v=Lvn98GKTQag",
+    "shortTitle": "C 大調長笛練習曲",
+    "story": "原來練習曲也能這麼好聽！清亮柔美的長笛聲，吹出一道道優美的旋律。",
+    "youtubeId": "Lvn98GKTQag"
+  },
+  {
+    "number": 15,
+    "id": "upper-15",
+    "title": "逐玉：一念",
+    "available": true,
+    "url": "https://www.youtube.com/watch?v=CYXF7d7vSvQ",
+    "shortTitle": "一念",
+    "story": "柔美又帶有俠骨柔情的旋律，樂曲從平靜到激昂，指尖下的每一個音符，都訴說著深情的故事。",
+    "youtubeId": "CYXF7d7vSvQ"
+  },
+  {
+    "number": 16,
+    "id": "upper-16",
+    "title": "初音未來：千本櫻",
+    "available": true,
+    "url": "https://www.youtube.com/watch?v=7qi56h3vQBg",
+    "shortTitle": "千本櫻",
+    "story": "《千本櫻》是初音未來非常知名的代表歌曲，節奏又快又酷！為上半場畫下熱血沸騰的句點！",
+    "youtubeId": "7qi56h3vQBg"
+  },
+  {
+    "number": 17,
+    "id": "lower-01",
+    "title": "霍爾的移動城堡：人生的旋轉木馬",
+    "available": true,
+    "url": "https://www.youtube.com/watch?v=u1UFcCriKHk",
+    "shortTitle": "人生的旋轉木馬",
+    "story": "一座會走路的城堡、一位神祕的魔法師，再加上一段華麗又迷人的旋律，這就是《霍爾的移動城堡》的奇幻魅力！",
+    "youtubeId": "u1UFcCriKHk"
+  },
+  {
+    "number": 18,
+    "id": "lower-02",
+    "title": "高塞克：嘉禾舞曲",
+    "available": true,
+    "url": "https://www.youtube.com/watch?v=6A4U2kDSBhQ",
+    "shortTitle": "嘉禾舞曲",
+    "story": "法國宮廷經典舞曲！輕快跳躍的節奏，就像小舞者踩著輕盈的跳躍舞步。",
+    "youtubeId": "6A4U2kDSBhQ"
+  },
+  {
+    "number": 19,
+    "id": "lower-03",
+    "title": "天空之城：載著你",
+    "available": true,
+    "url": "https://www.youtube.com/watch?v=TtAcOkwxDdI",
+    "shortTitle": "載著你",
+    "story": "傳說中，有一座漂浮在天空中的神祕城堡，他到底隱藏著什麼祕密？跟著音樂一起揭開天空之城的神秘面紗。",
+    "youtubeId": "TtAcOkwxDdI"
+  },
+  {
+    "number": 20,
+    "id": "lower-04",
+    "title": "亨利·克萊·沃克：爺爺的大鐘",
+    "available": true,
+    "url": "https://www.youtube.com/watch?v=2pelgVT3Meo",
+    "shortTitle": "爺爺的大鐘",
+    "story": "有一座好老好老的大鐘，陪著爺爺走過一輩子。聽，滴答滴答，鐘聲好像在說故事。",
+    "youtubeId": "2pelgVT3Meo"
+  },
+  {
+    "number": 21,
+    "id": "lower-05",
+    "title": "貝多芬：土耳其進行曲",
+    "available": true,
+    "url": "https://www.youtube.com/watch?v=CInpEzcy90k",
+    "shortTitle": "土耳其進行曲",
+    "story": "整齊的腳步聲響起，充滿精神的隊伍準備登場！這首土耳其進行曲節奏鮮明、活力十足，彷彿每個音符都在踏步前進。",
+    "youtubeId": "CInpEzcy90k"
+  },
+  {
+    "number": 22,
+    "id": "lower-06",
+    "title": "魔女宅急便：能看見海的街道",
+    "available": true,
+    "url": "https://www.youtube.com/watch?v=KJs-UI-RUp0",
+    "shortTitle": "能看見海的街道",
+    "story": "海風吹過街道，陽光灑在紅色屋頂上，小魔女琪琪正展開她的新生活。跟著輕快的旋律，一起感受海邊小鎮充滿活力的日常！",
+    "youtubeId": "KJs-UI-RUp0"
+  },
+  {
+    "number": 23,
+    "id": "lower-07",
+    "title": "哈利波特：嘿美主題曲",
+    "available": true,
+    "url": "https://www.youtube.com/watch?v=GJKDehWARD4",
+    "shortTitle": "嘿美主題曲",
+    "story": "貓頭鷹送來錄取通知書，魔法世界的大門正式打開！請跟著音樂乘上掃帚，進入哈利波特的奇幻世界！",
+    "youtubeId": "GJKDehWARD4"
+  },
+  {
+    "number": 24,
+    "id": "lower-08",
+    "title": "佈爾格彌勒：打獵",
+    "available": true,
+    "url": "https://www.youtube.com/watch?v=mxwlqQYGxLw",
+    "shortTitle": "打獵",
+    "story": "聽！號角響起來了，獵人騎著馬衝進森林。音符在森林中奔馳，充滿緊張刺激的節奏！",
+    "youtubeId": "mxwlqQYGxLw"
+  },
+  {
+    "number": 25,
+    "id": "lower-09",
+    "title": "魔髮奇緣：我看見了光明",
+    "available": true,
+    "url": "https://www.youtube.com/watch?v=zZeJiJHkh_0",
+    "shortTitle": "我看見了光明",
+    "story": "漫天燈籠緩緩升上夜空，金色光芒照亮湖面，優美的旋律交織出最閃耀的夜空。",
+    "youtubeId": "zZeJiJHkh_0"
+  },
+  {
+    "number": 26,
+    "id": "lower-10",
+    "title": "庫勞：C大調小奏鳴曲",
+    "available": true,
+    "url": "https://www.youtube.com/watch?v=KyUOrNUdnQA",
+    "shortTitle": "C大調小奏鳴曲",
+    "story": "陽光灑進房間，明亮的旋律讓人精神一振！作曲家庫勞留下了許多適合鋼琴演奏的作品，這首小奏鳴曲也展現了古典音樂俐落又優雅的一面。",
+    "youtubeId": "KyUOrNUdnQA"
+  },
+  {
+    "number": 27,
+    "id": "lower-11",
+    "title": "海頓：小夜曲",
+    "available": true,
+    "url": "https://www.youtube.com/watch?v=Jm-Pll5dzsM",
+    "shortTitle": "小夜曲",
+    "story": "夜幕降臨，四周慢慢安靜下來，一段溫柔的旋律悄悄響起，就像一封用音樂寫成的信。",
+    "youtubeId": "Jm-Pll5dzsM"
+  },
+  {
+    "number": 28,
+    "id": "lower-12",
+    "title": "天外奇蹟：Married Life",
+    "available": true,
+    "url": "https://www.youtube.com/watch?v=J6CruvmHwu0",
+    "shortTitle": "Married Life",
+    "story": "隨著綁滿氣球的小屋，還有我們的想像力，飛到夢想清單的每一個地方。",
+    "youtubeId": "J6CruvmHwu0"
+  },
+  {
+    "number": 29,
+    "id": "lower-13",
+    "title": "田丸信明：傑克與巨人",
+    "available": true,
+    "url": "https://www.youtube.com/watch?v=PxEMgEw-YE8",
+    "shortTitle": "傑克與巨人",
+    "story": "傑克的冒險還沒結束！這次他遇上了高大無比的巨人，沉穩低音與靈巧高音交織，上演一場精彩的對決。",
+    "youtubeId": "PxEMgEw-YE8"
+  },
+  {
+    "number": 30,
+    "id": "lower-14",
+    "title": "克拉倫斯·卡梅隆·懷特：On the Bayou",
+    "available": true,
+    "url": "https://www.youtube.com/watch?v=2K8ebNau19U",
+    "shortTitle": "On the Bayou",
+    "story": "水緩緩流動，微風吹過河岸。這首作品有著獨特的節奏與美洲風情的獨特和聲，帶我們聆聽不一樣的音樂風景！",
+    "youtubeId": "2K8ebNau19U"
+  },
+  {
+    "number": 31,
+    "id": "lower-15",
+    "title": "神鬼奇航：他是海盜",
+    "available": true,
+    "url": "https://www.youtube.com/watch?v=G5KYJePKrto",
+    "shortTitle": "他是海盜",
+    "story": "海盜船升起船帆，海浪洶湧拍打船身！節奏強烈，就像海盜船正迎著風浪勇往直前。讓我們用最熱烈的掌聲，為今天的音樂會畫下精彩的句點！",
+    "youtubeId": "G5KYJePKrto"
+  }
+]
