@@ -334,6 +334,7 @@ footer small{color:#a89878;letter-spacing:.08em}
 <link rel="stylesheet" href="assets/recital-video.css?v=20261116-autoplay">
 <link rel="stylesheet" href="assets/storybook.css">
 <link rel="stylesheet" href="assets/storybook-player.css">
+<link rel="stylesheet" href="assets/mobile-player-tabs.css">
 </head>
 <body>
 
@@ -775,13 +776,17 @@ document.getElementById('year').textContent=new Date().getFullYear();
 <dialog id="recital-dialog" class="recital-dialog storybook-player" aria-labelledby="recital-dialog-title">
   <div class="recital-dialog-shell">
     <header class="recital-dialog-bar"><div><h2 id="recital-dialog-title">聽聽音樂・演奏故事集</h2><p>2026 學生音樂發表會</p></div><div class="recital-dialog-actions"><a id="recital-open-separately" href="https://2026-demo.tingyumusic.com/?guest=1" target="_blank" rel="noopener">獨立開啟 3D ↗</a><button id="recital-dialog-close" type="button" aria-label="關閉互動舞台，返回官網">闔上故事書 <span aria-hidden="true">×</span></button></div></header>
+    <div class="recital-mobile-tabs" role="tablist" aria-label="選擇回顧方式">
+      <button type="button" id="recital-watch-tab" role="tab" aria-selected="true" aria-controls="recital-watch-panel" tabindex="0"><span aria-hidden="true">♫</span> 看演出</button>
+      <button type="button" id="recital-explore-tab" role="tab" aria-selected="false" aria-controls="recital-explore-panel" tabindex="-1"><span aria-hidden="true">✧</span> 探索舞台</button>
+    </div>
     <div class="recital-dialog-content local-dual-view">
-      <section class="recital-stage-pane book-page-left" aria-label="3D 互動舞台">
+      <section id="recital-explore-panel" class="recital-stage-pane book-page-left" aria-label="3D 互動舞台">
         <div class="book-chapter-heading"><p id="book-chapter-number">第 31 個音樂故事</p><h3 id="book-piece-title"></h3><p id="book-story"></p></div>
         <div class="book-stage-window"><p id="recital-loading" class="recital-loading" role="status">正在打開這一頁的音樂世界…</p><iframe id="recital-frame" title="2026 聽聽音樂發表會互動舞台" allow="fullscreen; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
         <p class="book-stage-caption"><span aria-hidden="true">✧</span> 轉轉舞台，找找藏在故事裡的亮光。 <span aria-hidden="true">✧</span></p>
       </section>
-      <section class="recital-video-pane book-page-right" aria-label="實際演出影片">
+      <section id="recital-watch-panel" class="recital-video-pane book-page-right" aria-label="實際演出影片">
         <div class="local-video-heading"><span id="local-video-number"></span></div><h3 id="local-video-title"></h3>
         <div class="book-film-frame"><div class="local-video-wrap"><iframe id="youtube-recital-video" title="學生演出影片" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe><button type="button" id="recital-enable-sound" hidden>開啟聲音</button><p id="local-video-message" role="status" hidden></p></div></div>
         <div class="book-afterword"><div class="book-companion" aria-hidden="true"><svg viewBox="0 0 260 180" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -817,5 +822,6 @@ document.getElementById('year').textContent=new Date().getFullYear();
 </dialog>
 <script src="assets/recital.js?v=20261116-youtube" defer></script>
 <script src="assets/recital-video.js?v=20261116-autoplay" defer></script>
+<script src="assets/mobile-player-tabs.js" defer></script>
 </body>
 </html>

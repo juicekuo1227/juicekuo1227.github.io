@@ -1,0 +1,39 @@
+/* Mobile books show one spacious page at a time; media stays mounted. */
+.recital-mobile-tabs{display:none}
+@media(max-width:700px){
+  .storybook-player .recital-mobile-tabs{display:flex;flex:none;gap:9px;padding:9px 13px 0;background:#f9f3df;border-bottom:1px solid #ded2b1}
+  .recital-mobile-tabs button{flex:1;min-height:44px;padding:9px 12px;border:1px solid #d7c9a8;border-bottom:0;border-radius:10px 10px 0 0;background:#eee7d3;color:#796c56;font:16px/1.4 var(--hand);cursor:pointer}
+  .recital-mobile-tabs button span{margin-right:5px;color:#9b885c}
+  .recital-mobile-tabs button[aria-selected="true"]{background:#fcf8eb;color:#36594d;box-shadow:inset 0 3px #91ac98;position:relative;bottom:-1px}
+  .recital-mobile-tabs button:focus-visible{outline:2px solid #36594d;outline-offset:-5px}
+  .storybook-player .local-dual-view{position:relative;display:block;flex:1;min-height:0}
+  .storybook-player .recital-stage-pane,.storybook-player .recital-video-pane{position:absolute;inset:0;width:100%;height:100%;display:flex;min-height:0;box-sizing:border-box}
+  .storybook-player[data-mobile-view="watch"] .recital-stage-pane,.storybook-player[data-mobile-view="explore"] .recital-video-pane{visibility:hidden;pointer-events:none}
+  .storybook-player .recital-stage-pane{padding:10px 8px 6px}
+  .storybook-player .book-chapter-heading{position:relative;top:auto;left:auto;margin:0 3px 9px;padding-right:0}
+  .storybook-player .book-chapter-heading>p:first-child{font-size:11px;box-shadow:none;border-radius:3px}
+  .storybook-player .book-chapter-heading h3{display:block;font-size:23px;line-height:1.35;margin:5px 0 0;max-width:100%}
+  .storybook-player .book-stage-window{flex:1;min-height:0;border-radius:10px 6px 12px 6px}
+  .storybook-player .book-stage-caption{padding-top:6px;font-size:10px}
+  .storybook-player .recital-video-pane{justify-content:center;padding:18px 12px 14px;border-bottom:0;overflow-y:auto}
+  .storybook-player .recital-video-pane h3{font-size:22px;line-height:1.5;margin:9px 0 19px}
+  .storybook-player .local-video-heading{font-size:12px}
+  .storybook-player .local-video-wrap{width:100%;max-height:none;aspect-ratio:16/9}
+  .storybook-player .local-video-wrap iframe{max-height:none}
+  .storybook-player .book-afterword{display:flex;min-height:0;margin-top:26px;justify-content:center}
+  .storybook-player .book-companion{flex:0 0 105px;width:105px;height:80px}
+  .storybook-player .book-turn-pages{padding-bottom:max(5px,env(safe-area-inset-bottom))}
+}
+@media(max-width:700px) and (max-height:500px){
+  .storybook-player .recital-dialog-bar p,.storybook-player .book-afterword,.storybook-player .book-stage-caption{display:none}
+  .storybook-player .recital-dialog-bar{padding-block:4px}
+  .storybook-player .recital-mobile-tabs{padding-top:4px}
+  .recital-mobile-tabs button{min-height:36px;padding-block:5px;font-size:14px}
+  .storybook-player .recital-video-pane{padding-block:6px}
+  .storybook-player .recital-video-pane h3{font-size:16px;margin:0 0 6px}
+  .storybook-player .local-video-heading{display:none}
+  .storybook-player .book-film-frame{align-self:center;width:min(100%,calc((100dvh - 180px)*16/9))}
+  .storybook-player .book-chapter-heading{margin-bottom:4px}
+  .storybook-player .book-chapter-heading>p:first-child{display:none}
+  .storybook-player .book-chapter-heading h3{font-size:18px;margin:0}
+}

@@ -5,7 +5,8 @@ import test from 'node:test';
 const homepage = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
 
 test('homepage sections follow the conversion order', () => {
-  const sectionIds = [...homepage.matchAll(/<section\b[^>]*\bid="([^"]+)"/g)]
+  const main = homepage.match(/<main>([\s\S]*?)<\/main>/)?.[1] || '';
+  const sectionIds = [...main.matchAll(/<section\b[^>]*\bid="([^"]+)"/g)]
     .map(match => match[1]);
 
   assert.deepEqual(sectionIds, ['top', 'courses', 'results', 'teacher', 'journal', 'faq', 'contact']);
