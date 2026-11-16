@@ -1,0 +1,33 @@
+@import url('recital-dialog.css');
+.local-preview-note{background:#514035;color:#fffdf8;font-size:11px;padding:7px 5%;display:flex;justify-content:space-between;gap:15px}.local-preview-note a{text-decoration:underline;text-underline-offset:3px}
+.program-sheet{background:#fffdf8;border:1px solid #c8cfc2;border-radius:4px;margin-bottom:48px;overflow:clip}
+.program-cover{padding:30px 38px 27px;display:flex;align-items:center;justify-content:space-between;gap:20px;background:#f5f0e2;border-bottom:3px double #c9c7b4}
+.program-edition{font-size:13px;letter-spacing:.1em;color:#61776a;display:flex;align-items:center;gap:18px}.program-edition span{font-size:12px;letter-spacing:.05em;padding-left:18px;border-left:1px solid #b5bfad}
+.program-cover h3{font:400 clamp(26px,3vw,36px)/1.5 var(--hand);letter-spacing:.06em;margin:10px 0 7px}.program-lead{font-size:13px;color:#65594e}.program-cover-mark{font:76px/1 var(--hand);color:#a88c51;transform:rotate(-9deg);padding:10px 20px}
+.program-body{display:grid;grid-template-columns:1.14fr 1fr;align-items:start}
+.program-list{border-right:1px solid #d6d6c8;padding:0 27px 22px;min-width:0}
+.program-list-heading{display:flex;justify-content:space-between;align-items:center;gap:10px;color:#6c7163;padding:17px 8px 13px;font-size:11px;border-bottom:1px solid #b2bdac}.desktop-program-hint{font-size:10px}.mobile-program-hint{display:none}
+.recital-scene-picker{list-style:none;margin:0;padding:0}
+.program-row{display:flex;align-items:stretch;border-bottom:1px dotted #c9cebf;gap:0}
+.recital-scene-choice{display:grid;grid-template-columns:28px 64px minmax(0,1fr) 15px;gap:13px;align-items:center;min-width:0;flex:1;border:0;background:none;text-align:left;color:#514035;cursor:pointer;font:inherit;padding:12px 8px;border-left:3px solid transparent;transition:background .15s,border-color .15s}
+.recital-scene-choice:hover{background:#f3f4eb}.recital-scene-choice[aria-pressed=true]{background:#e8efe7;border-left-color:#6b8a78}
+.program-number{font:19px/1 var(--hand);color:#7d8b79;text-align:center}
+.stage-art{position:relative;overflow:hidden;background:#eee9dd;margin:0}.stage-art img{position:absolute;top:0;left:-20.5%;width:141%;height:auto;max-width:none;transform:translateY(-15.76%)}
+.program-thumbnail{width:64px;aspect-ratio:1.09;border-radius:4px}
+.program-piece{min-width:0}.program-piece b{font:400 19px/1.5 var(--hand);display:block}.program-piece small{font-size:10px;color:#788071;display:block;line-height:1.6;margin-top:3px}.program-piece small span{margin:0 6px}
+.program-current{visibility:hidden;color:#64816e;font-size:21px}.recital-scene-choice[aria-pressed=true] .program-current{visibility:visible}
+.program-open{display:flex;align-items:center;justify-content:center;gap:5px;font-size:11px;color:#5e7466;min-width:55px;padding:0 7px}.program-open span{font-size:14px}.program-open:hover{background:#f0f3e9;text-decoration:underline;text-underline-offset:4px}
+.program-list-note{font-size:10px;color:#7c8072;padding:18px 7px 0}
+.program-preview{padding:24px 30px 30px;position:sticky;top:110px;min-width:0;align-self:start}
+.program-preview-heading{display:flex;align-items:center;justify-content:space-between;gap:15px;color:#788071;font-size:11px;margin-bottom:14px}
+.recital-scene-link{display:block;position:relative;border:7px solid #f6f1e6;border-radius:3px;background:#f6f1e6}
+.recital-scene{aspect-ratio:1.09;border-radius:6px}
+.program-preview-overlay{position:absolute;right:15px;bottom:15px;background:#fffdf8ee;border-radius:20px;padding:6px 12px;font-size:11px;color:#514035}
+.program-selected-label{font-family:var(--hand);color:#7e8c77;font-size:13px;margin-top:24px}
+.program-preview h4{font:400 27px/1.5 var(--hand);margin:7px 0 13px;letter-spacing:.025em}
+.program-preview-description{font-size:13px;line-height:2;color:#65594e;margin-bottom:21px}.recital-enter{font-size:13px;gap:20px;padding:11px 23px}
+.recital-footnote{font-size:10px;line-height:1.8;color:#7c8072;border-top:1px dotted #cbcdbc;padding-top:16px;margin-top:23px}
+.recital-to-videos{display:flex;align-items:center;justify-content:center;gap:12px;color:#5c6f64;margin:0 0 35px;font-family:var(--hand);font-size:17px}.recital-to-videos>span{font-size:25px;color:#a88843}
+@media(max-width:1050px){.program-cover{padding:26px}.program-list{padding-inline:16px}.program-preview{padding:22px}.recital-scene-choice{gap:8px;grid-template-columns:23px 52px minmax(0,1fr) 12px;padding:12px 5px}.program-thumbnail{width:52px}.program-piece b{font-size:17px}.program-open{min-width:43px;padding:0 4px}.desktop-program-hint{display:none}.program-preview h4{font-size:24px}}
+@media(max-width:700px){.program-cover{padding:23px 20px 22px;gap:10px}.program-cover h3{font-size:26px;letter-spacing:.01em;margin:11px 0 8px}.program-edition{font-size:12px;gap:12px}.program-edition span{font-size:11px;padding-left:12px}.program-lead{font-size:12px;max-width:22em;line-height:1.9}.program-cover-mark{display:none}.program-body{display:block}.program-preview{display:none}.program-list{padding:0 13px 19px;border:0}.program-list-heading{font-size:10px;padding:15px 5px 12px;gap:8px}.mobile-program-hint{display:inline;font-size:10px}.recital-scene-choice{grid-template-columns:23px 56px minmax(0,1fr);gap:9px;padding:12px 4px}.program-thumbnail{width:56px}.program-number{font-size:17px}.program-piece b{font-size:18px;line-height:1.45}.program-piece small{font-size:10px}.program-current{display:none}.program-open{min-width:35px;font-size:10px;padding:0 3px;flex-direction:column;gap:0}.program-open span{font-size:13px}.program-list-note{font-size:9px;padding-top:15px}.local-preview-note{font-size:10px}.local-preview-note a{white-space:nowrap}.recital-to-videos{font-size:15px}}
+@media(prefers-reduced-motion:reduce){.recital-scene-choice{transition:none}}

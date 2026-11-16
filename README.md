@@ -76,3 +76,5 @@ git switch -c restore-v1 v1     # 從 v1 tag 開出一個分支
 - **v1** — 復刻原 Strikingly 站：完整 9 區塊、RWD、mailto 聯絡表單、相片 / 影片燈箱、手機全選單 + scrollspy、滿版 hero、臉部置中縮圖、footer 社群連結（YouTube / Instagram / LINE）、自訂網域 `tingyumusic.com`。
 
 - **音樂繪本改版（2026-11-15）** — 薄荷綠、手寫標題與音樂貓咪主插畫；沿用原站課程、成果、師資、文章與聯絡功能。主題樣式位於 `assets/picturebook.css`，主插畫位於 `assets/music-cats.png`。
+
+- **2026 發表會曲目單（2026-11-16）** — 學生成果新增10首精選曲目、舞台預覽與點擊後載入的互動視窗；手機點曲目直接進入舞台。`assets/recital.css`、`assets/recital-dialog.css`、`assets/recital.js` 為此區塊樣式與互動程式。
