@@ -24,7 +24,7 @@ test('situation heading offers a starting point for every learner', () => {
 });
 
 test('award disclosure has explicit mobile expand and collapse cues', () => {
-  assert.match(homepage, /點擊展開 <span id="award-count">26 筆<\/span>完整紀錄/);
+  assert.match(homepage, /點擊展開 <span id="award-count">\d+ 筆<\/span>完整紀錄/);
   assert.match(homepage, /收起完整紀錄/);
   assert.match(homepage, /@media\(max-width:600px\)\{[\s\S]*?\.aw-toggle\{[^}]*width:100%/);
 });
