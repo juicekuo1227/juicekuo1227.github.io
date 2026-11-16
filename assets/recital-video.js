@@ -1,6 +1,71 @@
 (() => {
   const frame = document.getElementById('recital-frame');
-  const video = document.getElementById('youtube-recital-video');
+  let video = document.getElementById('youtube-recital-video');
+  const sound = document.getElementById('recital-enable-sound');
+  let player = null, playbackRevision = 0, apiReady;
+  function youtubeAPI() {
+    if(window.YT?.Player) return Promise.resolve(window.YT);
+    if(!apiReady) apiReady = new Promise((resolve, reject) => {
+      const previousReady = window.onYouTubeIframeAPIReady;
+      window.onYouTubeIframeAPIReady = () => {
+        previousReady?.();
+        resolve(window.YT);
+      };
+      const script = document.createElement('script');
+      script.src = 'https://www.youtube.com/iframe_api';
+      script.onerror = () => { apiReady = null; reject(Error('播放器控制暫時無法載入，請使用影片內的播放按鈕。')); };
+      document.head.appendChild(script);
+    });
+    return apiReady;
+  }
+  function clearPlayer() {
+    playbackRevision++;
+    sound.hidden = true;
+    if(player) {
+      const replacement = video.cloneNode(false);
+      replacement.removeAttribute('src');
+      video.before(replacement);
+      player.destroy();
+      video = replacement;
+      player = null;
+    }
+    video.removeAttribute('src');
+  }
+  function playVideo(item, autoplay) {
+    clearPlayer();
+    const request = playbackRevision;
+    let mutedFallback = false;
+    video.title = `第 ${item.number} 場：${item.title}`;
+    video.src = `https://www.youtube.com/embed/${item.youtubeId}?autoplay=${autoplay ? 1 : 0}&rel=0&playsinline=1&enablejsapi=1&origin=${encodeURIComponent(location.origin)}`;
+    youtubeAPI().then(YT => {
+      if(request !== playbackRevision || !dialog.open) return;
+      player = new YT.Player(video, { events: {
+        onReady(event) {
+          if(request !== playbackRevision || !dialog.open) return;
+          if(autoplay) event.target.playVideo();
+        },
+        onAutoplayBlocked(event) {
+          if(request !== playbackRevision || !dialog.open) return;
+          sound.hidden = false;
+          if(mutedFallback) return;
+          mutedFallback = true;
+          event.target.mute();
+          event.target.playVideo();
+        },
+        onStateChange(event) {
+          if(request !== playbackRevision || !dialog.open) return;
+          if(event.data === YT.PlayerState.PLAYING) sound.hidden = !event.target.isMuted();
+        }
+      }});
+    }).catch(error => {
+      if(request !== playbackRevision || !dialog.open) return;
+      message.textContent = error.message;message.hidden = false;
+    });
+  }
+  sound.addEventListener('click', () => {
+    if(!player) return;
+    player.unMute();player.setVolume(100);player.playVideo();sound.hidden = true;
+  });
   const dialog = document.getElementById('recital-dialog');
   const message = document.getElementById('local-video-message');
   const previous = document.getElementById('local-piece-prev');
@@ -9,7 +74,7 @@
   let items = [], current = 0, revision = 0, bridgeToken = 0;
   function setVideo(index, autoplay = false) {
     const item = items[index];if(!item)return;
-    current = index;video.removeAttribute('src');
+    current = index;
     document.getElementById('local-video-title').textContent = item.title;
     document.getElementById('book-chapter-number').textContent = `第 ${String(item.number).padStart(2,'0')} 個音樂故事`;
     document.getElementById('book-piece-title').textContent = item.shortTitle || item.title;
@@ -21,7 +86,7 @@
     message.textContent = item.available ? '' : '這首曲目的影片尚未加入，仍可探索 3D 舞台。';
     video.title = `第 ${item.number} 場：${item.title}`;
     if(item.available && /^[A-Za-z0-9_-]{11}$/.test(item.youtubeId)) {
-      video.src = `https://www.youtube.com/embed/${item.youtubeId}?autoplay=${autoplay ? 1 : 0}&rel=0&playsinline=1`;
+      playVideo(item, autoplay);
     }
   }
   function setStage(index, autoplay = false) {
@@ -48,5 +113,5 @@
     const index = items.findIndex(item=>item.number===event.data.number);
     if(index>=0 && index!==current)setVideo(index,true);
   });
-  window.addEventListener('recital:close',()=>{revision++;video.removeAttribute('src');});
+  window.addEventListener('recital:close',()=>{revision++;clearPlayer();});
 })();

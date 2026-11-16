@@ -331,7 +331,7 @@ footer small{color:#a89878;letter-spacing:.08em}
 <link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC&family=Noto+Sans+TC:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/picturebook.css">
 <link rel="stylesheet" href="assets/recital.css">
-<link rel="stylesheet" href="assets/recital-video.css">
+<link rel="stylesheet" href="assets/recital-video.css?v=20261116-autoplay">
 <link rel="stylesheet" href="assets/storybook.css">
 <link rel="stylesheet" href="assets/storybook-player.css">
 </head>
@@ -783,7 +783,7 @@ document.getElementById('year').textContent=new Date().getFullYear();
       </section>
       <section class="recital-video-pane book-page-right" aria-label="實際演出影片">
         <div class="local-video-heading"><span id="local-video-number"></span></div><h3 id="local-video-title"></h3>
-        <div class="book-film-frame"><div class="local-video-wrap"><iframe id="youtube-recital-video" title="學生演出影片" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe><p id="local-video-message" role="status" hidden></p></div></div>
+        <div class="book-film-frame"><div class="local-video-wrap"><iframe id="youtube-recital-video" title="學生演出影片" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe><button type="button" id="recital-enable-sound" hidden>開啟聲音</button><p id="local-video-message" role="status" hidden></p></div></div>
         <div class="book-afterword"><div class="book-companion" aria-hidden="true"><svg viewBox="0 0 260 180" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M30 151c31-9 48-1 70-4 44-6 81 9 129-3" stroke="#a9ba9e" stroke-width="2" stroke-linecap="round"/>
 <g stroke="#625043" stroke-linecap="round" stroke-linejoin="round">
@@ -816,6 +816,6 @@ document.getElementById('year').textContent=new Date().getFullYear();
   </div>
 </dialog>
 <script src="assets/recital.js?v=20261116-youtube" defer></script>
-<script src="assets/recital-video.js" defer></script>
+<script src="assets/recital-video.js?v=20261116-autoplay" defer></script>
 </body>
 </html>

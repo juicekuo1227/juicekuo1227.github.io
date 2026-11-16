@@ -13,3 +13,5 @@
 .local-video-wrap iframe[hidden]{display:none}
 
 .local-video-wrap iframe{border:0}
+
+#recital-enable-sound{position:absolute;left:12px;bottom:48px;z-index:2;border:1px solid #d8cfb1;border-radius:20px;padding:9px 17px;min-height:44px;background:#fffbed;color:#514035;font:inherit;font-size:14px;cursor:pointer;box-shadow:0 2px 8px #0003}#recital-enable-sound[hidden]{display:none}
