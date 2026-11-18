@@ -9,14 +9,14 @@ test('homepage sections follow the conversion order', () => {
   const sectionIds = [...main.matchAll(/<section\b[^>]*\bid="([^"]+)"/g)]
     .map(match => match[1]);
 
-  assert.deepEqual(sectionIds, ['top', 'courses', 'results', 'teacher', 'journal', 'faq', 'contact']);
+  assert.deepEqual(sectionIds, ['top', 'courses', 'teacher', 'results', 'faq', 'contact', 'journal']);
 });
 
 test('navigation follows the visible homepage order', () => {
   const nav = homepage.match(/<div class="nav-links">([\s\S]*?)<\/div>/)?.[1] || '';
   const destinations = [...nav.matchAll(/href="([^"]+)"/g)].map(match => match[1]);
 
-  assert.deepEqual(destinations, ['#courses', '#results', '#teacher', 'blog/', '#faq']);
+  assert.deepEqual(destinations, ['#courses', '#teacher', '#results', '#faq', 'blog/']);
 });
 
 test('situation heading offers a starting point for every learner', () => {
